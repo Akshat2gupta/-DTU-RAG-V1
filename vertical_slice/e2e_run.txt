@@ -1,0 +1,420 @@
+﻿python : Page 1: skipped (likely scanned)
+At line:3 char:1
++ python vertical_slice/e2e_pipeline.py `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Page 1: skipped (likely scanned):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Page 2: skipped (classified as skip)
+Page 3: skipped (ghost duplicate — all content outside cropbox)
+Page 7: skipped (ghost duplicate — all content outside cropbox)
+Page 8: skipped (classified as skip)
+Page 9: skipped (classified as skip)
+Page 10: skipped (classified as skip)
+Page 11: skipped (classified as skip)
+Page 12: skipped (classified as skip)
+Page 37: skipped (classified as skip)
+Page 38: skipped (classified as skip)
+Page 39: skipped (classified as skip)
+Page 40: skipped (classified as skip)
+Page 41: skipped (classified as skip)
+Page 42: skipped (classified as skip)
+Page 43: skipped (classified as skip)
+Page 44: skipped (classified as skip)
+Page 45: skipped (classified as syllabus)
+Page 46: skipped (classified as syllabus)
+Page 47: skipped (classified as skip)
+Page 48: skipped (classified as skip)
+Page 49: skipped (classified as syllabus)
+Page 50: skipped (classified as syllabus)
+Page 51: skipped (classified as syllabus)
+Page 52: skipped (classified as syllabus)
+Page 53: skipped (classified as syllabus)
+Page 54: skipped (classified as syllabus)
+Page 55: skipped (classified as syllabus)
+Page 56: skipped (classified as syllabus)
+Page 57: skipped (classified as syllabus)
+Page 58: skipped (classified as syllabus)
+Page 59: skipped (classified as syllabus)
+Page 60: skipped (classified as syllabus)
+Page 61: skipped (classified as syllabus)
+Page 62: skipped (classified as syllabus)
+Page 63: skipped (classified as syllabus)
+Page 64: skipped (classified as syllabus)
+Page 65: skipped (classified as syllabus)
+Page 66: skipped (classified as syllabus)
+Page 67: skipped (classified as syllabus)
+Page 68: skipped (classified as syllabus)
+Page 69: skipped (classified as syllabus)
+Page 70: skipped (classified as syllabus)
+Page 71: skipped (classified as syllabus)
+Page 72: skipped (classified as syllabus)
+Page 73: skipped (classified as skip)
+Page 74: skipped (classified as skip)
+Page 75: skipped (classified as syllabus)
+Page 76: skipped (classified as syllabus)
+Page 77: skipped (classified as syllabus)
+Page 78: skipped (classified as syllabus)
+Page 79: skipped (classified as skip)
+Page 80: skipped (classified as skip)
+Page 81: skipped (classified as syllabus)
+Page 82: skipped (classified as syllabus)
+Page 83: skipped (classified as syllabus)
+Page 84: skipped (classified as syllabus)
+Page 85: skipped (classified as syllabus)
+Page 86: skipped (classified as syllabus)
+Page 87: skipped (classified as skip)
+Page 88: skipped (classified as skip)
+Page 89: skipped (classified as syllabus)
+Page 90: skipped (classified as syllabus)
+Page 91: skipped (classified as syllabus)
+Page 92: skipped (classified as syllabus)
+Page 93: skipped (classified as syllabus)
+Page 94: skipped (classified as syllabus)
+Page 95: skipped (classified as syllabus)
+Page 96: skipped (classified as syllabus)
+Page 97: skipped (classified as syllabus)
+Page 98: skipped (classified as syllabus)
+Page 99: skipped (classified as syllabus)
+Page 100: skipped (classified as syllabus)
+Page 101: skipped (classified as skip)
+Page 102: skipped (classified as skip)
+Page 103: skipped (classified as syllabus)
+Page 104: skipped (classified as syllabus)
+Page 105: skipped (classified as syllabus)
+Page 106: skipped (classified as syllabus)
+Page 107: skipped (classified as syllabus)
+Page 108: skipped (classified as syllabus)
+Page 109: skipped (classified as syllabus)
+Page 110: skipped (classified as syllabus)
+Page 111: skipped (classified as syllabus)
+Page 112: skipped (classified as syllabus)
+Page 113: skipped (classified as syllabus)
+Page 114: skipped (classified as syllabus)
+Page 115: skipped (classified as skip)
+Page 116: skipped (classified as skip)
+Page 117: skipped (classified as syllabus)
+Page 118: skipped (classified as syllabus)
+Page 119: skipped (classified as syllabus)
+Page 120: skipped (classified as syllabus)
+Page 121: skipped (classified as syllabus)
+Page 122: skipped (classified as syllabus)
+Page 123: skipped (classified as syllabus)
+Page 124: skipped (classified as syllabus)
+Page 125: skipped (classified as syllabus)
+Page 126: skipped (classified as syllabus)
+Page 127: skipped (classified as syllabus)
+Page 128: skipped (classified as syllabus)
+Page 129: skipped (classified as skip)
+Page 130: skipped (classified as skip)
+Page 131: skipped (classified as syllabus)
+Page 132: skipped (classified as syllabus)
+Page 133: skipped (classified as syllabus)
+Page 134: skipped (classified as syllabus)
+Page 135: skipped (classified as syllabus)
+Page 136: skipped (classified as syllabus)
+Page 137: skipped (classified as syllabus)
+Page 138: skipped (classified as syllabus)
+Page 139: skipped (classified as syllabus)
+Page 140: skipped (classified as syllabus)
+Page 141: skipped (classified as syllabus)
+Page 142: skipped (classified as syllabus)
+Page 143: skipped (classified as skip)
+Page 144: skipped (classified as skip)
+Page 145: skipped (classified as skip)
+Page 146: skipped (classified as skip)
+Page 147: skipped (classified as skip)
+Page 148: skipped (classified as skip)
+Page 149: skipped (classified as skip)
+Page 150: skipped (classified as skip)
+Page 151: skipped (classified as skip)
+Page 152: skipped (classified as skip)
+Page 153: skipped (classified as skip)
+Page 154: skipped (classified as skip)
+Page 155: skipped (classified as skip)
+Page 156: skipped (classified as skip)
+Page 157: skipped (classified as skip)
+Page 158: skipped (classified as skip)
+Page 159: skipped (classified as skip)
+Page 160: skipped (classified as skip)
+Page 161: skipped (classified as skip)
+Page 162: skipped (classified as skip)
+Page 163: skipped (classified as skip)
+Page 164: skipped (classified as skip)
+Page 165: skipped (classified as skip)
+Page 166: skipped (classified as skip)
+Page 167: skipped (classified as skip)
+Page 168: skipped (classified as skip)
+Page 169: skipped (classified as skip)
+Page 170: skipped (classified as skip)
+Page 171: skipped (classified as skip)
+Page 172: skipped (classified as skip)
+Page 177: skipped (classified as skip)
+Page 178: skipped (classified as skip)
+Page 181: skipped (classified as skip)
+Page 182: skipped (classified as skip)
+Page 183: skipped (classified as syllabus)
+Page 184: skipped (classified as syllabus)
+Page 185: skipped (classified as syllabus)
+Page 186: skipped (classified as syllabus)
+Page 187: skipped (classified as skip)
+Page 188: skipped (classified as skip)
+Page 189: skipped (classified as syllabus)
+Page 190: skipped (classified as syllabus)
+Page 191: skipped (classified as syllabus)
+Page 192: skipped (classified as syllabus)
+Page 193: skipped (classified as syllabus)
+Page 194: skipped (classified as syllabus)
+Page 195: skipped (classified as syllabus)
+Page 196: skipped (classified as syllabus)
+Page 197: skipped (classified as skip)
+Page 198: skipped (classified as skip)
+Page 199: skipped (classified as skip)
+Page 200: skipped (classified as skip)
+Page 201: skipped (classified as skip)
+Page 202: skipped (classified as skip)
+Page 203: skipped (classified as skip)
+Page 204: skipped (classified as skip)
+Page 205: skipped (classified as skip)
+Page 206: skipped (classified as skip)
+Page 207: skipped (classified as skip)
+Page 208: skipped (classified as skip)
+Page 209: skipped (classified as skip)
+Page 210: skipped (classified as skip)
+Page 211: skipped (classified as skip)
+Page 212: skipped (classified as skip)
+Page 213: skipped (classified as skip)
+Page 214: skipped (classified as skip)
+Page 215: skipped (classified as skip)
+Page 216: skipped (classified as skip)
+Page 217: skipped (classified as skip)
+Page 218: skipped (classified as skip)
+Page 219: skipped (classified as skip)
+Page 220: skipped (classified as skip)
+Page 221: skipped (classified as skip)
+Page 222: skipped (classified as skip)
+Page 223: skipped (classified as skip)
+Page 224: skipped (classified as skip)
+Page 225: skipped (classified as skip)
+Page 226: skipped (classified as skip)
+Page 227: skipped (classified as skip)
+Page 228: skipped (classified as skip)
+Page 229: skipped (classified as skip)
+Page 230: skipped (classified as skip)
+Page 231: skipped (classified as skip)
+Page 232: skipped (classified as skip)
+Page 233: skipped (classified as skip)
+Page 234: skipped (classified as skip)
+Page 235: skipped (classified as skip)
+Page 236: skipped (classified as skip)
+Page 237: skipped (likely scanned)
+Page 238: skipped (likely scanned)
+Page 239: skipped (classified as skip)
+Page 240: skipped (classified as skip)
+Page 241: skipped (classified as syllabus)
+Page 242: skipped (classified as syllabus)
+Page 243: skipped (classified as syllabus)
+Page 244: skipped (classified as syllabus)
+Page 245: skipped (classified as syllabus)
+Page 246: skipped (classified as syllabus)
+Page 247: skipped (classified as syllabus)
+Page 248: skipped (classified as syllabus)
+Page 249: skipped (classified as syllabus)
+Page 250: skipped (classified as syllabus)
+Page 251: skipped (classified as syllabus)
+Page 252: skipped (classified as syllabus)
+Page 253: skipped (classified as syllabus)
+Page 254: skipped (classified as syllabus)
+Page 255: skipped (classified as syllabus)
+Page 256: skipped (classified as syllabus)
+Page 257: skipped (classified as syllabus)
+Page 258: skipped (classified as syllabus)
+Page 259: skipped (classified as syllabus)
+Page 260: skipped (classified as syllabus)
+Page 261: skipped (classified as syllabus)
+Page 262: skipped (classified as syllabus)
+Page 263: skipped (classified as syllabus)
+Page 264: skipped (classified as syllabus)
+Page 265: skipped (classified as skip)
+Page 266: skipped (classified as skip)
+Page 267: skipped (classified as skip)
+Page 268: skipped (classified as skip)
+Page 269: skipped (classified as skip)
+Page 270: skipped (classified as skip)
+Page 271: skipped (classified as skip)
+Page 272: skipped (classified as skip)
+Page 273: skipped (classified as skip)
+Page 274: skipped (classified as skip)
+Page 275: skipped (classified as skip)
+Page 276: skipped (classified as skip)
+Page 277: skipped (classified as skip)
+Page 278: skipped (classified as skip)
+Page 279: skipped (classified as skip)
+Page 280: skipped (classified as skip)
+Page 281: skipped (classified as skip)
+Page 282: skipped (classified as skip)
+Page 283: skipped (classified as skip)
+Page 284: skipped (classified as skip)
+Page 285: skipped (classified as skip)
+Page 286: skipped (classified as skip)
+Page 287: skipped (classified as skip)
+Page 288: skipped (classified as skip)
+Page 289: skipped (classified as skip)
+Page 290: skipped (classified as skip)
+Page 291: skipped (classified as skip)
+Page 292: skipped (classified as skip)
+Page 293: skipped (classified as skip)
+Page 294: skipped (classified as skip)
+Page 297: skipped (likely scanned)
+Page 298: skipped (likely scanned)
+Page 299: skipped (likely scanned)
+Page 300: skipped (likely scanned)
+Page 301: skipped (likely scanned)
+Page 302: skipped (likely scanned)
+Page 303: skipped (likely scanned)
+Page 304: skipped (likely scanned)
+Page 305: skipped (likely scanned)
+Page 306: skipped (likely scanned)
+Page 307: skipped (likely scanned)
+Page 308: skipped (likely scanned)
+Page 309: skipped (likely scanned)
+Page 310: skipped (likely scanned)
+Page 311: skipped (likely scanned)
+Page 312: skipped (likely scanned)
+Page 313: skipped (classified as skip)
+Page 314: skipped (classified as skip)
+Page 317: skipped (classified as skip)
+Page 318: skipped (classified as skip)
+Page 323: skipped (classified as skip)
+Page 324: skipped (classified as skip)
+Page 325: skipped (classified as skip)
+Page 326: skipped (classified as skip)
+Page 327: skipped (classified as skip)
+Page 328: skipped (classified as skip)
+Page 329: skipped (classified as form)
+Page 330: skipped (classified as form)
+Page 335: skipped (classified as skip)
+Page 336: skipped (classified as skip)
+Page 339: skipped (classified as form)
+Page 340: skipped (classified as form)
+Page 341: skipped (likely scanned)
+Page 342: skipped (likely scanned)
+HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+████████████████████████████████████████████████████████████
+  DTU RAG — END-TO-END PIPELINE
+████████████████████████████████████████████████████████████
+  PDF      : dtu-chatbot\data\raw\pdfs\BTech_2022_ordinance.pdf
+  Title    : DTU B.Tech Ordinance 2022
+  Queries  : 5
+
+============================================================
+  STAGE 1 — CHUNK  (pdf_parser → IR → chunks)
+============================================================
+  PDF          : BTech_2022_ordinance.pdf
+  IR blocks    : 211
+  Chunks total : 169  {'prose': 114, 'table': 55}
+  Token sizes  : min=17  avg=289  max=628
+  Time         : 174.4s
+
+============================================================
+  STAGE 2 — EMBED  (OpenAI text-embedding-3-small)
+============================================================
+  Chunks embedded : 169
+  Vector dim      : 1536
+  Time            : 3.2s
+
+============================================================
+  STAGE 3 — INDEX  (ChromaDB ephemeral)
+============================================================
+  Collection      : dtu_e2e
+  Documents       : 169
+  Time            : 0.3s
+
+============================================================
+  STAGE 4 — QUERY  (multi-variant retrieval + gpt-4o-mini)
+============================================================
+
+────────────────────────────────────────────────────────────
+  Q1: What is the minimum attendance required to appear in the end-term exam?
+────────────────────────────────────────────────────────────
+  Retrieved:
+    [1] score=0.55  type=prose  page=27  section=R. 1(B).22 Attendance, Absence, Leave and Withdrawals:
+    [2] score=0.55  type=prose  page=28  section=R. 1(B).22 Attendance, Absence, Leave and Withdrawals:
+    [3] score=0.55  type=prose  page=28  section=R. 1(B).19 Scrutiny of Grades, Tabulation and Declarati
+
+  Answer:
+The minimum attendance required to appear at the End-Term Examination for a subject is 75% of the total number of classes, including lectures, tutorials, and practicals, held in that subject (R. 1(B).22 Attendance, Absence, Leave and Withdrawals).
+
+
+────────────────────────────────────────────────────────────
+  Q2: What is the grading formula for the O (Outstanding) grade?
+────────────────────────────────────────────────────────────
+  Retrieved:
+    [1] score=0.61  type=table  page=24  section=R. 1(B).16 Conduction of Examination:
+    [2] score=0.59  type=prose  page=22  section=10. MA/M.Sc. 16 32
+    [3] score=0.58  type=prose  page=24  section=COE for showing answer sheets to the students. Both Mid
+    [4] score=0.53  type=prose  page=23  section=COE for showing answer sheets to the students. Both Mid
+
+  Answer:
+The grading formula for the O (Outstanding) grade is: m ≥ x̅ + 1.5 σ. This information is found in the section titled "R. 1(B).16 Conduction of Examination."
+
+
+────────────────────────────────────────────────────────────
+  Q3: What is the maximum duration to complete a B.Tech degree?
+────────────────────────────────────────────────────────────
+  Retrieved:
+    [1] score=0.58  type=prose  page=18  section=10. MA/ M.Sc. Annexure 1J
+    [2] score=0.57  type=table  page=19  section=S. No Program
+    [3] score=0.55  type=table  page=19  section=S. No Program
+    [4] score=0.54  type=prose  page=179  section=Procedure for Conduct and Evaluation of B. Tech. Projec
+    [5] score=0.52  type=table  page=21  section=10. MA/M.Sc. 16 32
+
+  Answer:
+The maximum duration to complete a B.Tech degree is 7 years, as stated in the section "S. No Program" (Chunk 2).
+
+
+────────────────────────────────────────────────────────────
+  Q4: What happens if I fail too many courses in my first year?
+────────────────────────────────────────────────────────────
+  Retrieved:
+    [1] score=0.52  type=prose  page=24  section=COE for showing answer sheets to the students. Both Mid
+    [2] score=0.52  type=prose  page=29  section=Regulation(s) on behalf of the AC as he/she deems appro
+    [3] score=0.52  type=prose  page=30  section=Regulation(s) on behalf of the AC as he/she deems appro
+
+  Answer:
+If you fail to earn 30% of the prescribed credits in your first year, your enrolment in the program shall stand terminated, as specified in the Scheme of teaching and examinations (Regulation(s) on behalf of the AC as he/she deems appropriate and report it to the next).
+
+
+────────────────────────────────────────────────────────────
+  Q5: Can I withdraw from a semester due to health reasons?
+────────────────────────────────────────────────────────────
+  Retrieved:
+    [1] score=0.50  type=prose  page=29  section=R. 1(B).24 Withdrawal
+    [2] score=0.50  type=prose  page=30  section=R. 1(B).24 Withdrawal
+    [3] score=0.49  type=prose  page=29  section=Regulation(s) on behalf of the AC as he/she deems appro
+    [4] score=0.47  type=prose  page=30  section=Regulation(s) on behalf of the AC as he/she deems appro
+
+  Answer:
+I could not find this information in the available DTU documents.
+
+
+████████████████████████████████████████████████████████████
+  DONE  —  total time 195.5s
+████████████████████████████████████████████████████████████

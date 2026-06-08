@@ -1,0 +1,20 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables (API keys!)
+.env
+*.env
+
+# Testing cache
+.pytest_cache/
+
+# Database files
+*.db
+
+# Logs
+logs/
+
+# Claude Code config
+.claude/
