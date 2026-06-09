@@ -139,6 +139,72 @@ class ManifestDB:
     # Reads
     # ------------------------------------------------------------------
 
+    def get_document_by_hash(
+        self,
+        file_hash: str,
+        exclude_url: str,
+        confirmed_statuses: tuple[str, ...] = ("done",),
+    ) -> sqlite3.Row | None:
+        """Return a confirmed document that already has this SHA-256 hash.
+
+        Only considers rows whose download_status is in confirmed_statuses so
+        that pending/running/failed duplicates are never treated as canonical.
+        """
+        placeholders = ",".join("?" * len(confirmed_statuses))
+        cur = self._conn.execute(
+            f"SELECT * FROM documents "
+            f"WHERE file_hash = ? AND url != ? "
+            f"AND download_status IN ({placeholders})",
+            (file_hash, exclude_url, *confirmed_statuses),
+        )
+        return cur.fetchone()
+
+    def update_file_metadata(
+        self,
+        url: str,
+        path: Path,
+        size: int,
+        file_hash: str,
+    ) -> None:
+        """Persist file_path, file_size, and file_hash for a downloaded document.
+
+        Commits atomically.  Callers should catch exceptions and clean up the
+        on-disk file if this raises, because the manifest row will stay in
+        'running' state and be reset to 'pending' by the next recovery cycle.
+        """
+        self._conn.execute(
+            "UPDATE documents SET file_path=?, file_size=?, file_hash=? WHERE url=?",
+            (str(path), size, file_hash, url),
+        )
+        self._conn.commit()
+
+    def finalize_download(
+        self,
+        url: str,
+        stage: str,
+        path: Path,
+        size: int,
+        file_hash: str,
+    ) -> None:
+        """Atomically write file metadata and mark the stage done in one transaction.
+
+        Both the file metadata columns and the stage status column are updated
+        inside a single BEGIN/COMMIT so a crash between the two writes cannot
+        leave the row in an inconsistent state.  Callers should catch exceptions
+        and clean up the on-disk file if this raises.
+        """
+        if stage not in VALID_STAGES:
+            raise ValueError(f"Unknown stage: {stage!r}")
+        self._conn.execute(
+            "UPDATE documents SET file_path=?, file_size=?, file_hash=? WHERE url=?",
+            (str(path), size, file_hash, url),
+        )
+        self._conn.execute(
+            f"UPDATE documents SET {stage}_status=?, {stage}_notes=? WHERE url=?",
+            ("done", str(path), url),
+        )
+        self._conn.commit()
+
     def get_by_url(self, url: str) -> sqlite3.Row | None:
         cur = self._conn.execute(
             "SELECT * FROM documents WHERE url = ?", (url,)

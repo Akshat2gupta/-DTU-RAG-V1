@@ -60,6 +60,16 @@ def get_by_document_type(db: ManifestDB, doc_type: str) -> list[sqlite3.Row]:
     return cur.fetchall()
 
 
+def get_ready_to_embed(db: ManifestDB) -> list[sqlite3.Row]:
+    """Return documents where chunk_status='done' AND embed_status='pending'."""
+    cur = db._conn.execute(
+        "SELECT * FROM documents "
+        "WHERE chunk_status = 'done' AND embed_status = 'pending' "
+        "ORDER BY id"
+    )
+    return cur.fetchall()
+
+
 def get_recent(db: ManifestDB, days: int = 7) -> list[sqlite3.Row]:
     """Return documents scraped within the last *days* days."""
     cur = db._conn.execute(

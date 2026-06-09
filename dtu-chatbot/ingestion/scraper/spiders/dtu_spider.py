@@ -28,17 +28,39 @@ class DtuSpider(scrapy.Spider):
         "exam.dtu.ac.in",
     ]
     start_urls = [
+        # Academic policy documents
         "https://dtu.ac.in/Web/Academics/ordinance.php",
         "https://dtu.ac.in/Web/Academics/notice.php",
         "https://dtu.ac.in/Web/Academics/scholarship.php",
-        "https://dtu.ac.in/Web/Departments/coe/about/",
-        "https://dtu.ac.in/Web/Departments/coe/scheme/",
-        "https://dtu.ac.in/Web/Departments/coe/faculty/",
-        "https://dtu.ac.in/Web/Departments/ece/about/",
-        "https://dtu.ac.in/Web/Departments/ece/scheme/",
-        "https://dtu.ac.in/Web/Departments/ece/faculty/",
+        # Departments — about + faculty (DTU dropped /scheme paths)
+        "https://dtu.ac.in/Web/Departments/CSE/about",
+        "https://dtu.ac.in/Web/Departments/CSE/faculty",
+        "https://dtu.ac.in/Web/Departments/Electronics/about",
+        "https://dtu.ac.in/Web/Departments/Electronics/faculty",
+        "https://dtu.ac.in/Web/Departments/Electrical/about",
+        "https://dtu.ac.in/Web/Departments/Electrical/faculty",
+        "https://dtu.ac.in/Web/Departments/Mechanical/about",
+        "https://dtu.ac.in/Web/Departments/Mechanical/faculty",
+        "https://dtu.ac.in/Web/Departments/Civil/about",
+        "https://dtu.ac.in/Web/Departments/Civil/faculty",
+        "https://dtu.ac.in/Web/Departments/InformationTechnology/about",
+        "https://dtu.ac.in/Web/Departments/InformationTechnology/faculty",
+        "https://dtu.ac.in/Web/Departments/BioTech/about",
+        "https://dtu.ac.in/Web/Departments/BioTech/faculty",
+        "https://dtu.ac.in/Web/Departments/AppliedMathematics/about",
+        "https://dtu.ac.in/Web/Departments/AppliedPhysics/about",
+        "https://dtu.ac.in/Web/Departments/AppliedPhysics/faculty",
+        "https://dtu.ac.in/Web/Departments/AppliedChemistry/about",
+        "https://dtu.ac.in/Web/Departments/Humanities/about",
+        "https://dtu.ac.in/Web/Departments/Humanities/faculty",
+        "https://dtu.ac.in/Web/Departments/SE/about",
+        "https://dtu.ac.in/Web/Departments/SE/faculty",
+        "https://dtu.ac.in/Web/Departments/Environment/about",
+        "https://dtu.ac.in/Web/Departments/Environment/faculty",
+        # Other properties
         "https://hostels.dtu.ac.in/",
-        "https://saarthi.dtu.ac.in/admissions/",
+        "https://saarthi.dtu.ac.in/admissions2026_27/",
+        "https://saarthi.dtu.ac.in/admissions2025_26/",
         "https://exam.dtu.ac.in/",
     ]
 
@@ -195,6 +217,9 @@ class DtuSpider(scrapy.Spider):
 
     def parse_saarthi_landing(self, response: Response):
         # Yield ONE record only — no link following (auth-gated downstream)
+        yield from self._yield_html_record(response)
+
+    def parse(self, response: Response):
         yield from self._yield_html_record(response)
 
     def parse_exam_portal(self, response: Response):

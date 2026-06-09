@@ -19,7 +19,7 @@ _ALLOWLIST_RAW: list[tuple[str, str]] = [
     ("dept_scheme",        r"dtu\.ac\.in/Web/Departments/[^/]+/scheme/?"),
     ("dept_faculty",       r"dtu\.ac\.in/Web/Departments/[^/]+/faculty/?"),
     ("hostel_html",        r"hostels\.dtu\.ac\.in/"),
-    ("saarthi_html",       r"saarthi\.dtu\.ac\.in/admissions"),
+    ("saarthi_html",       r"saarthi\.dtu\.ac\.in/admissions"),   # matches admissions2026_27/ etc.
     ("exam_html",          r"exam\.dtu\.ac\.in/"),
 ]
 
