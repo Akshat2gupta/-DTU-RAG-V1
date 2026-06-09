@@ -1,0 +1,725 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>DTU Admission Portal</title>
+
+
+<!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+	
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<style>
+
+body {
+
+    margin: 0px;
+
+    background: #ffffff;
+
+    /* background: url(../img/bg1.jpg); */
+
+    background-size: cover;
+
+    font-family: 'Open Sans';
+
+    font-size: 14px;
+
+}
+
+.headertop {
+
+    background: #ffffff;
+
+}
+
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+
+    width: 100%;
+
+    padding-right: 15px;
+
+    padding-left: 15px;
+
+    margin-right: auto;
+
+    margin-left: auto;
+
+}
+
+.row {
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+
+    flex-wrap: wrap;
+
+    margin-right: -15px;
+
+    margin-left: -15px;
+
+}
+
+
+
+*, ::after, ::before {
+
+    box-sizing: border-box;
+
+}
+
+
+
+.headertop h1,h4 {
+
+    font-weight: bold;
+
+    text-transform: none;
+
+    font-size: 22px;
+
+    color: #002c56;
+
+    margin: 0;
+
+    padding: 14px 0 7px 0;
+
+    font-family: 'Open Sans' !important;
+
+    text-align: center;
+
+}
+
+
+
+.menusection {
+
+    margin: 0px 0px 0px 0px;
+
+    /* border-bottom: 5px solid #d2d2d2; */
+
+    background: #002c56;
+
+}
+
+
+
+.marqueesection {
+
+    background: #eaf5ff;
+
+    margin-bottom: 6px;
+
+    color: #000000;
+
+}
+
+.marqueetext {
+    border: 1px dashed #636363;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: #fff;
+    margin: 1px 10px;
+}
+
+
+
+
+.boxdesignBottomLinks 
+{
+    border: 1px solid #c32f00;
+    margin-bottom: 20px;
+    min-height: 240px;
+}
+
+
+.updateSectionDiv 
+{
+    border: 1px solid black;
+    margin-bottom: 1px;
+    min-height: 250px;
+	border-style: dotted;	
+	border-radius: 10px;	
+	padding-left: 15px;
+	max-height: 250px;
+}
+
+.divBorder 
+{
+    border: 1px solid black;
+    margin-bottom: 1px;
+    min-height: 250px;
+	border-style: solid;	
+	border-radius:15px;	
+	padding-left: 15px;
+	margin-left: 0px;
+	border-color: #e6b3ff;
+	
+}
+
+
+.marqueetextNew 
+{
+    border: 3px dashed #ff8080;
+    border-radius: 5px;
+    background: #fff;
+	text-align: center;
+    padding: 5px 10px;
+
+}
+
+
+
+.center {
+  line-height: 50px;
+  height: 60px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: black;
+}
+
+
+</style>
+
+
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+<section class="headertop">
+
+    <div class="container-fluid">
+
+        
+
+    <div class="row">
+
+                <div class="col-lg-3">
+					<img src="logo/dtu.png" width="150" height="150" alt="" class="img-fluid mx-auto logoleft">
+				</div>
+
+                <div class="col-lg-6">
+					<h1>
+						DELHI TECHNOLOGICAL UNIVERSITY
+					</h1>
+
+					<h4> ADMISSIONS - 2026</h4>
+
+						<h4>Welcome to DTU Admission Webportal</h4>
+				</div>
+
+                <div class="col-lg-3">
+					<img src="logo/dtu.png" width="150" height="150" alt="" style="float: right;">
+				</div>
+    </div>
+
+	
+
+	</div>
+
+</section>
+
+
+
+
+
+<section class="menusection">
+
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+
+    
+
+    <ul class="nav navbar-nav">
+
+      <!--<li class="active"><a href="#">Home</a></li>
+
+      <li><a href="#">Contact Us</a></li>
+
+      <li><a href="#">Schedule</a></li>-->
+
+    </ul>
+
+  </div>
+
+</nav>            
+
+</section>
+
+
+
+
+
+<section class="marqueesection">
+
+
+
+            <marquee behavior="alternate" direction="left" class="marqueestyle" onmouseover="this.stop();" onmouseout="this.start();">
+
+                <!-- 
+					<span class="marqueetext">Ph.D(W) Jan-2023 session Last Date of Registration extended till 14th Dec, 2022<img src="images/newicon.gif" alt="new"></span>
+				-->
+			</marquee>
+			
+		
+
+</section>
+
+
+
+
+
+
+
+
+<!--Main Section starts-->
+
+<section class="contentsection mt-2" id="skipcontent">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+					<div class="card">
+
+					  <div class="card-header">
+
+						<label>Important Links</label>
+
+					  </div>
+
+						<ul class="list-group list-group-flush">
+
+							<!--<li class="list-group-item">
+
+								<!--<a href="http://dtu.ac.in/Web/Admission/brochure/2023/All_Advertisement_admission23.pdf" target="_blank" >Important Dates <img src="images/newicon.gif" alt="new" class="float-end"></a>
+								<!--<a href="http://dtu.ac.in/Web/notice/2022/may/file0518.pdf" target="_blank" >Important Dates <img src="images/newicon.gif" alt="new" class="float-end"></a>-->
+
+							<!--</li>
+
+							<!--<li class="list-group-item">
+								<a href="#newsSection" target="_self" >Important Updates and News <img src="images/newicon.gif" alt="new" class="float-end"></a>
+								
+							</li>
+							
+							<li class="list-group-item">
+								<a class="colr" target="_blank"><font color="maroon">M.B.A(Business Analytics) Admission 2025 :: Admission Live on 05-05-2025.</font></a><br>
+									&nbsp;&nbsp;||&nbsp;&nbsp;<a href="https://saarthi.dtu.ac.in/admissions2025_26/" class="colr" target="_blank"><small>Admission Portal Link &nbsp;&nbsp;||</small></a>
+									<br>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="https://dtu.ac.in/Web/Admission/brochure/2025/bmba_AdmissionGuidelines2025.pdf" class="colr" target="_blank"><small>Admission Guidelines&nbsp;&nbsp;||</small></a>
+							<br>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="https://dtu.ac.in/Web/Admission/brochure/2025/Revised Guidelines MBA (BA) program.pdf" class="colr" target="_blank"><small>Revised Admission Guidelines&nbsp;&nbsp;||</small></a>
+							</li>
+							
+							<li class="list-group-item">
+							<a class="colr" target="_blank"><font color="maroon">M.B.A(Executive) Admission 2025 :: Admission Live on 05-05-2025.</font></a><br>
+									&nbsp;&nbsp;||&nbsp;&nbsp;<a href="https://saarthi.dtu.ac.in/admissions2025_26/" class="colr" target="_blank"><small>Admission Portal Link &nbsp;&nbsp;||</small></a>
+									<br>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="https://dtu.ac.in/Web/Admission/brochure/2025/emba_AdmissionGuidelines2025.pdf" class="colr" target="_blank"><small>Admission Guidelines&nbsp;&nbsp;||</small></a>
+							<br>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="https://dtu.ac.in/Web/Admission/brochure/2025/Revised Guidelines MBA (Executive) program.pdf" class="colr" target="_blank"><small>Revised Admission Guidelines&nbsp;&nbsp;||</small></a>
+							</li>-->
+
+						</ul>
+
+					</div>
+
+					
+
+	
+
+                </div>
+
+
+
+                <div class="col-lg-6 " style="background-color: #cccccc;">
+
+                    <div class="mb-4">
+
+						<div class="mb-4 pagecontentpara" >
+
+							<h3 class="pageheading">DTU Admissions 2026</h3>
+								<p><strong>Welcome to DTU Admissions Webportal.</strong>	</p><br>
+
+						<br>
+
+						<p>
+							<strong>Please go through the Terms and Conditions under Important Links carefully before registration.</strong><br>
+							<strong>Decision of DTU in all matters pertaining to admissions will be final.</strong>
+						</p>
+						
+				
+						<p><strong>NOTE ::&nbsp;</strong>The decision of DTU on matters pertaining to Admission will be final. 
+
+							Any litigation/dispute regarding the admission will be settled subject to jurisdiction of the Delhi Court.
+						</p>
+
+
+
+						</div>
+
+					</div>
+
+
+					<div class="col-lg-6 mx-auto">
+
+						<nav id="sidebar">
+									<ul class="list-unstyled components">
+									
+									
+	
+
+
+
+							<section id='embads_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./emba_ds/sourceCode/" target="_self">Executive M.B.A. in Data Science & Analytics Admission 2026 (Registration Open Now).  </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<section id='mtech_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./btechContEdu/sourceCode/" target="_self">B.Tech. Continuing Educaton for Working Professionals Admission 2026 (Registration Open Now).  </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+											<section id='mtech_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./mtech/sourceCode/" target="_self">M.Tech. Admission 2026 (Registration Open Now).  </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+											<section id='mtech_research_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./mtechresearch/sourceCode/" target="_self">M.Tech. By Research Admission 2026 (Registration Open Now).  </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+											<section id='msc_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./msc/sourceCode/" target="_self">M.Sc. Admission 2026 (Registration Open Now).  </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+
+
+
+
+
+
+
+
+	
+									
+									
+									
+									
+									
+											<section id='phd_summer_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./phdSummer/sourceCode/" target="_self">Ph.D. Admission 2026 (Registration Open Now).  </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+									
+									
+									
+									
+									
+									
+									
+									
+											<section id='baeco_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./ba_eco/sourceCode/" target="_self">B.A. (ECONOMICS) Admission 2026 (Registration Open Now).  </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+											<section id='maeco_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./ma_eco/sourceCode/" target="_self">M.A. (ECONOMICS) Admission 2026  (Registration Open Now) </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									<section id='emba_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./emba/sourceCode/" target="_self">MBA (Executive) Admissions 2026   (Registration Open Now) </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+										<section id='mba_ba_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-primary btn-block btn-lg text-white" href="./mba_ba/sourceCode/" target="_self">MBA-B.A. Admissions 2026   (Registration Open Now) </a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+										
+										<section id='bdes_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-danger btn-block btn-lg text-white" href="./bDes/sourceCode/" target="_self">  B.Design 2026  (Registration Closed)</a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+										
+									<section id='mdes_section'>
+																																															<li style="margin-bottom:10px;">
+																		<a class="btn btn-danger btn-block btn-lg text-white" href="./mDes/sourceCode/" target="_self">  M.Design 2026  (Registration Closed)</a>
+																	</li>
+																	
+																
+																	
+															
+										
+										</section>
+									
+																		
+									
+								
+											</ul>
+	
+						</nav>
+
+								<br>
+
+					</div>
+
+
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+					<div class="card">
+					  <div class="card-header">
+						<label>Important Links</label>
+					  </div>
+						
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<a href="http://www.dtu.ac.in" target="_blank">Delhi Technological University</a>
+							</li>
+
+							<li class="list-group-item">
+								<a href="./pdfs/termsAndCondition.pdf" target="_blank" > <label>Terms and Conditions</label>  <img src="images/newicon.gif" alt="T&C" class="float-end"></a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+        </div>
+
+    </section>
+
+
+
+
+<br>
+<br>
+
+
+
+<section>
+	<div class="center">
+		<marquee behavior="alternate" direction="left" class="marqueestyle" onmouseover="this.stop();" onmouseout="this.start();">
+			<span class="marqueetextNew" style='border-color: black;'>Designed & developed by: <b>Computer Centre, DTU</b></span> 
+		</marquee>
+	</div>
+	
+	
+</section>
+
+  
+
+</body>
+
+</html>

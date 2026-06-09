@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTU Hostel Management Department</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #3b82c4 0%, #2563aa 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3b82c4;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-links a:hover {
+            background: white;
+            color: #3b82c4;
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        /* Navigation Styles */
+        .nav {
+            background: rgba(74, 144, 226, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item {
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffffff, #e8f4fd);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-item:hover::before, .nav-item.active::before {
+            width: 100%;
+        }
+        
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(59, 130, 196, 0.8), rgba(37, 99, 170, 0.8)), url(images/APJ.png);
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/api/placeholder/100/100');
+            opacity: 0.1;
+            animation: backgroundMove 20s linear infinite;
+        }
+        
+        @keyframes backgroundMove {
+            0% { transform: translateX(-100px) translateY(-100px); }
+            100% { transform: translateX(100px) translateY(100px); }
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            animation: slideInUp 1s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.8s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #f44336, #2563aa);
+            border-radius: 2px;
+        }
+        
+        /* Hostels Grid */
+        .hostels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .hostel-category {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hostel-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(59, 130, 196, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+        
+        .hostel-category:hover::before {
+            top: -100%;
+            right: -100%;
+        }
+        
+        .hostel-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hostel-category h3 {
+            color: #3b82c4;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .hostel-list {
+            list-style: none;
+        }
+        
+        .hostel-list li {
+            padding: 0.5rem 0;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .hostel-list li a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .hostel-list li a:hover {
+            color: #2196f3;
+        }
+        
+        .hostel-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #3b82c4;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .hostel-list li:hover::before {
+            background: #ff6b6b;
+            transform: translateY(-50%) scale(1.5);
+        }
+        
+        .hostel-list li:hover {
+            transform: translateX(10px);
+            color: #3b82c4;
+        }
+        
+        /* Facilities Grid */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            margin-left: 10rem;
+            margin-right: 10rem;
+        }
+        
+        .facility-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .facility-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .facility-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .facility-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(59, 130, 196, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .facility-card:hover .facility-image::before {
+            opacity: 1;
+        }
+        
+        .facility-content {
+            padding: 1.5rem;
+        }
+        
+        .facility-content h3 {
+            color: #3b82c4;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .facility-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 196, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .info-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .recent-posts {
+            margin-top: 2rem;
+            max-height: 45rem;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+            position: relative;
+        }
+        
+        .recent-posts h2 {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+            padding: 0.5rem 0;
+        }
+        
+        .recent-posts::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .recent-posts::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 10px;
+        }
+        
+        .recent-posts::-webkit-scrollbar-thumb:hover {
+            background-color: #94a3b8;
+        }
+        
+        .recent-posts h2 {
+            color: #3b82c4;
+            margin-bottom: 1rem;
+        }
+        
+        .post-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .post-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .post-item a {
+            color: #3b82c4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .post-item a:hover {
+            color: #2563aa;
+        }
+        
+        .post-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .form-posts {
+            margin-top: 3.5rem;
+            max-height: 20rem;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+            position: relative;
+        }
+        
+        .form-posts h2 {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+            padding: 0.5rem 0;
+            color: #3b82c4;
+            margin-bottom: 1rem;
+        }
+        
+        .form-posts::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .form-posts::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 10px;
+        }
+        
+        .form-posts::-webkit-scrollbar-thumb:hover {
+            background-color: #94a3b8;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .mark {
+            background-color: white;
+            font-weight: 800;
+            color: #2196f3;
+            text-decoration: none;
+        }
+        
+        .mark a {
+            font-weight: 800;
+            color: #2196f3;
+            text-decoration: none;
+        }
+        
+        /* Hostel Authorities */
+        .carousel-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .carousel-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #f44336;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            margin-left: 10rem;
+            margin-right: 10rem;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .photo-placeholder img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h3 {
+            color: #4a7ba7;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .contact-info .title {
+            display: block;
+            color: #666;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .contact-details {
+            list-style: none;
+        }
+        
+        .contact-details li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
+        
+        .contact-details li::before {
+            content: "📧";
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #212121;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            padding-left: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #1565c0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #1565c0;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            100% { left: 100%; }
+        }
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ============================================
+           RESPONSIVE DESIGN - MOBILE OPTIMIZATION
+           ============================================ */
+        
+        /* Tablets and Small Laptops */
+        @media (max-width: 1024px) {
+            .facilities-grid {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+            
+            .contact-grid {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+        }
+        
+        /* Tablets */
+        @media (max-width: 900px) {
+            .facilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .carousel-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+            /* Header */
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                padding: 0 1rem;
+            }
+            
+            .logo {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.8rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .social-links a {
+                width: 35px;
+                height: 35px;
+            }
+            
+            /* Navigation */
+            .nav-content {
+                justify-content: center;
+            }
+            
+            .nav-item {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            
+            /* Hero Section */
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            /* Main Content */
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .section {
+                margin-bottom: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .carousel-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Grids */
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hostels-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .facilities-grid {
+                grid-template-columns: 1fr;
+                margin-left: 0;
+                margin-right: 0;
+                gap: 1.5rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            /* Cards */
+            .hostel-category {
+                padding: 1.5rem;
+            }
+            
+            .hostel-category h3 {
+                font-size: 1.5rem;
+            }
+            
+            .facility-content {
+                padding: 1rem;
+            }
+            
+            .facility-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-card {
+                padding: 20px;
+            }
+            
+            .contact-info h3 {
+                font-size: 20px;
+            }
+            
+            .contact-info .title {
+                font-size: 14px;
+            }
+            
+            /* Info Section */
+            .info-section {
+                padding: 2rem 1rem;
+                margin: 2rem 0;
+            }
+            
+            /* Sidebar */
+            .sidebar {
+                position: static;
+                padding: 1.5rem;
+            }
+            
+            .recent-posts {
+                max-height: 30rem;
+            }
+            
+            .form-posts {
+                margin-top: 2rem;
+                max-height: 15rem;
+            }
+            
+            /* Footer */
+            footer {
+                padding: 30px 0 15px;
+            }
+            
+            .footer-container {
+                gap: 20px;
+            }
+            
+            .footer-column {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .footer-column h3 {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            /* Header */
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+            
+            .social-links a {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+            
+            /* Navigation */
+            .nav-item {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            /* Hero */
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .cta-button {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            
+            /* Titles */
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .carousel-title {
+                font-size: 1.5rem;
+            }
+            
+            /* Cards */
+            .hostel-category {
+                padding: 1rem;
+            }
+            
+            .hostel-category h3 {
+                font-size: 1.3rem;
+            }
+            
+            .facility-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .contact-card {
+                padding: 15px;
+            }
+            
+            .photo-placeholder img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .contact-info h3 {
+                font-size: 18px;
+            }
+            
+            /* Hover effects disabled on touch devices */
+            .hostel-list li:hover {
+                transform: none;
+            }
+            
+            .post-item:hover {
+                transform: none;
+            }
+        }
+        
+        /* Very Small Screens */
+        @media (max-width: 360px) {
+            .header-content {
+                padding: 0 0.5rem;
+            }
+            
+            .main-content {
+                padding: 1.5rem 0.75rem;
+            }
+            
+            .nav-item {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            
+            .section-title,
+            .carousel-title {
+                font-size: 1.3rem;
+            }
+        }
+        
+      
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="DTU Logo" width="70px">
+                <div class="logo-text">
+                    <h1>Hostel Office</h1>
+                    <p>DELHI TECHNOLOGICAL UNIVERSITY</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-item active">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="fee.html" class="nav-item">Fee Structure</a>
+            <a href="#hostels" class="nav-item">Boys Hostels</a>
+            <a href="#hostels" class="nav-item">Girls Hostels</a>
+            <a href="complain.html" class="nav-item">Rules & Regulations</a> 
+            <a href="#search-section" class="nav-item">Important Updates</a>
+            <a href="contact.html" class="nav-item">Contact Us</a>
+            
+        </div>
+        </nav>
+    <marquee class="mark">
+       <a href=" https://dtuhostel.in">Click here for New Hostel Allotment Portal </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   <a class="colr" href="https://dtu.ac.in/Web/upload/notice/2026/may/file0554.pdf"  target="_blank" align="justify">Circular :All admitted students who wish to avail hostel accommodation facility may fill hostel registration form for the AY 2026-27</a>
+        <!-- <a href="#">Provisional Hostel allotment of 2K24 M.Tech/MBA/MSC/MDes Male and Female and Ph.D Female students</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#">Provisional Hostel allotment of B.Tech 2K24 Male and Female student</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#">Hostel application forms for first year students of BTECH, MSC, MTECH,MDES and BDES, are LIVE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+    </marquee>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to DTU Hostels</h1>
+            <p>Providing quality accommodation and excellent facilities for over 2500 students across 13 hostels on campus.</p>
+            <a href=" https://dtuhostel.in" class="cta-button">Apply for Accommodation</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="two-column">
+            <div class="content-area">
+                <!-- Hostels Section -->
+                <section class="section fade-in" id="hostels">
+                    <h2 class="section-title">Hostels — Delhi Technological University</h2>
+                    <p>Delhi Technological University has 10 Boys and 3 Girls hostels in the campus that can accommodate around 2500 students. These hostels are:</p>
+                    
+                    <div class="hostels-grid">
+                        <div class="hostel-category">
+                            <h3><i class="fas fa-male"></i> Boys' Hostels</h3>
+                            <ol class="hostel-list">
+                                <li><a href="t2.html">Type — II Hostel</a></li>
+                                <li><a href="abh.html">Aryabhatt Hostel</a></li>
+                                <li><a href="bah.html">Bhaskaracharya Hostel</a></li>
+                                <li><a href="cvr.html">Sir C. V. Raman Hostel</a></li>
+                                <li><a href="jcb.html">Sir J.C. Bose Hostel</a></li>
+                                <li><a href="vmh.html">Varahmihir Hostel</a></li>
+                                <li><a href="svh.html">Sir Vishveshwarya Hostel</a></li>
+                                <li><a href="hjb.html">Homi Jehangir Bhabha Hostel</a></li>
+                                <li><a href="rmh.html">Ramanujan Hostel</a></li>
+                                <li><a href="apj.html">Dr. APJ Abdul Kalam Hostel (AC)</a></li>
+                            </ol>
+                        </div>
+                        
+                        <div class="hostel-category">
+                            <h3><i class="fas fa-female"></i> Girls' Hostels</h3>
+                            <ol class="hostel-list">
+                                <li><a href="snh.html">Sister Nivediata Hostel</a></li>
+                                <li><a href="kch.html">Kalpana Chawla Hostel</a></li>
+                                <li><a href="vlb.html">Virangana Lakshmibai Hostel, Block-1 (AC)</a></li>
+                                <li><a href="vlb.html">Virangana Lakshmibai Hostel, Block-2 (AC)</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-content">
+                            <p><strong>Mess Services:</strong> The mess services are provided in six of the hostels. These are Sir Visvesvaraya Hostel, Sir C. V. Raman Hostel, AryaBhatta Hostel, Homi Jahangir Bhabha Hostel, Sir J.C. Bose Hostel and Sister Nivedita. These cater to the requirements of all the students residing within the campus.</p>
+                            <br>
+                            <p><strong>Common Facilities:</strong> Every hostel has its own common room and gymnasium. Additionally every hostel subscribes to the latest magazines and newspapers for the residents.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>   
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+
+                <div class="recent-posts" id="search-section">
+                    <h2>Recent Posts</h2>
+                    <div class="post-item">
+                        <a href="uploads/Hostel Allotment Policy for 2026-27_MoM.pdf">Minutes of Meeting of hostel allotment policy for year 2026-27  🆕</a>
+                        <div class="post-date">June 03, 2026</div>
+                    </div>
+					<div class="post-item">
+                        <a href="https://saarthi.dtu.ac.in/hostel/hostel_prod_2025/hostel_registration/index_old.php">Hostel Registration Forms for the Academic Year 2025-26  🆕</a>
+                        <div class="post-date">May 15, 2025</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="https://forms.gle/MwMNX4FhqpkhKeus8">Application for mess fee refund for the session 2024-25  🆕</a>
+                        <div class="post-date">May 15, 2025</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="#">Provisional Hostel allotment of 2K24 M.Tech/MBA/MSC/MDes Male and Female and Ph.D Female students</a>
+                        <div class="post-date">July 31, 2024</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="#">Provisional Hostel allotment of B.Tech 2K24 Male and Female student</a>
+                        <div class="post-date">July 27, 2024</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="#">Hostel application forms for first year students of BTECH, MSC, MTECH,MDES and BDES, are LIVE</a>
+                        <div class="post-date">July 25, 2024</div>
+                    </div>
+                </div>
+
+                <div class="form-posts" >
+                    <h2>Important forms</h2>
+                    <div class="post-item">
+                        <a href="https://drive.google.com/file/d/13XuGVlsNsqLK7q7KZ7KHQdRC_EHHfhJi/view?usp=sharing">Room Surrender Form  🆕</a>
+                        <div class="post-date">Available</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="#">Mess Fee Refund Form  🆕</a>
+                        <div class="post-date">Available soon</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="#">Guest Accommodation Form 🆕</a>
+                        <div class="post-date">Not Available</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="https://drive.google.com/file/d/1gjE4esLhtpLSKUHnVJVvql2aPa1u-U7f/view?usp=sharing">Show cause Notice 🆕</a>
+                        <div class="post-date">Available</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="https://drive.google.com/file/d/1WZJzsdUb5AX_b5PAk-gTs2TKDV0DZ1f2/view?usp=sharing">Casual Leave (for employees) 🆕</a>
+                        <div class="post-date">Available</div>
+                    </div>
+                    <div class="post-item">
+                        <a href="https://drive.google.com/file/d/1jAfwAXbNlsW6M5YR2yMvaYu6QT_6OeWB/view?usp=sharing">Summer Internship Form 🆕</a>
+                        <div class="post-date">Available</div>
+                    </div>
+
+                    
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- HOSTEL Facilities -->
+    <section class="section fade-in align" id="facilities">
+        <h2 class="section-title">Hostel Facilities</h2>
+        
+        <div class="facilities-grid">
+            <div class="facility-card">
+                <div class="facility-image" style="background-image: url(images/accomodation.png);"></div>
+                <div class="facility-content">
+                    <h3><i class="fas fa-bed"></i> Quality Accommodation</h3>
+                    <p>Well-furnished rooms with essential amenities to ensure comfortable living for all students.</p>
+                </div>
+            </div>
+            
+            <div class="facility-card">
+                <div class="facility-image" style="background-image: url(images/mess.png);"></div>
+                <div class="facility-content">
+                    <h3><i class="fas fa-utensils"></i> Dining Facilities</h3>
+                    <p>Hygienic mess services offering nutritious meals along with special menu on festivals.</p>
+                </div>
+            </div>
+            
+            <div class="facility-card">
+                <div class="facility-image" style="background-image: url(images/recretion.png);"></div>
+                <div class="facility-content">
+                    <h3><i class="fas fa-gamepad"></i> Recreation & Sports</h3>
+                    <p>Common room with recreational facilities and indoor games for student entertainment.</p>
+                </div>
+            </div>
+            
+            <div class="facility-card">
+                <div class="facility-image" style="background-image: url(images/gym.png);"></div>
+                <div class="facility-content">
+                    <h3><i class="fas fa-dumbbell"></i> Gymnasium</h3>
+                    <p>Well-equipped gymnasium facilities available in every hostel for fitness enthusiasts.</p>
+                </div>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-image" style="background-image: url(images/VLBstudy.jpg);"></div>
+                <div class="facility-content">
+                    <h3><i class="fas fa-book-reader"></i> Study Room</h3>
+                    <p>Quiet and well-lit study rooms in each hostel block to support focused learning and group study sessions.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- HOSTEL AUTHORITIS -->
+    <h2 class="carousel-title">Hostel Authorities</h2>
+    <div class="contact-grid">
+        <div class="contact-card">
+            <div class="photo-placeholder">
+                <img src="images/rksingh.png">
+            </div>
+            <div class="contact-info">
+                <h3>Prof Raj Kumar Singh</h3>
+                <p class="title">Chief Warden</p>
+                <ul class="contact-details">
+                    <li>rajkumarsingh@dce.ac.in</li>
+                    <li>Ground Floor, Hostel Office</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <div class="photo-placeholder">
+                <img src="images/sp.png">
+            </div>
+            <div class="contact-info">
+                <h3>Dr. Sanjay Patidar</h3>
+                <p class="title">Hostel Officer-in-Charge (OIC)</p>
+                <ul class="contact-details">
+                    <li>sanjaypatidar@dtu.ac.in</li>
+                    <li>Ground Floor, Hostel Office</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>About DTU Hostels</h3>
+                    <p>Delhi Technological University provides quality accommodation for students with modern amenities and facilities to ensure a comfortable living experience during their academic journey.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="fee.html">Fee Structure</a></li>
+                        <li><a href="index.html#hostels">Boys Hostels</a></li>
+                        <li><a href="index.html#hostels">Girls Hostels</a></li>
+                        <li><a href="#">Complaints & Grievances</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt">📍</i> Hostel Office, Transit Hostel (Ramanujan Hostel)<br>Delhi Technological University<br>Shahbad Daulatpur, Main Bawana Road<br>Delhi - 42, India</p>
+                        <!-- <p><i class="fas fa-phone">📞</i> +91-XXXXXXXXXX</p> -->
+                        <p><i class="fas fa-envelope">✉️</i> hostel@dtu.ac.in</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>Copyright © 2014 - 2025, Delhi Technological University | <a href="http://dtu.ac.in">dtu.ac.in</a> | <a href="#">Disclaimer</a></p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Loading animation on page load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.loading').forEach(el => {
+                el.classList.remove('loading');
+            });
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.facility-card, .hostel-category').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dynamic background particles (optional)
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: rgba(59, 130, 196, 0.3);
+                border-radius: 50%;
+                pointer-events: none;
+                animation: float ${Math.random() * 3 + 2}s linear infinite;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                z-index: -1;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 2000);
+
+       
+    </script>
+</body>
+</html>
