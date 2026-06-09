@@ -39,6 +39,8 @@ _proj_root = Path(__file__).resolve().parent.parent
 if str(_proj_root) not in sys.path:
     sys.path.insert(0, str(_proj_root))
 
+import re as _re
+
 from ingestion.chunker import _build_overlap, _split_sentences, count_tokens
 from ingestion.document_ir import (
     Document,
@@ -53,6 +55,22 @@ MAX_TOKENS = 512          # tuning target; chunker.py PDF path still uses 600
 MIN_TOKENS = 100          # merge trailing prose fragments below this
 MIN_CHUNK_TOKENS = 15     # drop prose chunks below this (orphan section labels,
                           # e.g. "Ordinance / Regulations", "Former Principal")
+
+_YEAR_RE = _re.compile(r"20(1[5-9]|2[0-9])")   # 2015–2029
+
+
+def _batch_year(doc: Document) -> int:
+    """
+    Extract a 4-digit batch year from document metadata.
+
+    Checks date_published → title → url in order. Returns 0 when no year
+    is found (HTML dept pages, evergreen content, etc.).
+    """
+    for text in (doc.date_published or "", doc.title or "", doc.url or ""):
+        m = _YEAR_RE.search(text)
+        if m:
+            return int(m.group(0))
+    return 0
 
 
 # ---------------------------------------------------------------------------
@@ -164,6 +182,7 @@ def _record(
         "source_format": doc.source_format,
         "block_type": block_type,
         "page_number": section.page,          # int for PDF, None for HTML
+        "batch_year": _batch_year(doc),       # 0 = not year-specific (HTML, evergreen docs)
     }
 
 
@@ -196,7 +215,8 @@ def chunk_document(
                 blob = blob[len(head):].lstrip(" :-\n")
             if not blob:
                 return
-            for piece in _pack_prose(blob, max_tokens):
+            bc_overhead = count_tokens(breadcrumb) + 2  # mirrors _group_table_rows
+            for piece in _pack_prose(blob, max_tokens - bc_overhead):
                 # Skip orphan-label fragments (a section whose only "prose" is its
                 # own sub-heading). Tables are never floored — short tables like
                 # the contact block are still meaningful.

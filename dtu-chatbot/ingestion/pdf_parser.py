@@ -39,9 +39,14 @@ from ingestion.chunker import (
     detect_headings,
     extract_pages,
 )
+from ingestion.classifier import classify_page
 from ingestion.document_ir import Block, Document, Heading, Paragraph, Table
 
 _TOC_LINE_RE = re.compile(r"\b\d{1,3}\s*$")        # entry ending in a page number
+
+# Syllabus pages: only index clean tables (not rotated-header messes)
+_MAX_SYLLABUS_COLS = 15   # wider tables have garbled/rotated headers — skip them
+_LTP_RE            = re.compile(r"\bL\s*/?\s*T\s*/?\s*P\b")   # confirms it's a teaching-scheme table
 
 
 def _is_toc_section(section: dict) -> bool:
@@ -91,31 +96,84 @@ def _fill_merged_cells(raw_rows: list[list]) -> list[list[str]]:
     return result
 
 
+def _find_data_start(raw_table: list[list]) -> int:
+    """
+    Find the index of the first row that looks like data rather than a header.
+
+    Checks the RAW (unfilled) table so that spans/merges don't inflate
+    the apparent density of sub-header rows.  A row is treated as a header
+    continuation when its original non-None cells occupy ≤50% of the columns.
+    """
+    if not raw_table:
+        return 0
+    col_count = max(len(r) for r in raw_table)
+    # Row 0 is always part of the header
+    for row_idx in range(1, len(raw_table)):
+        raw_row      = raw_table[row_idx]
+        filled_cells = sum(1 for c in raw_row if c is not None and str(c).strip())
+        if filled_cells / col_count > 0.5:
+            return row_idx  # dense enough — data starts here
+    return len(raw_table)   # degenerate: every row sparse (all headers, no data)
+
+
+def _combine_headers(raw_rows: list[list]) -> list[str]:
+    """
+    Merge multiple raw header rows column-by-column: take the first non-None
+    non-empty value per column.  Fill remaining blanks with "Col N".
+    """
+    if not raw_rows:
+        return []
+    col_count = max(len(r) for r in raw_rows)
+    headers   = [""] * col_count
+    for row in raw_rows:
+        for j in range(col_count):
+            cell = row[j] if j < len(row) else None
+            val  = str(cell).strip() if cell is not None else ""
+            if val and not headers[j]:
+                headers[j] = val
+    return [h if h else f"Col {j + 1}" for j, h in enumerate(headers)]
+
+
+def _is_header_repeat(cells: list[str], headers: list[str]) -> bool:
+    """
+    True when a data row is actually a repeated header (common in multi-page
+    tables where DTU PDFs print the column labels again at the top of each
+    continued page).  Detected when ≥2 cells exactly match their header.
+    """
+    if not cells or not headers:
+        return False
+    matches = sum(
+        1 for h, c in zip(headers, cells)
+        if h and c and h.strip().lower() == c.strip().lower()
+    )
+    return matches >= 2
+
+
 def _raw_table_to_ir(raw_table: list[list], page: int) -> Table | None:
     """
     Convert a pdfplumber raw table (list-of-lists) to an IR Table block.
 
-    Row 0  → headers (blank cells become "Col N").
-    Rows 1+ → data rows; fully-empty rows are skipped.
+    Handles multi-row headers (common in DTU PDFs): merges sparse top rows
+    into one header using the original sparsity (before cell-inheritance fill).
+    Skips header-repeat rows (multi-page tables that re-print column labels).
     Returns None when the table has fewer than 2 rows (header only).
     """
     if not raw_table or len(raw_table) < 2:
         return None
 
-    filled = _fill_merged_cells(raw_table)
-
-    headers: list[str] = []
-    for j, h in enumerate(filled[0]):
-        h = (h or "").strip()
-        headers.append(h if h else f"Col {j + 1}")
+    data_start = _find_data_start(raw_table)
+    headers    = _combine_headers(raw_table[:data_start] or [raw_table[0]])
+    filled     = _fill_merged_cells(raw_table)
 
     data_rows: list[list[str]] = []
-    for row in filled[1:]:
-        # Pad short rows, truncate long rows to header width
+    for row in filled[data_start:]:
         padded = (row + [""] * len(headers))[: len(headers)]
-        cells = [c.strip() for c in padded]
-        if any(cells):          # skip fully-empty rows
-            data_rows.append(cells)
+        cells  = [c.strip() for c in padded]
+        if not any(cells):
+            continue          # fully empty row
+        if _is_header_repeat(cells, headers):
+            continue          # header repeated mid-table — skip
+        data_rows.append(cells)
 
     if not data_rows:
         return None
@@ -190,6 +248,68 @@ def _section_to_blocks(
 
 
 # ---------------------------------------------------------------------------
+# Syllabus page table extraction (clean tables only)
+# ---------------------------------------------------------------------------
+
+
+def _extract_syllabus_tables(
+    pdf_path: Path,
+    already_allowed: set[int],
+) -> list[Block]:
+    """
+    Extract teaching-scheme tables from syllabus-classified pages that the
+    main pipeline skips.
+
+    Only clean tables (≤ _MAX_SYLLABUS_COLS columns, containing L/T/P pattern
+    in page text) are indexed; wide tables with rotated headers are skipped.
+
+    Each extracted table is preceded by a synthetic Heading derived from the
+    first meaningful line of the page's plain text.
+    """
+    extra_blocks: list[Block] = []
+    with pdfplumber.open(pdf_path) as pdf:
+        for n, page in enumerate(pdf.pages, start=1):
+            if n in already_allowed:
+                continue   # already handled by the main pipeline
+
+            text = page.extract_text() or ""
+            if len(text.strip()) < 80:
+                continue   # scanned or empty
+
+            if classify_page(text) != "syllabus":
+                continue   # only target syllabus pages
+
+            if not _LTP_RE.search(text):
+                continue   # not a teaching-scheme page
+
+            raw_tables = page.extract_tables() or []
+            clean_tables = [
+                t for t in raw_tables
+                if t and len(t[0]) <= _MAX_SYLLABUS_COLS
+            ]
+            if not clean_tables:
+                continue
+
+            # Derive a heading from the first non-empty line on the page
+            heading_text = next(
+                (ln.strip() for ln in text.splitlines() if ln.strip()),
+                f"Teaching Scheme (page {n})",
+            )
+
+            added_heading = False
+            for raw in clean_tables:
+                tbl = _raw_table_to_ir(raw, page=n)
+                if tbl is None:
+                    continue
+                if not added_heading:
+                    extra_blocks.append(Heading(text=heading_text, level=2, page=n))
+                    added_heading = True
+                extra_blocks.append(tbl)
+
+    return extra_blocks
+
+
+# ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
 
@@ -217,6 +337,9 @@ def parse_pdf(
     tables_emitted: set[int] = set()
     for section in sections:
         blocks.extend(_section_to_blocks(section, page_tables, tables_emitted))
+
+    # Third pass — syllabus pages (course schedule tables, skipped by classifier)
+    blocks.extend(_extract_syllabus_tables(pdf_path, allowed))
 
     return Document(
         url=url,
