@@ -189,6 +189,19 @@ def parse_faculty_html(
 
         # --- Skip nav / boilerplate rows (very long or no alpha content) ---
 
+    # DTU's CMS sometimes emits <td> directly under <table> without a <tr>
+    # wrapper (malformed HTML). These entries are invisible to the TR loop above.
+    for td in tbl:
+        if td.tag != "td":
+            continue
+        combined = _clean(td.text_content())
+        if not combined or not _FACULTY_MARKER.search(combined):
+            continue
+        record = _parse_faculty_cell(combined)
+        if dept:
+            record += f" — Department: {dept}"
+        blocks.append(Paragraph(text=record))
+
     return Document(
         url=url,
         title=title,

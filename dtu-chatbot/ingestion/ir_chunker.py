@@ -227,6 +227,9 @@ def chunk_document(
                 )
                 idx += 1
 
+        # Faculty pages: one person = one chunk for precise name retrieval.
+        one_per_block = doc.doc_type == "dept_faculty"
+
         for block in section.blocks:
             if isinstance(block, Table):
                 flush_prose()                         # keep document order
@@ -239,10 +242,23 @@ def chunk_document(
                 prose_buffer.append(block.as_text())
             elif isinstance(block, Paragraph):
                 prose_buffer.append(block.text)
+                if one_per_block:
+                    flush_prose()
 
         flush_prose()
 
-    return records
+    # Content dedup: spread-layout PDFs and CMS template repetition can emit
+    # the same text under two chunk ids — keep the first occurrence only.
+    seen: set[str] = set()
+    deduped: list[dict] = []
+    for r in records:
+        h = hashlib.sha256(r["text"].encode()).hexdigest()
+        if h in seen:
+            continue
+        seen.add(h)
+        deduped.append(r)
+
+    return deduped
 
 
 # ---------------------------------------------------------------------------

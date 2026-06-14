@@ -79,10 +79,13 @@ _HEADING_TAGS = {f"h{i}": i for i in range(1, 7)}
 
 _WS_RE = re.compile(r"\s+")
 
-# Strip the site-name suffix DTU appends to every <title>.
+# Strip the institution suffix DTU appends to every <title>.
 _TITLE_SUFFIX_RE = re.compile(
-    r"\s*\|\s*Delhi Technological University\s*$", re.IGNORECASE
+    r"\s*\|\s*(?:Delhi Technological University|DTU)\s*$", re.IGNORECASE
 )
+# For titles in "Page Name | Site Name" format, keep only the site/department part.
+# e.g. "About | Career Development & Industry Engagement" → "Career Development & Industry Engagement"
+_TITLE_PREFIX_RE = re.compile(r"^[^|]{1,40}\|", re.IGNORECASE)
 
 
 def _clean(text: str | None) -> str:
@@ -93,8 +96,12 @@ def _clean(text: str | None) -> str:
 
 
 def _clean_title(text: str | None) -> str:
-    """Page title without the boilerplate site-name suffix."""
-    return _TITLE_SUFFIX_RE.sub("", _clean(text)).strip(" |»-–—")
+    """Page title without boilerplate suffix; strips leading page-name when site is pipe-separated."""
+    t = _TITLE_SUFFIX_RE.sub("", _clean(text)).strip(" |»-–—")
+    # If title still contains a pipe, the first segment is the page name — drop it.
+    if "|" in t:
+        t = t.split("|", 1)[1].strip(" |»-–—")
+    return t
 
 
 def _is_noise(el: HtmlElement) -> bool:
@@ -182,35 +189,60 @@ def _parse_table(table: HtmlElement) -> Table | None:
 # ---------------------------------------------------------------------------
 
 
+# Item labels that only ever appear in navigation menus, never in content lists.
+_NAV_LABEL_RE = re.compile(
+    r"^(?:home|about(?:\s*us)?|contact(?:\s*us)?|sitemap|login|sign\s*in|"
+    r"faq|gallery|downloads?|quick\s*links|important\s*links|read\s*more|"
+    r"click\s*here)$",
+    re.IGNORECASE,
+)
+
+
 def _is_nav_list(el: HtmlElement) -> bool:
     """
-    A list whose items are (almost) all bare hyperlinks is a navigation menu,
-    not content — e.g. the DTU per-department sidebar (About Us, Vision, People
-    ...). Such lists carry no answerable text, so they are dropped. A list with
-    real prose around its links (rare) is kept.
+    A list whose items are (almost) all bare hyperlinks MIGHT be a navigation
+    menu — but it can also be real content (the hostels page lists every hostel
+    name as a link). Link-only lists are dropped only when they also *look*
+    navigational: at least one item is a classic nav label (Home, Contact Us…)
+    or the items are uniformly tiny ("News", "Events").
     """
     lis = el.findall("li")
     if len(lis) < 3:
         return False
     linkish = 0
+    texts: list[str] = []
     for li in lis:
         li_text = _clean(li.text_content())
         if not li_text:
             continue
+        texts.append(li_text)
         anchor_text = _clean("".join(a.text_content() for a in li.findall(".//a")))
         if anchor_text and len(anchor_text) >= 0.8 * len(li_text):
             linkish += 1
-    return linkish >= max(3, int(0.8 * len(lis)))
+    if linkish < max(3, int(0.8 * len(lis))):
+        return False    # has real prose — content list
+    if any(_NAV_LABEL_RE.match(t) for t in texts):
+        return True     # contains "Home" / "Contact Us" / … — menu
+    avg_len = sum(len(t) for t in texts) / max(len(texts), 1)
+    return avg_len < 12  # uniformly tiny one-word items — menu
+
+
+_OL_NUM_PREFIX_RE = re.compile(r"^\d+\.\s*")
 
 
 def _parse_list(el: HtmlElement) -> ListBlock | None:
     if _is_nav_list(el):
         return None
+    ordered = el.tag == "ol"
     items = [_clean(li.text_content()) for li in el.findall("li")]
     items = [i for i in items if i]
     if not items:
         return None
-    return ListBlock(items=items, ordered=(el.tag == "ol"))
+    # DTU pages often manually number <ol> items ("1. Applied Chemistry…"),
+    # which creates "1. 1. …" double-numbering when as_text() adds its own prefix.
+    if ordered and all(_OL_NUM_PREFIX_RE.match(i) for i in items):
+        items = [_OL_NUM_PREFIX_RE.sub("", i) for i in items]
+    return ListBlock(items=items, ordered=ordered)
 
 
 def _walk(el: HtmlElement, blocks: list[Block]) -> None:

@@ -19,6 +19,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -38,6 +39,7 @@ from ingestion.chunker import (
     count_tokens,
     detect_headings,
     extract_pages,
+    visible_page,
 )
 from ingestion.classifier import classify_page
 from ingestion.document_ir import Block, Document, Heading, Paragraph, Table
@@ -149,6 +151,19 @@ def _is_header_repeat(cells: list[str], headers: list[str]) -> bool:
     return matches >= 2
 
 
+_ALPHA_WORD_RE = re.compile(r"[A-Za-z]{3,}")
+
+
+def _row_is_meaningful(cells: list[str]) -> bool:
+    """
+    True when a table row carries retrievable content: at least one real word
+    (3+ letters) somewhere in the row. Rows of bare digits/symbols ("0/2", "4")
+    are layout debris from garbled syllabus grids — embedding them only adds
+    noise to the index.
+    """
+    return any(_ALPHA_WORD_RE.search(c) for c in cells)
+
+
 def _raw_table_to_ir(raw_table: list[list], page: int) -> Table | None:
     """
     Convert a pdfplumber raw table (list-of-lists) to an IR Table block.
@@ -173,6 +188,8 @@ def _raw_table_to_ir(raw_table: list[list], page: int) -> Table | None:
             continue          # fully empty row
         if _is_header_repeat(cells, headers):
             continue          # header repeated mid-table — skip
+        if not _row_is_meaningful(cells):
+            continue          # junk row — single chars, symbols, infographic debris
         data_rows.append(cells)
 
     if not data_rows:
@@ -183,19 +200,27 @@ def _raw_table_to_ir(raw_table: list[list], page: int) -> Table | None:
 
 def _extract_page_tables(
     pdf_path: Path,
-    allowed_pages: set[int],
+    skip_pages: set[int] | None = None,
 ) -> dict[int, list[Table]]:
     """
-    Open the PDF with pdfplumber and extract real tables from every page in
-    *allowed_pages* (pages that passed extract_pages()'s classifier filter).
+    Open the PDF with pdfplumber and extract real tables from every page
+    except those in *skip_pages* (forms, contacts — pages we know have no
+    useful tables).
+
+    Extraction is intentionally broad: the classifier guards prose sections,
+    but grading-scheme and programme-structure tables live on pages that look
+    like "skip" to the prose classifier.  _raw_table_to_ir already rejects
+    junk (empty rows, header-only tables, non-meaningful content).
 
     Returns {page_number: [Table, ...]} — only pages that have ≥1 real table.
     """
+    skip_pages = skip_pages or set()
     result: dict[int, list[Table]] = {}
     with pdfplumber.open(pdf_path) as pdf:
-        for n, page in enumerate(pdf.pages, start=1):
-            if n not in allowed_pages:
+        for n, raw_page in enumerate(pdf.pages, start=1):
+            if n in skip_pages:
                 continue
+            page = visible_page(raw_page)
             raw_tables = page.extract_tables() or []
             ir_tables = [
                 t
@@ -267,12 +292,20 @@ def _extract_syllabus_tables(
     first meaningful line of the page's plain text.
     """
     extra_blocks: list[Block] = []
+    seen_page_hashes: set[str] = set()
     with pdfplumber.open(pdf_path) as pdf:
-        for n, page in enumerate(pdf.pages, start=1):
+        for n, raw_page in enumerate(pdf.pages, start=1):
             if n in already_allowed:
                 continue   # already handled by the main pipeline
 
+            page = visible_page(raw_page)
             text = page.extract_text() or ""
+
+            # Spread PDFs repeat logical pages; index each syllabus page once.
+            page_hash = hashlib.sha256(text.strip().encode()).hexdigest()
+            if page_hash in seen_page_hashes:
+                continue
+            seen_page_hashes.add(page_hash)
             if len(text.strip()) < 80:
                 continue   # scanned or empty
 
@@ -329,14 +362,36 @@ def parse_pdf(
     sections  = build_sections(pages, headings)
     sections  = [s for s in sections if _keep_section(s)]
 
-    # Second pdfplumber pass — structured table extraction on classifier-approved pages
+    # Second pdfplumber pass — table extraction across ALL pages.
+    # We skip only form/contact pages (application blanks, faculty directories)
+    # because those pages' tables have no retrieval value.  The classifier is
+    # intentionally NOT used here: grading-scheme and programme-structure tables
+    # live on pages that look like "skip" to the prose classifier, and _raw_table_to_ir
+    # already rejects junk (empty, header-only, non-meaningful rows).
+    from ingestion.classifier import classify_page as _classify
+    skip_for_tables: set[int] = set()
+    with pdfplumber.open(pdf_path) as _tmp_pdf:
+        for _n, _pg in enumerate(_tmp_pdf.pages, start=1):
+            _txt = _pg.extract_text() or ""
+            if len(_txt.strip()) < 50:
+                skip_for_tables.add(_n)   # effectively empty — nothing to extract
+            elif _classify(_txt) in ("form", "contact"):
+                skip_for_tables.add(_n)   # forms/contacts: no useful tables
+
     allowed     = {p["page_number"] for p in pages}
-    page_tables = _extract_page_tables(pdf_path, allowed)
+    page_tables = _extract_page_tables(pdf_path, skip_pages=skip_for_tables)
 
     blocks: list[Block] = []
     tables_emitted: set[int] = set()
     for section in sections:
         blocks.extend(_section_to_blocks(section, page_tables, tables_emitted))
+
+    # Emit any tables on pages that no prose section claimed.
+    # This covers table-only pages (grading scheme, programme credits, placement stats)
+    # where _keep_section drops the thin prose but the table is still valid content.
+    for page_num, tables in page_tables.items():
+        if page_num not in tables_emitted:
+            blocks.extend(tables)
 
     # Third pass — syllabus pages (course schedule tables, skipped by classifier)
     blocks.extend(_extract_syllabus_tables(pdf_path, allowed))

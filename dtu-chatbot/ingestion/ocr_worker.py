@@ -52,6 +52,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
 
 from manifest.manifest import ManifestDB
+from ingestion.classifier import classify_page
 from ingestion.document_ir import Document, Heading, Paragraph
 from ingestion.ir_chunker import chunk_document
 
@@ -153,30 +154,52 @@ def _extract_with_ocr(pdf_path: Path, dpi: int, lang: str) -> list[tuple[int, st
     Pages below the scanned threshold get Tesseract OCR.
     """
     results: list[tuple[int, str]] = []
-    doc = fitz.open(str(pdf_path))
+    skipped_by_class: dict[str, int] = {}
 
-    for i, page in enumerate(doc, start=1):
-        # Fast path: page already has embedded text.
-        embedded = page.get_text("text").strip()
-        if len(embedded) >= _SCANNED_THRESHOLD:
-            results.append((i, embedded))
-            continue
+    with fitz.open(str(pdf_path)) as doc:
+        for i, page in enumerate(doc, start=1):
+            # Fast path: page already has embedded text.
+            embedded = page.get_text("text").strip()
+            if len(embedded) >= _SCANNED_THRESHOLD:
+                text = embedded
+            else:
+                # Scanned page — run Tesseract OCR.
+                try:
+                    tp   = page.get_textpage_ocr(flags=0, language=lang, dpi=dpi, full=True)
+                    text = page.get_text(textpage=tp).strip()
+                except Exception as exc:
+                    print(f"    Page {i}: OCR failed ({exc})")
+                    continue
 
-        # Scanned page — run Tesseract OCR.
-        try:
-            tp   = page.get_textpage_ocr(flags=0, language=lang, dpi=dpi, full=True)
-            text = page.get_text(textpage=tp).strip()
-        except Exception as exc:
-            print(f"    Page {i}: OCR failed ({exc})")
-            continue
+            if len(text) < _SCANNED_THRESHOLD:
+                continue
 
-        if len(text) >= _SCANNED_THRESHOLD:
+            # Same page-type gate as the pdfplumber pipeline: syllabus grids,
+            # contact sheets and blank forms only add noise as OCR prose.
+            page_type = classify_page(text)
+            if page_type in ("syllabus", "contact", "form", "skip"):
+                skipped_by_class[page_type] = skipped_by_class.get(page_type, 0) + 1
+                continue
+
             results.append((i, text))
-        else:
-            print(f"    Page {i}: OCR returned too little text ({len(text)} chars), skipped")
 
-    doc.close()
+    if skipped_by_class:
+        print(f"    Pages skipped by classifier: {skipped_by_class}")
     return results
+
+
+def _is_mostly_scanned(pdf_path: Path) -> bool:
+    """True when fewer than half the pages carry embedded text — i.e. the
+    document needs OCR. Text PDFs are batch_index.py's job; re-indexing them
+    here would overwrite its richer chunks (same chunk ids) with OCR-IR ones."""
+    with fitz.open(str(pdf_path)) as doc:
+        n = len(doc)
+        if n == 0:
+            return False
+        with_text = sum(
+            1 for page in doc if len(page.get_text("text").strip()) >= _SCANNED_THRESHOLD
+        )
+    return with_text < 0.5 * n
 
 
 # ── embedding ────────────────────────────────────────────────────────────────
@@ -216,6 +239,10 @@ def _process_one(row: dict, oai: OpenAI, qdrant: QdrantClient, cfg: Config) -> i
         print(f"  SKIP: file not found: {file_path}")
         return 0
 
+    if not _is_mostly_scanned(file_path):
+        print(f"  SKIP: {file_path.name} is a text PDF (batch_index.py handles it)")
+        return 0
+
     print(f"  OCR scanning: {file_path.name}  (dpi={cfg.dpi})", flush=True)
     t0 = time.perf_counter()
 
@@ -250,6 +277,7 @@ def _process_one(row: dict, oai: OpenAI, qdrant: QdrantClient, cfg: Config) -> i
                 "token_count":     int(c.get("token_count") or 0),
                 "page_number":     int(c.get("page_number") or 0),
                 "batch_year":      int(c.get("batch_year") or 0),
+                "chunk_index":     int(c.get("chunk_index") or 0),
             },
         )
         for c, vec in zip(chunks, vectors)
@@ -285,11 +313,26 @@ def main(cfg: Config) -> None:
         )
         all_rows = [dict(r) for r in cur.fetchall()]
 
-    # Skip PDFs the OCR pass already finished, unless --force.
+    # Use runtime scan detection — the manifest is_ocr flag can be stale or wrong.
+    def _resolve(r: dict) -> Path:
+        fp = r["file_path"]
+        return Path(fp) if Path(fp).is_absolute() else _CHATBOT / fp
+
+    # Curated overrides: hand-verified docs in data/curated/ replace these
+    # sources — re-OCRing them would re-add garbled chunks next to the clean
+    # curated ones. Applies even with --force.
+    from ingestion.curated_sources import curated_source_urls
+    curated = curated_source_urls()
+    superseded = [r for r in all_rows if r["url"] in curated]
+    for r in superseded:
+        print(f"SKIP (superseded by curated doc): {r['url']}")
+    all_rows = [r for r in all_rows if r["url"] not in curated]
+
+    scanned = [r for r in all_rows if _is_mostly_scanned(_resolve(r))]
     if cfg.force:
-        rows = all_rows
+        rows = scanned
     else:
-        rows = [r for r in all_rows if not r.get("is_ocr")]
+        rows = [r for r in scanned if r.get("index_notes") != "ocr_done"]
 
     print(f"\nOCR worker starting")
     print(f"PDFs to process : {len(rows)}  (of {len(all_rows)} downloaded)")
@@ -308,17 +351,19 @@ def main(cfg: Config) -> None:
         try:
             n = _process_one(row, oai, qdrant, cfg)
             total_chunks += n
-            # Mark in manifest so we don't re-OCR on next run.
             with ManifestDB(cfg.manifest_path) as db:
+                if n > 0:
+                    db.update_stage(row["url"], "chunk", "done")
+                    db.update_stage(row["url"], "embed",  "done")
+                    db.update_stage(row["url"], "index",  "done")
+                # Mark ocr_done AFTER the update_stage calls — update_stage
+                # rewrites index_notes (None when no notes arg), which would
+                # wipe this marker and cause a full re-OCR on every run.
                 db._conn.execute(
                     "UPDATE documents SET is_ocr=1, index_notes=? WHERE url=?",
                     ("ocr_done", row["url"]),
                 )
                 db._conn.commit()
-                if n > 0:
-                    db.update_stage(row["url"], "chunk", "done")
-                    db.update_stage(row["url"], "embed",  "done")
-                    db.update_stage(row["url"], "index",  "done")
         except Exception as exc:
             print(f"  ERROR: {exc}")
 
@@ -327,6 +372,12 @@ def main(cfg: Config) -> None:
         f"\nDone. {total_chunks} new chunks in {time.perf_counter() - t_total:.0f}s\n"
         f"Collection '{COLLECTION_NAME}': {before} -> {after} points"
     )
+
+    # Self-healing: re-OCRing ordinances re-adds chunks that the curated docs
+    # superseded — retire them again automatically.
+    if total_chunks > 0:
+        from ingestion.chunk_retirement import retire_chunks
+        retire_chunks(qdrant, COLLECTION_NAME)
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
@@ -341,7 +392,7 @@ def _parse_args() -> Config:
     ap.add_argument("--lang",          default="eng",
                     help="Tesseract language code (default: eng)")
     ap.add_argument("--force",         action="store_true",
-                    help="Re-process PDFs already marked ocr_done")
+                    help="Re-process PDFs already marked index_notes=ocr_done")
     args = ap.parse_args()
     return Config(
         manifest_path=args.manifest_path,

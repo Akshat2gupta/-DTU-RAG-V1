@@ -102,26 +102,52 @@ def count_tokens(text: str) -> int:
 # STEP 1 — Extract pages
 # =============================================================================
 
+def visible_page(page):
+    """
+    Restrict a pdfplumber page to its visible box and upright text.
+
+    Some DTU ordinance PDFs are exported as 2-up spreads: each PDF page carries
+    TWO logical pages of text, one of them shifted outside the visible page box
+    (negative x, or x > page width). Plain extract_text() merges the invisible
+    neighbour into the visible page line-by-line, producing interleaved garbage
+    AND duplicating every logical page across two PDF pages. Cropping to the
+    page box keeps exactly the visible logical page.
+
+    Rotated (non-upright) chars — vertical table headers in syllabus pages —
+    extract as reversed strings (".oN.S" for "S.No."), so they are dropped too.
+    """
+    cropped = page.within_bbox((0, 0, page.width, page.height), strict=False)
+    return cropped.filter(
+        lambda obj: obj.get("object_type") != "char" or obj.get("upright", True)
+    )
+
+
 def extract_pages(pdf_path: Path) -> tuple[list[dict], list[int], int, dict[str, int]]:
     """Return (processed_pages, skipped_page_nums, total_page_count, class_counts)."""
     pages: list[dict] = []
     skipped: list[int] = []
+    seen_page_hashes: set[str] = set()
     class_counts: dict[str, int] = {
         "policy": 0, "notice": 0, "syllabus": 0,
-        "contact": 0, "form": 0, "skip": 0,
+        "contact": 0, "form": 0, "skip": 0, "admissions": 0, "placement": 0,
     }
 
     with pdfplumber.open(pdf_path) as pdf:
         total = len(pdf.pages)
-        for n, page in enumerate(pdf.pages, start=1):
-            # Bug 1: skip ghost duplicate pages where all content sits outside the cropbox
-            words = page.extract_words()
-            if words and all(w["x0"] > page.width for w in words):
-                log.info(f"Page {n}: skipped (ghost duplicate — all content outside cropbox)")
-                skipped.append(n)
-                continue
+        for n, raw_page in enumerate(pdf.pages, start=1):
+            page = visible_page(raw_page)
 
             text = page.extract_text() or ""
+
+            # Spread PDFs can still repeat a logical page across two PDF pages;
+            # drop exact repeats of already-seen page text.
+            page_hash = hashlib.sha256(text.strip().encode()).hexdigest()
+            if text.strip() and page_hash in seen_page_hashes:
+                log.info(f"Page {n}: skipped (duplicate of an earlier page)")
+                skipped.append(n)
+                continue
+            seen_page_hashes.add(page_hash)
+
             if len(text.strip()) < 100:
                 log.info(f"Page {n}: skipped (likely scanned)")
                 skipped.append(n)

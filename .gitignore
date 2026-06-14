@@ -2,10 +2,16 @@
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 
 # Environment variables (API keys!)
 .env
 *.env
+
+# Virtual environments
+venv/
+.venv/
+env/
 
 # Testing cache
 .pytest_cache/
@@ -15,6 +21,25 @@ __pycache__/
 
 # Logs
 logs/
+
+# Generated chunks (re-creatable from source docs)
+dtu-chatbot/data/chunks/
+
+# Scrapy job state
+.scrapy/
+scrapy_jobdir/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# Board / experiment scratch files
+vertical_slice/board_*.txt
+vertical_slice/qdrant_run.txt
+
+# Planning docs (internal only)
+PLAN.md
 
 # Claude Code config
 .claude/

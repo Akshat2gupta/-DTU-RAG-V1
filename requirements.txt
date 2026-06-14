@@ -1,0 +1,35 @@
+# Web scraping
+scrapy==2.16.0
+
+# PDF parsing
+pdfplumber==0.11.9
+PyMuPDF==1.26.7
+
+# OCR (scanned PDFs — requires Tesseract 5.x installed system-wide)
+pytesseract==0.3.13
+
+# HTML parsing
+lxml==6.1.1
+cssselect==1.4.0
+beautifulsoup4==4.15.0
+
+# AI / embeddings
+openai==1.109.1
+tiktoken==0.12.0
+
+# Vector store
+qdrant-client==1.18.0
+chromadb==1.5.9
+
+# UI
+streamlit==1.54.0
+
+# HTTP client
+httpx==0.28.1
+
+# Utilities
+python-dotenv==1.1.0
+Pillow==10.4.0
+
+# Testing
+pytest==8.3.5
