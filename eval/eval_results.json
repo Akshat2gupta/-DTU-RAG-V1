@@ -1,0 +1,1931 @@
+[
+  {
+    "id": "att-01",
+    "question": "What is the minimum attendance required to sit in the end sem exam?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.66668963,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.667,
+        "title": "BTech 2022 ordinance",
+        "section": "/Even",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2022 ordinance > /Even\n\nAs per attendance Regulations in force, a student is required to have attended at least 75% of the total classes held in"
+      },
+      {
+        "rank": 2,
+        "score": 0.661,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "R.22 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": true,
+        "snippet": "B.Tech Ordinance 2017 18 > R.22 Unfair Means\n\n(ii) The students of UG must have a minimum attendance of 75% of the total number of classes including l"
+      },
+      {
+        "rank": 3,
+        "score": 0.658,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "End Term Examination – Two weeks",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": true,
+        "snippet": "B.Tech Ordinance 2017 18 > End Term Examination – Two weeks\n\nThis relaxation may be granted on production of documents showing that the student was ei"
+      },
+      {
+        "rank": 4,
+        "score": 0.658,
+        "title": "BTech 2021 ordinance",
+        "section": "/Even",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2021 ordinance > /Even\n\nAs per attendance Regulations in force, a student is required to have attended at least 75% of the total classes held in"
+      },
+      {
+        "rank": 5,
+        "score": 0.652,
+        "title": "BTech_2018_ordinance",
+        "section": "R.1(B).22",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2018_ordinance > R.1(B).22\n\nAttendance, Absence, Leave and Withdrawals: (i) Allthe students of UG/ PG programs are expected to attend every lect"
+      }
+    ],
+    "answer": "The minimum attendance required to sit in the end-semester examination is 75% of the total classes held in a subject, including lectures, tutorials, and practicals. This requirement is consistent across various ordinances at DTU (BTech 2022 ordinance, R.22 Unfair Means, B.Tech Ordinance 2017-18, and BTech 2018 ordinance)."
+  },
+  {
+    "id": "att-02",
+    "question": "I was sick and missed a lot of classes, can I still give my exams?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.6767348,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.677,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "R. 1(B).21 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > R. 1(B).21 Unfair Means\n\nThis relaxation may be granted on production of doc"
+      },
+      {
+        "rank": 2,
+        "score": 0.665,
+        "title": "BTech_2023_ordinance",
+        "section": "R. 1(B).21 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2023_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2023_ordinance > R. 1(B).21 Unfair Means\n\nThis relaxation may be granted on production of documents showing that the student was either busy in "
+      },
+      {
+        "rank": 3,
+        "score": 0.658,
+        "title": "BTech_2025_ordinance",
+        "section": "R.1(B).21 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > R.1(B).21 Unfair Means\n\nThis relaxation may be granted on production of documents showing that the student was either busy in t"
+      },
+      {
+        "rank": 4,
+        "score": 0.657,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "R.22 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": true,
+        "snippet": "B.Tech Ordinance 2017 18 > R.22 Unfair Means\n\n(ii) The students of UG must have a minimum attendance of 75% of the total number of classes including l"
+      },
+      {
+        "rank": 5,
+        "score": 0.639,
+        "title": "BTech 2021 ordinance",
+        "section": "R. 1(B).23 Make-up Examinations on Medical / Extra Ordinary ",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2021 ordinance > R. 1(B).23 Make-up Examinations on Medical / Extra Ordinary Ground:\n\nStudents who have missed the Mid-Term Examinations and/or "
+      }
+    ],
+    "answer": "If you missed classes due to illness, you may be eligible for a Make-up Examination. You need to submit documents proving your medical condition to the Head of Department (HOD) within ten working days from the date of the examination you missed. The HOD will then forward your application with recommendations to the Controller of Examinations (COE), who will seek approval from the Dean (UG) or Dean (PG). However, please note that Make-up Examinations will only be allowed if you have not been disqualified earlier due to a shortage of attendance. \n\nFor more details, you can refer to the BTech 2021 ordinance, Section R. 1(B).23 Make-up Examinations on Medical/Extra Ordinary Ground."
+  },
+  {
+    "id": "grade-01",
+    "question": "How is SGPA calculated at DTU?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.6695163,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.67,
+        "title": "BTech_2025_ordinance",
+        "section": "Preamble",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > Preamble\n\nDelhi Technological University (DTU) is a non-affiliating, teaching and research University at Delhi to achieve excel"
+      },
+      {
+        "rank": 2,
+        "score": 0.665,
+        "title": "BTech_2018_ordinance",
+        "section": "Preamble",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2018_ordinance > Preamble\n\nDelhi Technological University (DTU) is a non affiliating, teaching and research University at Delhi to achieve excel"
+      },
+      {
+        "rank": 3,
+        "score": 0.664,
+        "title": "BTech_2023_ordinance",
+        "section": "Preamble",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2023_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2023_ordinance > Preamble\n\nDelhi Technological University (DTU) is a non affiliating, teaching and research University at Delhi to achieve excel"
+      },
+      {
+        "rank": 4,
+        "score": 0.656,
+        "title": "BTech 2019 ordinance",
+        "section": "R. 1(B).2. Definitions:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2019 ordinance > R. 1(B).2. Definitions:\n\ni. “Applicant” shall mean an individual who applies for admission to undergraduate/ post graduate degr"
+      },
+      {
+        "rank": 5,
+        "score": 0.655,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Preamble",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Preamble\n\nDelhi Technological University (DTU) is a non affiliating, teachin"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more details on SGPA calculation at DTU on the official website: https://dtu.ac.in."
+  },
+  {
+    "id": "grade-02",
+    "question": "What marks do I need for an O grade?",
+    "answerable": true,
+    "first_correct_rank": 2,
+    "top_score": 0.6358502,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.636,
+        "title": "BTech 2022 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2022 ordinance > R. 1(B).17 Grading System:\n\nThe grade cut off will be (Good) x̅+0.0σ or 64% whichever is lower The value of x̅-0.5σto be taken "
+      },
+      {
+        "rank": 2,
+        "score": 0.635,
+        "title": "BTech_2025_ordinance",
+        "section": "R. I[(B).18 Grade Moderation Committee:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > R. I[(B).18 Grade Moderation Committee:\n\nR. I[(B).19 Scrutiny ofGrades, Tabulation and Declaration of Results: (i) Astudent may"
+      },
+      {
+        "rank": 3,
+        "score": 0.633,
+        "title": "BTech 2019 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2019 ordinance > R. 1(B).17 Grading System:\n\nThe grade cut off will be +0.0σ or 64% whichever is lower B 6 -0.5 σ ≤ m< +0.0 σ The value of -0.5σ"
+      },
+      {
+        "rank": 4,
+        "score": 0.63,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "R. 1(B).18 Grade Moderation Committee:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > R. 1(B).18 Grade Moderation Committee:\n\nR. 1(B).19 Scrutiny of Grades, Tabul"
+      },
+      {
+        "rank": 5,
+        "score": 0.623,
+        "title": "BTech 2021 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2021 ordinance > R. 1(B).17 Grading System:\n\nThe grade cut off will be (Very Good) x+̅ 0.5σ or 73% whichever is lower The value of x+̅ 0.0σ to b"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more details on grading and marks at the following links:\n* Admissions / JEE / counselling / seat allotment → https://jacdelhi.admissions.nic.in or https://saarthi.dtu.ac.in\n* Placement / TPC / TNP / recruiters / internships → https://tnp.dtu.ac.in/index.html\n* Fees / ERP / registration / timetable → https://dtu.ac.in or the student portal\n* Anything else → https://dtu.ac.in"
+  },
+  {
+    "id": "grade-03",
+    "question": "What happens if I get an F in a subject?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.6411887,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.641,
+        "title": "BTech_2018_ordinance",
+        "section": "F",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2018_ordinance > F\n\nm<x-1.50 Less than x-1.50 or 35% whichever is (Fail) lower In those subjects, where the total number of students is upto 30,"
+      },
+      {
+        "rank": 2,
+        "score": 0.632,
+        "title": "BTech_2025_ordinance",
+        "section": "F",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > F\n\nm < 35 Less than 35% (Fail) ==\nIn those subjects, where the total number of students is upto 30, the results in Grades shall"
+      },
+      {
+        "rank": 3,
+        "score": 0.621,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "F",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > F\n\nLess than 35% . < In those subjects, where the total number of students i"
+      },
+      {
+        "rank": 4,
+        "score": 0.612,
+        "title": "BTech 2020 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2020 ordinance > R. 1(B).17 Grading System:\n\n(i) The academic performance of a student shall be graded on a 10-point scale. For the award of gra"
+      },
+      {
+        "rank": 5,
+        "score": 0.611,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "F",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > F\n\n(b) Incaseastudentis awarded ‘F’ Grade in a Core paper, the student has t"
+      }
+    ],
+    "answer": "If you receive an 'F' grade in a subject, it denotes poor performance, indicating that you have failed the course. The implications of receiving an 'F' grade are as follows:\n\n1. **Core Paper**: If you are awarded an 'F' grade in a Core paper, you must repeat the course in the subsequent semester when it is offered.\n\n2. **Elective Paper**: If you receive an 'F' grade in an Elective paper, you may take the same course or any other course from the same category in the subsequent semester.\n\n3. **Major/Minor Project**: If you fail in the major or minor project, you will have to repeat the course in the form of a new project, working full time on it for a minimum period of four months.\n\n4. **Grade Card**: The 'F' grade will stay permanently on your grade card. While it is not counted in the calculation of the Cumulative Grade Point Average (CGPA), it is counted in the calculation of the Semester Grade Point Average (SGPA).\n\nThese guidelines are consistent across various academic ordinances at DTU (see BTech_2018_ordinance, BTech_2025_ordinance, and BTech 2020 ordinance)."
+  },
+  {
+    "id": "grade-04",
+    "question": "Can I improve my grade after passing a course?",
+    "answerable": false,
+    "first_correct_rank": 1,
+    "top_score": 0.5997041,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.6,
+        "title": "BTech 2022 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2022 ordinance > R. 1(B).17 Grading System:\n\nThe concerned course coordinator shall have to be convinced about the extraordinary circumstances a"
+      },
+      {
+        "rank": 2,
+        "score": 0.597,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "F",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > F\n\n(e) In extra-ordinary circumstances, on the recommendation of the Dean (U"
+      },
+      {
+        "rank": 3,
+        "score": 0.591,
+        "title": "BTech 2019 ordinance",
+        "section": "‘I’ grade to the COE through the Course Coordinator, provide",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2019 ordinance > ‘I’ grade to the COE through the Course Coordinator, provided that he / she\n\nhas not been disqualified due to shortage of atten"
+      },
+      {
+        "rank": 4,
+        "score": 0.589,
+        "title": "BTech 2021 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2021 ordinance > R. 1(B).17 Grading System:\n\nThe concerned course coordinator shall have to be convinced about the extraordinary circumstances a"
+      },
+      {
+        "rank": 5,
+        "score": 0.583,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "F",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > F\n\n(b) Incaseastudentis awarded ‘F’ Grade in a Core paper, the student has t"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more details on the following links:\n* Admissions / JEE / counselling / seat allotment → https://jacdelhi.admissions.nic.in or https://saarthi.dtu.ac.in\n* Placement / TPC / TNP / recruiters / internships → https://tnp.dtu.ac.in/index.html\n* Fees / ERP / registration / timetable → https://dtu.ac.in or the student portal\n* Anything else → https://dtu.ac.in",
+    "guard_refused": true
+  },
+  {
+    "id": "grade-05",
+    "question": "What is an I grade and when is it given?",
+    "answerable": true,
+    "first_correct_rank": 2,
+    "top_score": 0.68071306,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.681,
+        "title": "BTech 2021 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2021 ordinance > R. 1(B).17 Grading System:\n\nThe concerned course coordinator shall have to be convinced about the extraordinary circumstances a"
+      },
+      {
+        "rank": 2,
+        "score": 0.67,
+        "title": "BTech 2021 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2021 ordinance > R. 1(B).17 Grading System:\n\nThe course coordinator shall have full responsibility for this purpose. The grades so awarded shall"
+      },
+      {
+        "rank": 3,
+        "score": 0.668,
+        "title": "BTech 2019 ordinance",
+        "section": "‘I’ grade to the COE through the Course Coordinator, provide",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2019 ordinance > ‘I’ grade to the COE through the Course Coordinator, provided that he / she\n\nhas not been disqualified due to shortage of atten"
+      },
+      {
+        "rank": 4,
+        "score": 0.665,
+        "title": "BTech 2022 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2022 ordinance > R. 1(B).17 Grading System:\n\nThe award of ‘F’ Grade a) The ‘F’ grades denote poor performance, i.e. failing course. ‘F’ grade is"
+      },
+      {
+        "rank": 5,
+        "score": 0.665,
+        "title": "BTech 2022 ordinance",
+        "section": "R. 1(B).17 Grading System:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2022 ordinance > R. 1(B).17 Grading System:\n\nThe concerned course coordinator shall have to be convinced about the extraordinary circumstances a"
+      }
+    ],
+    "answer": "An 'I' grade refers to an 'incomplete' grade that is awarded to a student who is absent during the End-Term Examination of a course due to medical reasons or other special circumstances. The student may apply for the award of 'I' grade to the Controller of Examinations (COE) through the Course Coordinator, provided that they have not been disqualified due to a shortage of attendance. The concerned course coordinator must be convinced about the extraordinary circumstances and certify the attendance record before this option is recommended. The 'I' grade is required to be converted into a regular letter grade after the make-up examination is completed and the course requirements are fulfilled by the student. \n\nThis information is sourced from the BTech 2021 ordinance, Section R. 1(B).17 Grading System."
+  },
+  {
+    "id": "prog-01",
+    "question": "What is the maximum time allowed to finish the B.Tech degree?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.7151679,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.715,
+        "title": "BTech_2018_ordinance",
+        "section": "CS",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2018_ordinance > CS\n\n(ii) The normal and maximum duration of the UG and PG programs is given in Table 2. The maximum duration for all the progra"
+      },
+      {
+        "rank": 2,
+        "score": 0.705,
+        "title": "BTech 2020 ordinance",
+        "section": "10. MA/ M.Sc. Annexure 1J",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2020 ordinance > 10. MA/ M.Sc. Annexure 1J\n\nii The normal and maximum duration of the UG and PG programs is given in Table 2. The maximum durati"
+      },
+      {
+        "rank": 3,
+        "score": 0.684,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Anmexut tH",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Anmexut tH\n\n8 EMBAAnexure| 10. MA/ M.Sc. Annexure 1J (ii) The normal and max"
+      },
+      {
+        "rank": 4,
+        "score": 0.675,
+        "title": "BTech 2019 ordinance",
+        "section": "R. 1(B).4 Undergraduate and Post Graduate Programs:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2019 ordinance > R. 1(B).4 Undergraduate and Post Graduate Programs:\n\ni The University offers Undergraduate and Post graduate programs of differ"
+      },
+      {
+        "rank": 5,
+        "score": 0.671,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "REGULATIONS",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": true,
+        "snippet": "B.Tech Ordinance 2017 18 > REGULATIONS\n\nR.1 Short Title and Commencement: (i) These Regulations shall be called the Regulations, 2015 for the four-yea"
+      }
+    ],
+    "answer": "The maximum duration for completing the B.Tech degree at DTU is seven years from the date of initial registration. This duration includes the period of withdrawal, absence, and different kinds of leaves permissible to a student, but it excludes the period of rustication. \n\n(Source: B.Tech Ordinance 2017-18 > REGULATIONS)"
+  },
+  {
+    "id": "prog-02",
+    "question": "How many credits do I need to be promoted to the next year?",
+    "answerable": true,
+    "first_correct_rank": 2,
+    "top_score": 0.6018033,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.602,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "Credit System",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": false,
+        "snippet": "B.Tech Ordinance 2017 18 > Credit System\n\nThe University follows a modern method of continuous evaluation, which is prevalent in most of the professio"
+      },
+      {
+        "rank": 2,
+        "score": 0.596,
+        "title": "BTech_2018_ordinance",
+        "section": "R.1(B).20",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2018_ordinance > R.1(B).20\n\nEarned Minimum Credits and Minimum CGPA for the Degree: The credits for the courses in which a student has obtained "
+      },
+      {
+        "rank": 3,
+        "score": 0.595,
+        "title": "BTech 2019 ordinance",
+        "section": "R. 1(B).20 Earned Minimum Credits and Minimum CGPA for the D",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2019 ordinance > R. 1(B).20 Earned Minimum Credits and Minimum CGPA for the Degree:\n\n(i) The credits for the courses in which a student has obta"
+      },
+      {
+        "rank": 4,
+        "score": 0.588,
+        "title": "BTech 2020 ordinance",
+        "section": "R. 1(B).20 Earned Minimum Credits and Minimum CGPA for the D",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2020 ordinance > R. 1(B).20 Earned Minimum Credits and Minimum CGPA for the Degree:\n\n(i) The credits for the courses in which a student has obta"
+      },
+      {
+        "rank": 5,
+        "score": 0.588,
+        "title": "BTech 2022 ordinance",
+        "section": "R. 1(B).20 Earned Minimum Credits and Minimum CGPA for the D",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2022 ordinance > R. 1(B).20 Earned Minimum Credits and Minimum CGPA for the Degree:\n\nThe credits for the courses in which a student has obtained"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more details on the credit requirements and promotion criteria at: \n- https://dtu.ac.in or the student portal."
+  },
+  {
+    "id": "prog-03",
+    "question": "Can I take a semester break for health reasons?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.61700904,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.617,
+        "title": "BTech_2023_ordinance",
+        "section": "R. 1(B).21 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2023_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2023_ordinance > R. 1(B).21 Unfair Means\n\nThis relaxation may be granted on production of documents showing that the student was either busy in "
+      },
+      {
+        "rank": 2,
+        "score": 0.605,
+        "title": "BTech_2025_ordinance",
+        "section": "R.1(B).21 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech_2025_ordinance > R.1(B).21 Unfair Means\n\nThis relaxation may be granted on production of documents showing that the student was either busy in t"
+      },
+      {
+        "rank": 3,
+        "score": 0.6,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "R. 1(B).21 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > R. 1(B).21 Unfair Means\n\nThis relaxation may be granted on production of doc"
+      },
+      {
+        "rank": 4,
+        "score": 0.592,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "R.22 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": false,
+        "snippet": "B.Tech Ordinance 2017 18 > R.22 Unfair Means\n\n(ii) The students of UG must have a minimum attendance of 75% of the total number of classes including l"
+      },
+      {
+        "rank": 5,
+        "score": 0.568,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "End Term Examination – Two weeks",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": false,
+        "snippet": "B.Tech Ordinance 2017 18 > End Term Examination – Two weeks\n\nThis relaxation may be granted on production of documents showing that the student was ei"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more details regarding semester breaks and related policies on the official DTU website: https://dtu.ac.in."
+  },
+  {
+    "id": "prog-04",
+    "question": "Is there a summer semester to clear backlogs?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.5814664,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.581,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Annexure - 3",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Annexure - 3\n\nGuidelines for the summer Semester Courses 1. A student will b"
+      },
+      {
+        "rank": 2,
+        "score": 0.57,
+        "title": "BTech_2025_ordinance",
+        "section": "Annexure - IIT",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > Annexure - IIT\n\nDetailed guidelines for Summer Semester 1. Astudent will be allowed to register a maximum of 16 credits inclusi"
+      },
+      {
+        "rank": 3,
+        "score": 0.568,
+        "title": "BTech 2020 ordinance",
+        "section": "Guidelines for the summer Semester Courses",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2020 ordinance > Guidelines for the summer Semester Courses\n\n1. A student will be allowed to register a maximum of 16 credits inclusive of odd a"
+      },
+      {
+        "rank": 4,
+        "score": 0.566,
+        "title": "BTech 2022 ordinance",
+        "section": "Guidelines for the Summer Semester Courses",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2022 ordinance > Guidelines for the Summer Semester Courses\n\n1. A student will be allowed to register a maximum of 16 credits inclusive of odd a"
+      },
+      {
+        "rank": 5,
+        "score": 0.563,
+        "title": "BTech 2021 ordinance",
+        "section": "Guidelines for the Summer Semester Courses",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2021 ordinance > Guidelines for the Summer Semester Courses\n\n1. A student will be allowed to register a maximum of 16 credits inclusive of odd a"
+      }
+    ],
+    "answer": "Yes, there is a summer semester at DTU where students can register for courses to clear backlogs. The guidelines specify that a student is allowed to register for a maximum of 16 credits, which can include odd and even semester courses. However, only common courses (First year), departmental core courses (DCC), and allied engineering courses (AEC) will be offered during the summer semester. \n\nFor more details, you can refer to the guidelines for the summer semester courses in the BTech ordinances."
+  },
+  {
+    "id": "minor-01",
+    "question": "How do I get a minor degree along with my B.Tech?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.65907574,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.659,
+        "title": "BTech_2025_ordinance",
+        "section": "ZERO",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > ZERO\n\nThe Constitution of Equivalence Committee shall be (i) HoD's ofdepartment offering Minor; (ii) Head ofDepartment in which"
+      },
+      {
+        "rank": 2,
+        "score": 0.658,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Fo",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Fo\n\naes es * Refer scheme of teaching and examinations of M.Tech Program. 12"
+      },
+      {
+        "rank": 3,
+        "score": 0.644,
+        "title": "BTech_2025_ordinance",
+        "section": "ZERO",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > ZERO\n\nmarks in the or with any other candidate in or around the Examination Centre concerned paper before, during or after the "
+      },
+      {
+        "rank": 4,
+        "score": 0.643,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "REGULATIONS",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": false,
+        "snippet": "B.Tech Ordinance 2017 18 > REGULATIONS\n\nR.1 Short Title and Commencement: (i) These Regulations shall be called the Regulations, 2015 for the four-yea"
+      },
+      {
+        "rank": 5,
+        "score": 0.643,
+        "title": "BTech_2025_ordinance",
+        "section": "Credit",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > Credit\n\nB. Tech, under Continuing Education B. Tech, (Lateral Entry) i a a po [odste aC v. Astudent shall have the option to ad"
+      }
+    ],
+    "answer": "To obtain a Minor degree along with your B.Tech at DTU, you need to follow these steps:\n\n1. **Eligibility**: You can opt for a Minor in a specific discipline if you have earned the requisite credits from the prescribed basket of courses for that Minor.\n\n2. **Credit Requirements**:\n   - If you wish to pursue a Minor from a discipline other than your own, you must earn 24 credits (6 courses) from the basket prescribed for that particular Minor.\n   - If you are pursuing a Minor from your own discipline, you need to earn 20 credits (5 courses) from the prescribed basket.\n\n3. **Registration**: You must register for the Minor in the 4th semester of your program of study.\n\n4. **Course Selection**: You will be permitted to register for the courses pertaining to the Minor as they are offered by the respective department during your studies.\n\n5. **Equivalence Committee**: If you have already earned credits for a course from a discipline other than the one in the basket of a Minor, an Equivalence Committee may examine and recommend counting these credits towards the requirement of the Minor.\n\nMake sure to check the specific guidelines and offerings from your department regarding the Minor courses."
+  },
+  {
+    "id": "cred-01",
+    "question": "How many total credits are required for the B.Tech program?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.66010416,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.66,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "Total 19",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": true,
+        "snippet": "B.Tech Ordinance 2017 18 > Total 19\n\nSeventh Semester: S.No., Col 2: Subject, Col 3: Credits, Col 4: Category\nSeventh Semester: 1., Col 2: Department "
+      },
+      {
+        "rank": 2,
+        "score": 0.659,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "REGULATIONS",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": true,
+        "snippet": "B.Tech Ordinance 2017 18 > REGULATIONS\n\nR.1 Short Title and Commencement: (i) These Regulations shall be called the Regulations, 2015 for the four-yea"
+      },
+      {
+        "rank": 3,
+        "score": 0.654,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "Credit System",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": true,
+        "snippet": "B.Tech Ordinance 2017 18 > Credit System\n\nThe University follows a modern method of continuous evaluation, which is prevalent in most of the professio"
+      },
+      {
+        "rank": 4,
+        "score": 0.653,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "S. No. Course Title Subject Area Credit L T P Total",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": false,
+        "snippet": "B.Tech Ordinance 2017 18 > 3. The candidates should have a sound moral character and should not have > S. No. Course Title Subject Area Credit L T P T"
+      },
+      {
+        "rank": 5,
+        "score": 0.647,
+        "title": "BTech_2025_ordinance",
+        "section": "R. 1(B).9 Course Credits:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > R. 1(B).9 Course Credits:\n\nNo credit shall be given ifa student attended a course for which he or she has not registered. The p"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more details on the B.Tech program requirements at: https://dtu.ac.in or the student portal."
+  },
+  {
+    "id": "host-01",
+    "question": "How many hostels are there in DTU and what are their names?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.836208,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.836,
+        "title": "DTU Hostel Management Department",
+        "section": "Hostels — Delhi Technological University",
+        "url": "https://hostels.dtu.ac.in/",
+        "correct": true,
+        "snippet": "DTU Hostel Management Department > Hostels — Delhi Technological University\n\nDelhi Technological University has 10 Boys and 3 Girls hostels in the cam"
+      },
+      {
+        "rank": 2,
+        "score": 0.796,
+        "title": "DTU Hostel Management Department",
+        "section": "Boys' Hostels",
+        "url": "https://hostels.dtu.ac.in/",
+        "correct": true,
+        "snippet": "DTU Hostel Management Department > Hostels — Delhi Technological University > Boys' Hostels\n\n1. Type — II Hostel\n2. Aryabhatt Hostel\n3. Bhaskaracharya"
+      },
+      {
+        "rank": 3,
+        "score": 0.758,
+        "title": "DTU Hostel Management Department",
+        "section": "Girls' Hostels",
+        "url": "https://hostels.dtu.ac.in/",
+        "correct": true,
+        "snippet": "DTU Hostel Management Department > Hostels — Delhi Technological University > Girls' Hostels\n\n1. Sister Nivediata Hostel\n2. Kalpana Chawla Hostel\n3. V"
+      },
+      {
+        "rank": 4,
+        "score": 0.692,
+        "title": "BTech 2021 ordinance",
+        "section": "The demand for University’s graduates has always been very h",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2021 ordinance > The demand for University’s graduates has always been very high and in the recent years it has increased\n\nFee has to be paid on"
+      },
+      {
+        "rank": 5,
+        "score": 0.691,
+        "title": "JAC Delhi Admission Brochure 2026",
+        "section": "DTU has consistently been ranked among top institutes in Ind",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf",
+        "correct": false,
+        "snippet": "JAC Delhi Admission Brochure 2026 > DTU has consistently been ranked among top institutes in India in terms of placement and higher studies\n\nThe Unive"
+      }
+    ],
+    "answer": "Delhi Technological University has a total of 13 hostels: 10 Boys' hostels and 3 Girls' hostels.\n\n**Boys' Hostels:**\n1. Type — II Hostel\n2. Aryabhatt Hostel\n3. Bhaskaracharya Hostel\n4. Sir C. V. Raman Hostel\n5. Sir J.C. Bose Hostel\n6. Varahmihir Hostel\n7. Sir Vishveshwarya Hostel\n8. Homi Jehangir Bhabha Hostel\n9. Ramanujan Hostel\n10. Dr. APJ Abdul Kalam Hostel (AC)\n\n**Girls' Hostels:**\n1. Sister Nivediata Hostel\n2. Kalpana Chawla Hostel\n3. Virangana Lakshmibai Hostel, Block-1 (AC)\n4. Virangana Lakshmibai Hostel, Block-2 (AC)\n\n(Source: Section: Hostels — Delhi Technological University)"
+  },
+  {
+    "id": "host-02",
+    "question": "Which hostels have mess facilities?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.5253243,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.525,
+        "title": "DTU Hostel Management Department",
+        "section": "Girls' Hostels",
+        "url": "https://hostels.dtu.ac.in/",
+        "correct": true,
+        "snippet": "DTU Hostel Management Department > Hostels — Delhi Technological University > Girls' Hostels\n\n1. Sister Nivediata Hostel\n2. Kalpana Chawla Hostel\n3. V"
+      },
+      {
+        "rank": 2,
+        "score": 0.439,
+        "title": "BTech 2019 ordinance",
+        "section": "2. Mode of payment for Hostel Fee:-",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2019 ordinance > 2. Mode of payment for Hostel Fee:-\n\nHostel Allotment fee for the year 2017-18 will be deposited through online payment facilit"
+      },
+      {
+        "rank": 3,
+        "score": 0.437,
+        "title": "DTU Hostel Management Department",
+        "section": "Hostels — Delhi Technological University",
+        "url": "https://hostels.dtu.ac.in/",
+        "correct": false,
+        "snippet": "DTU Hostel Management Department > Hostels — Delhi Technological University\n\nDelhi Technological University has 10 Boys and 3 Girls hostels in the cam"
+      },
+      {
+        "rank": 4,
+        "score": 0.43,
+        "title": "DTU Hostel Management Department",
+        "section": "Boys' Hostels",
+        "url": "https://hostels.dtu.ac.in/",
+        "correct": false,
+        "snippet": "DTU Hostel Management Department > Hostels — Delhi Technological University > Boys' Hostels\n\n1. Type — II Hostel\n2. Aryabhatt Hostel\n3. Bhaskaracharya"
+      },
+      {
+        "rank": 5,
+        "score": 0.415,
+        "title": "BTech_2018_ordinance",
+        "section": "Boys Hostels (8)",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech_2018_ordinance > Boys Hostels (8)\n\nGirls Hostels (6) 1. Bhaskaracharya Hostel 1. Sister Nivedita Hostel 2. SirC.V. Raman Hostel 2. Kalpana Chawl"
+      }
+    ],
+    "answer": "The hostels that have mess facilities at DTU are:\n\n1. Sir Visvesvaraya Hostel\n2. Sir C. V. Raman Hostel\n3. AryaBhatta Hostel\n4. Homi Jahangir Bhabha Hostel\n5. Sir J.C. Bose Hostel\n6. Sister Nivedita Hostel\n\nThese hostels cater to the requirements of all the students residing within the campus. (Source: Chunk 1)"
+  },
+  {
+    "id": "fac-01",
+    "question": "Who teaches machine learning in the CSE department?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.58752835,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.588,
+        "title": "CSE — Faculty",
+        "section": "Programmer",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": true,
+        "snippet": "CSE — Faculty > Programmer\n\nDr. Snigdha Agrawal — Designation: Assistant Professor — Qualification: PhD, MTech, BTech — Specialization: Machine Learni"
+      },
+      {
+        "rank": 2,
+        "score": 0.572,
+        "title": "CSE — Faculty",
+        "section": "Programmer",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": true,
+        "snippet": "CSE — Faculty > Programmer\n\nGull Kaur — Designation: Assistant Professor — Qualification: B.Tech , M.Tech — Specialization: Data Analytics, Bigdata, M"
+      },
+      {
+        "rank": 3,
+        "score": 0.568,
+        "title": "CSE — Faculty",
+        "section": "Programmer",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": false,
+        "snippet": "CSE — Faculty > Programmer\n\nDr. Rajeev Kumar — Designation: Assistant Professor — Qualification: B.Tech, M.Tech, Ph.D. ,Post-Doctorate — Specializatio"
+      },
+      {
+        "rank": 4,
+        "score": 0.552,
+        "title": "CSE — Faculty",
+        "section": "Programmer",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": true,
+        "snippet": "CSE — Faculty > Programmer\n\nDr. Kavinder Singh — Designation: Assistant Professor — Qualification: B.Tech, M.Tech, Ph.D. — Specialization: Image Proce"
+      },
+      {
+        "rank": 5,
+        "score": 0.551,
+        "title": "CSE — Faculty",
+        "section": "Assistant Professor",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": true,
+        "snippet": "CSE — Faculty > Assistant Professor\n\nDr. Rahul Kumar — Designation: Assistant Professor — Qualification: Ph.D(CSE), M.Tech(CSE), B.Tech — Specializati"
+      }
+    ],
+    "answer": "The following faculty members teach Machine Learning in the CSE department at DTU:\n\n1. **Prof. Anil Singh Parihar** — Professor, Department of Computer Science Engineering (CSE). Specialization: Pattern Recognition, Computer Vision, Soft Computing, Image Processing, Evolutionary Computing, Biometric Systems, Artificial Intelligence. Email: anil@dtu.ac.in\n\n2. **Dr. Snigdha Agrawal** — Assistant Professor. Specialization: Machine Learning, Medical Image Processing, Computer Vision. Email: snigdhaagrawal@dtu.ac.in\n\n3. **Gull Kaur** — Assistant Professor. Specialization: Data Analytics, Big Data, Machine Learning, Deep Learning, Data Mining, and Databases. Email: gullkaur@dtu.ac.in\n\n4. **Dr. Rahul Kumar** — Assistant Professor. Specialization: Machine Learning, Deep Learning. Email: rahulkumar@dtu.ac.in\n\n5. **Dr. Kavinder Singh** — Assistant Professor. Specialization: Image Processing, Computer Vision, Machine Learning, Deep Learning, Pattern Recognition. Email: kavinder@dtu.ac.in\n\n6. **Dr. Rajeev Kumar** — Assistant Professor. Specialization: Artificial Intelligence, including aspects related to Deep Neural Networks. Email: rajeevkumar@dtu.ac.in\n\nThese faculty members can be approached for topics related to Machine Learning."
+  },
+  {
+    "id": "fac-02",
+    "question": "What is the email of Prof. Anil Singh Parihar?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.66805905,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.668,
+        "title": "CSE — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": true,
+        "snippet": "CSE — Faculty > Head Of Department\n\nProf. Anil Singh Parihar — Designation: Professor — Qualification: B.Tech, M.E., Ph.D — Specialization: Pattern Re"
+      },
+      {
+        "rank": 2,
+        "score": 0.601,
+        "title": "AppliedChemistry — Faculty",
+        "section": "Professor",
+        "url": "https://dtu.ac.in/Web/Departments/AppliedChemistry/faculty_v2/",
+        "correct": false,
+        "snippet": "AppliedChemistry — Faculty > Professor\n\nProf. Anil Kumar — Designation: Professor — Qualification: PhD — Specialization: Bioinorganic Chemistry, Solar"
+      },
+      {
+        "rank": 3,
+        "score": 0.599,
+        "title": "AppliedChemistry — Faculty",
+        "section": "Professor",
+        "url": "https://dtu.ac.in/Web/Departments/AppliedChemistry/faculty_v2/",
+        "correct": false,
+        "snippet": "AppliedChemistry — Faculty > Professor\n\nDr. Anil Kumar — Designation: Adjunct Professor — Qualification: PhD — Email: anil.kumar@cy.iitr.ac.in; Detail"
+      },
+      {
+        "rank": 4,
+        "score": 0.591,
+        "title": "Environment — Faculty",
+        "section": "Professor",
+        "url": "https://dtu.ac.in/Web/Departments/Environment/faculty/",
+        "correct": false,
+        "snippet": "Environment — Faculty > Professor\n\nDr. Anil Kumar Haritash — Designation: Professor — Qualification: M.Sc., M. Tech., Ph.D.Areas of interest: Environm"
+      },
+      {
+        "rank": 5,
+        "score": 0.587,
+        "title": "Mechanical — Faculty",
+        "section": "Professor",
+        "url": "https://dtu.ac.in/Web/Departments/Mechanical/faculty/",
+        "correct": false,
+        "snippet": "Mechanical — Faculty > Professor\n\nProf. Anil Kumar — Designation: Professor — Qualification: Ph.D (IIT Delhi), PDF(Thailand) — Specialization: Energy "
+      }
+    ],
+    "answer": "The email of Prof. Anil Singh Parihar is anil@dtu.ac.in. \n\n(Source: Section: Head Of Department)"
+  },
+  {
+    "id": "fac-03",
+    "question": "Which professors in Electronics work on VLSI?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.6365224,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.637,
+        "title": "Electronics — Faculty",
+        "section": "Professor",
+        "url": "https://dtu.ac.in/Web/Departments/Electronics/faculty/",
+        "correct": true,
+        "snippet": "Electronics — Faculty > Professor\n\nProf. Poornima Mittal — Designation: Professor — Qualification: B.E., M.Tech., Ph.D. — Specialization: Organic Elec"
+      },
+      {
+        "rank": 2,
+        "score": 0.636,
+        "title": "Electronics — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/Electronics/faculty/",
+        "correct": true,
+        "snippet": "Electronics — Faculty > Head Of Department\n\nProf. Neeta Pandey — Designation: Professor — Qualification: Ph.D — Specialization: Analog and Digital VLS"
+      },
+      {
+        "rank": 3,
+        "score": 0.625,
+        "title": "Electronics — Faculty",
+        "section": "Professor",
+        "url": "https://dtu.ac.in/Web/Departments/Electronics/faculty/",
+        "correct": false,
+        "snippet": "Electronics — Faculty > Professor\n\nProf. Rajeshwari Pandey — Designation: Professor — Qualification: B.Tech , ME , Ph.D — Specialization: Analog Integ"
+      },
+      {
+        "rank": 4,
+        "score": 0.625,
+        "title": "Electronics — Faculty",
+        "section": "Professor",
+        "url": "https://dtu.ac.in/Web/Departments/Electronics/faculty/",
+        "correct": false,
+        "snippet": "Electronics — Faculty > Professor\n\nProf. Rajesh Rohilla — Designation: Professor — Qualification: BE,M.Tech, Ph.D — Specialization: Computer Vision, M"
+      },
+      {
+        "rank": 5,
+        "score": 0.624,
+        "title": "Electronics — Faculty",
+        "section": "Associate Professor",
+        "url": "https://dtu.ac.in/Web/Departments/Electronics/faculty/",
+        "correct": true,
+        "snippet": "Electronics — Faculty > Associate Professor\n\nDr. Deva Nand — Designation: Associate Professor — Qualification: B.Tech,M.Tech, Ph.D — Specialization: A"
+      }
+    ],
+    "answer": "The professors in the Electronics department who work on VLSI are:\n\n1. **Prof. Poornima Mittal**  \n   - Designation: Professor  \n   - Specialization: Organic Electronics, VLSI Design, Device Modeling  \n   - Email: poornimamittal@dtu.ac.in  \n\n2. **Dr. Deva Nand**  \n   - Designation: Associate Professor  \n   - Specialization: Analog Integrated Circuits, VLSI Design, Analog Circuit Designing, Low Power Circuit Designing, Digital System Designing using FPGAs  \n   - Email: devkamboj@dce.ac.in  \n\n3. **Prof. Rajeshwari Pandey**  \n   - Designation: Professor  \n   - Specialization: Analog Integrated circuits, Microelectronics  \n   - Email: rpandey@dce.ac.in  \n\nThese faculty members have expertise in VLSI-related areas."
+  },
+  {
+    "id": "fac-04",
+    "question": "Who is the head of the Civil Engineering department?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.7364271,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.736,
+        "title": "Civil — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/Civil/faculty/",
+        "correct": true,
+        "snippet": "Civil — Faculty > Head Of Department\n\nProf. Nirendra Dev — Designation: Professor — Qualification: B.Tech, M.Sc(Engg.), PhD — Specialization: Structur"
+      },
+      {
+        "rank": 2,
+        "score": 0.735,
+        "title": "Civil — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/Civil/faculty/",
+        "correct": true,
+        "snippet": "Civil — Faculty > Head Of Department\n\nB.R.G. Robert — Designation: Assistant Professors — Qualification: BE — Specialization: Civil Engineering — Emai"
+      },
+      {
+        "rank": 3,
+        "score": 0.717,
+        "title": "Civil — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/Civil/faculty/",
+        "correct": true,
+        "snippet": "Civil — Faculty > Head Of Department\n\nNaresh Kumar — Designation: Professor — Qualification: ME — Specialization: Soil Mechanics — Email: nareshkumar@"
+      },
+      {
+        "rank": 4,
+        "score": 0.714,
+        "title": "Civil — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/Civil/faculty/",
+        "correct": true,
+        "snippet": "Civil — Faculty > Head Of Department\n\nB. Jhamnani — Designation: Assistant Professor — Qualification: BE, ME — Email: bjhamnani@dce.ac.in Detail Profi"
+      },
+      {
+        "rank": 5,
+        "score": 0.71,
+        "title": "Civil — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/Civil/faculty/",
+        "correct": true,
+        "snippet": "Civil — Faculty > Head Of Department\n\nDr. S. Anbu Kumar — Designation: Professor — Qualification: BE, M.Tech, Ph.D — Specialization: Hydraulics and Wa"
+      }
+    ],
+    "answer": "The head of the Civil Engineering department is Prof. Nirendra Dev. He is a Professor with a specialization in Structural Engineering. You can contact him at nirendradev@dce.ac.in. \n\n(Source: Section: Head Of Department)"
+  },
+  {
+    "id": "fac-05",
+    "question": "List faculty in Applied Chemistry department",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.6175715,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.618,
+        "title": "AppliedChemistry — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/AppliedChemistry/faculty_v2/",
+        "correct": true,
+        "snippet": "AppliedChemistry — Faculty > Head Of Department\n\nProf. D. Kumar — Designation: Professor — Qualification: PhD — Specialization: Polymer Science & Tech"
+      },
+      {
+        "rank": 2,
+        "score": 0.601,
+        "title": "Department of Applied Chemistry",
+        "section": "Department of Applied Chemistry",
+        "url": "https://dtu.ac.in/Web/Departments/AppliedChemistry/about/",
+        "correct": true,
+        "snippet": "Department of Applied Chemistry\n\nExperienced faculty and advanced analytical equipment like FTIR, DSC, TGA, HPLC, Electro-Spinning, DMA, UTM, Rotation"
+      },
+      {
+        "rank": 3,
+        "score": 0.598,
+        "title": "Department of Applied Chemistry",
+        "section": "Department of Applied Chemistry",
+        "url": "https://dtu.ac.in/Web/Departments/AppliedChemistry/about/",
+        "correct": true,
+        "snippet": "Department of Applied Chemistry\n\n*APR- As Per Requirement The department is committed to higher education and research in the areas of Chemistry, Chem"
+      },
+      {
+        "rank": 4,
+        "score": 0.578,
+        "title": "AppliedChemistry — Faculty",
+        "section": "Assistant Professor",
+        "url": "https://dtu.ac.in/Web/Departments/AppliedChemistry/faculty_v2/",
+        "correct": true,
+        "snippet": "AppliedChemistry — Faculty > Assistant Professor\n\nDr. Poonam Singh — Designation: Assistant Professor — Email: poonam@dce.ac.in Detail Profile — Depar"
+      },
+      {
+        "rank": 5,
+        "score": 0.577,
+        "title": "AppliedChemistry — Faculty",
+        "section": "Professor",
+        "url": "https://dtu.ac.in/Web/Departments/AppliedChemistry/faculty_v2/",
+        "correct": true,
+        "snippet": "AppliedChemistry — Faculty > Professor\n\nProf. Anil Kumar — Designation: Professor — Qualification: PhD — Specialization: Bioinorganic Chemistry, Solar"
+      }
+    ],
+    "answer": "The faculty in the Applied Chemistry department at DTU are:\n\n1. **Prof. D. Kumar**\n   - Designation: Professor\n   - Qualification: PhD\n   - Specialization: Polymer Science & Technology\n   - Email: dkumar@dce.ac.in\n\n2. **Dr. Poonam Singh**\n   - Designation: Assistant Professor\n   - Email: poonam@dce.ac.in\n\n3. **Prof. Anil Kumar**\n   - Designation: Professor\n   - Qualification: PhD\n   - Specialization: Bioinorganic Chemistry, Solar Cell, Cell Imaging molecules, Electronic structure calculation using G03 suite program\n   - Email: asl213@gmail.com\n\n(Source: Section: Head Of Department, Department of Applied Chemistry)"
+  },
+  {
+    "id": "fac-06",
+    "question": "Who teaches computer vision or image processing at DTU?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.5858185,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.586,
+        "title": "CSE — Faculty",
+        "section": "Programmer",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": true,
+        "snippet": "CSE — Faculty > Programmer\n\nDr. Kavinder Singh — Designation: Assistant Professor — Qualification: B.Tech, M.Tech, Ph.D. — Specialization: Image Proce"
+      },
+      {
+        "rank": 2,
+        "score": 0.568,
+        "title": "Electronics — Faculty",
+        "section": "Assistant Professor",
+        "url": "https://dtu.ac.in/Web/Departments/Electronics/faculty/",
+        "correct": true,
+        "snippet": "Electronics — Faculty > Assistant Professor\n\nDr. Chhavi Dhiman — Designation: Assistant Professor — Qualification: Ph.D., M.Tech., B.Tech. — Specializ"
+      },
+      {
+        "rank": 3,
+        "score": 0.547,
+        "title": "Electronics — Faculty",
+        "section": "Assistant Professor",
+        "url": "https://dtu.ac.in/Web/Departments/Electronics/faculty/",
+        "correct": true,
+        "snippet": "Electronics — Faculty > Assistant Professor\n\nMr. Varun Sangwan — Designation: Assistant Professor — Qualification: B.Tech, M.Tech, Ph.D(P) — Specializ"
+      },
+      {
+        "rank": 4,
+        "score": 0.546,
+        "title": "InformationTechnology — Faculty",
+        "section": "Head Of Department",
+        "url": "https://dtu.ac.in/Web/Departments/InformationTechnology/faculty/",
+        "correct": true,
+        "snippet": "InformationTechnology — Faculty > Head Of Department\n\nProf. Dinesh K. Vishwakarma — Designation: Professor — Qualification: B.Tech , M.Tech , Ph.D — S"
+      },
+      {
+        "rank": 5,
+        "score": 0.542,
+        "title": "InformationTechnology — Faculty",
+        "section": "Assistant Professor",
+        "url": "https://dtu.ac.in/Web/Departments/InformationTechnology/faculty/",
+        "correct": true,
+        "snippet": "InformationTechnology — Faculty > Assistant Professor\n\nDr. Bindu Verma — Designation: Assistant Professor — Qualification: B.Tech(CSE), M.Tech(CSE), P"
+      }
+    ],
+    "answer": "Here are the faculty members at DTU who teach Computer Vision or Image Processing:\n\n1. **Prof. Anil Singh Parihar**  \n   - **Title**: Professor  \n   - **Department**: Computer Science Engineering (CSE)  \n   - **Specialization**: Pattern Recognition, Computer Vision, Soft Computing, Image Processing, Evolutionary Computing, Biometric Systems, Artificial Intelligence  \n   - **Email**: anil@dtu.ac.in  \n\n2. **Dr. Kavinder Singh**  \n   - **Title**: Assistant Professor  \n   - **Department**: CSE  \n   - **Specialization**: Image Processing, Computer Vision, Machine Learning, Deep Learning, Pattern Recognition  \n   - **Email**: kavinder@dtu.ac.in  \n\n3. **Dr. Chhavi Dhiman**  \n   - **Title**: Assistant Professor  \n   - **Department**: Electronics  \n   - **Specialization**: Computer Vision, Image Processing, Machine Learning, Deep Learning, Human Action Recognition in Videos  \n   - **Email**: chhavi.dhiman@dtu.ac.in  \n\n4. **Mr. Varun Sangwan**  \n   - **Title**: Assistant Professor  \n   - **Department**: Electronics  \n   - **Specialization**: Image Processing, Computer Vision  \n   - **Email**: varunsangwan@dtu.ac.in  \n\n5. **Prof. Dinesh K. Vishwakarma**  \n   - **Title**: Professor  \n   - **Department**: Information Technology  \n   - **Specialization**: Machine Learning, Deep Learning, Pattern Recognition, Computer Vision, Digital Image Processing, Human Action and Activity Recognition  \n   - **Email**: dinesh@dtu.ac.in, dvishwakarma@gmail.com  \n\n6. **Dr. Bindu Verma**  \n   - **Title**: Assistant Professor  \n   - **Department**: Information Technology  \n   - **Specialization**: Machine Learning, Deep Learning, Computer Vision, Image Processing, Human-Computer Interaction  \n   - **Email**: binduverma@dtu.ac.in  \n\nThese faculty members are involved in teaching and research related to Computer Vision and Image Processing at DTU."
+  },
+  {
+    "id": "dept-01",
+    "question": "Tell me about the Electrical Engineering department at DTU.",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.71941954,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.719,
+        "title": "Department of Electrical Engineering",
+        "section": "Department of Electrical Engineering",
+        "url": "https://dtu.ac.in/Web/Departments/Electrical/about/",
+        "correct": true,
+        "snippet": "Department of Electrical Engineering\n\nThe students are motivated for technical and creative activities besides classroom teaching and laboratory exerc"
+      },
+      {
+        "rank": 2,
+        "score": 0.717,
+        "title": "BTech 2020 ordinance",
+        "section": "The Department of Electronics and Communication Engineering ",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2020 ordinance > The Department of Electronics and Communication Engineering has seen considerable growth since\n\nits inception in 1976. The visi"
+      },
+      {
+        "rank": 3,
+        "score": 0.717,
+        "title": "Department of Electrical Engineering",
+        "section": "Department of Electrical Engineering",
+        "url": "https://dtu.ac.in/Web/Departments/Electrical/about/",
+        "correct": true,
+        "snippet": "Department of Electrical Engineering\n\nAbout Us The Department of Electrical Engineering has grown significantly since its inception in 1941. The year "
+      },
+      {
+        "rank": 4,
+        "score": 0.714,
+        "title": "BTech_2018_ordinance",
+        "section": "ANNEXURE -B",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech_2018_ordinance > ANNEXURE -B\n\nScholarships are available for Ph. D. programs in the area of Electronics and Communication namely VLSI, DSP, Imag"
+      },
+      {
+        "rank": 5,
+        "score": 0.707,
+        "title": "Department of Environmental Science & Engineering",
+        "section": "Department of Environmental Science & Engineering",
+        "url": "https://dtu.ac.in/Web/Departments/Environment/about/",
+        "correct": false,
+        "snippet": "Department of Environmental Science & Engineering\n\nAbout Department The Department of Environmental Engineering at Delhi Technological University (DTU"
+      }
+    ],
+    "answer": "The Department of Electrical Engineering at Delhi Technological University (DTU) has grown significantly since its inception in 1941. The year 2024 marks the 83rd year of excellence for both the University and the Department in academics, research, and innovation. The goal of the Department is to provide quality education at undergraduate and postgraduate levels and undertake cutting-edge research in various areas of Electrical Engineering.\n\nCurrently, the Department has an annual undergraduate intake of 300 students and offers a B.Tech. under Continuing Education for working professionals with an intake of 60 students. At the postgraduate level, the Department offers three M.Tech. programs in Control and Instrumentation, Power Electronics and Systems, and Power Systems, with a combined intake of 80 students. The M. Tech. programs in Control and Instrumentation and Power Systems are accredited for 6 years (till 2027). The Department also offers regular Ph.D. programs in various areas of specialization in Electrical Engineering, including Analog Signal Processing, Electric Drives, Flexible AC Transmission Systems (FACTS), HVDC, Hybrid Electric Vehicles, Intelligent Control and Transportation, Optimization, Power Electronic Converters, Power Quality, Power System Dynamics and Stability, Power System Operation and Control, Renewable Energy Sources, and Smart Grid.\n\nThe Department emphasizes technical and creative activities beyond classroom teaching and laboratory exercises, encouraging participation in technical festivals like TROIKA, organized under the IEEE student chapter, and Renaissance, organized by the IET student chapter DTU. Students are also motivated to engage in group learning, discussions, and presentations.\n\nThe Department has 47 experienced and highly qualified faculty members with intense research and professional expertise, and it has developed a strong reputation in the national and global academic network. The placement trend shows that students from the Department have been successful in securing lucrative jobs, with top global recruiters such as Fujikara, Qualcomm, and McKinsey offering placements with packages over Rs. 15 Lakhs per annum.\n\nOverall, the Department of Electrical Engineering at DTU strives for excellence in teaching and research, aiming to achieve eminence in all niche areas of Electrical Engineering."
+  },
+  {
+    "id": "dept-02",
+    "question": "What research areas does the CSE department focus on?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.6220343,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.622,
+        "title": "Department of Computer Engineering & Engineering",
+        "section": "Department of Computer Engineering & Engineering",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/about/",
+        "correct": true,
+        "snippet": "Department of Computer Engineering & Engineering\n\nThe curriculum is designed to develop technical knowledge, problem-solving skills, and technological"
+      },
+      {
+        "rank": 2,
+        "score": 0.595,
+        "title": "Department of Computer Engineering & Engineering",
+        "section": "Department of Computer Engineering & Engineering",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/about/",
+        "correct": true,
+        "snippet": "Department of Computer Engineering & Engineering\n\nDepartment of Computer Science & Engineering About the CSE Department Welcome to the Department of C"
+      },
+      {
+        "rank": 3,
+        "score": 0.588,
+        "title": "CSE — Faculty",
+        "section": "Programmer",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": false,
+        "snippet": "CSE — Faculty > Programmer\n\nDr. Rajeev Kumar — Designation: Assistant Professor — Qualification: B.Tech, M.Tech, Ph.D. ,Post-Doctorate — Specializatio"
+      },
+      {
+        "rank": 4,
+        "score": 0.585,
+        "title": "Department of Software& Engineering",
+        "section": "Department of Software& Engineering",
+        "url": "https://dtu.ac.in/Web/Departments/SE/about/",
+        "correct": false,
+        "snippet": "Department of Software& Engineering\n\nDepartment of Software Engineering About Us The Department of Software Engineering is dedicated to produce high q"
+      },
+      {
+        "rank": 5,
+        "score": 0.541,
+        "title": "CSE — Faculty",
+        "section": "Programmer",
+        "url": "https://dtu.ac.in/Web/Departments/CSE/faculty/",
+        "correct": false,
+        "snippet": "CSE — Faculty > Programmer\n\nGarima Chhikara — Designation: Assistant Professor — Qualification: B.Tech, M.Tech, PhD Pursuing (IITD) — Specialization: "
+      }
+    ],
+    "answer": "The Department of Computer Science & Engineering (CSE) at DTU focuses on several research areas, including:\n\n- Artificial Intelligence\n- Machine Learning\n- Blockchain\n- Cybersecurity\n- Data Science\n- Pattern Recognition\n- Computer Vision\n- Soft Computing\n- Image Processing\n- Evolutionary Computing\n- Biometric Systems\n\nThe curriculum emphasizes design principles, system software development, and various emerging technological challenges, ensuring students are well-prepared for the industry (Section: Department of Computer Engineering & Engineering). \n\nFor specific faculty expertise in these areas, you may consider reaching out to:\n\n1. **Prof. Anil Singh Parihar**  \n   - **Title**: Professor, Department of Computer Science Engineering (CSE)  \n   - **Specialization**: Pattern Recognition, Computer Vision, Soft Computing, Image Processing, Evolutionary Computing, Biometric Systems, Artificial Intelligence  \n   - **Email**: anil@dtu.ac.in  \n\n2. **Dr. Rajeev Kumar**  \n   - **Title**: Assistant Professor  \n   - **Specialization**: Artificial Intelligence: Privacy & Security concerning Deep Neural Networks; Data Hiding: Image & Text Steganography; Digital forensics and Wireless Sensor Networks  \n   - **Email**: rajeevkumar@dtu.ac.in  \n\n3. **Garima Chhikara**  \n   - **Title**: Assistant Professor  \n   - **Specialization**: Natural Language Processing, Responsible AI, Computational Social Science  \n   - **Email**: garimachhikara@dtu.ac.in"
+  },
+  {
+    "id": "schol-01",
+    "question": "What scholarships are available for B.Tech students at DTU?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.7568203,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.757,
+        "title": "file2018_05_29",
+        "section": "Technological",
+        "url": "https://dtu.ac.in/Web/Academics/scholarship/file2018_05_29.pdf",
+        "correct": true,
+        "snippet": "file2018_05_29 > Technological\n\nUniversity has proposed to provide two scholarships to the meritorious /needy students of B. Tech. (Civil Engineering)"
+      },
+      {
+        "rank": 2,
+        "score": 0.749,
+        "title": "JAC Delhi Admission Brochure 2026",
+        "section": "As many as 11 meritorious girl students from B.Tech. program",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf",
+        "correct": false,
+        "snippet": "JAC Delhi Admission Brochure 2026 > As many as 11 meritorious girl students from B.Tech. programs in Electronics and Communication\n\nEngineering (ECE),"
+      },
+      {
+        "rank": 3,
+        "score": 0.715,
+        "title": "BTech_2025_ordinance",
+        "section": "Financial Support:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech_2025_ordinance > Financial Support:\n\nDTU shall not provide any financial support for the Program. Student shall have to obtain a letter of Finan"
+      },
+      {
+        "rank": 4,
+        "score": 0.712,
+        "title": "BTech 2021 ordinance",
+        "section": "All the desirous and eligible students of DTU who belongs to",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2021 ordinance > All the desirous and eligible students of DTU who belongs to lower income group and wish to seek financial assistance\n\nDepartme"
+      },
+      {
+        "rank": 5,
+        "score": 0.703,
+        "title": "BTech 2020 ordinance",
+        "section": "FINANCIAL SUPPORT TO STUDENTS",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2020 ordinance > FINANCIAL SUPPORT TO STUDENTS\n\nMerit scholarship to the toppers of each branch of Bachelor of Technology. The merit Scholarship"
+      }
+    ],
+    "answer": "At DTU, several scholarships are available for B.Tech students:\n\n1. **Class of 1969 Scholarship**: Two scholarships of Rs. 60,000/- per annum are awarded to meritorious/needy students of B. Tech. (Civil Engineering) based on merit-cum-means criteria. This is for students who have scored more than 8 SGPA and whose parents' income is less than 5 lakhs per annum.\n\n2. **Rupa Rahul Bajaj National Scholarship for Women in Engineering**: This scholarship awards up to Rs. 8 lakhs to meritorious girl students in B.Tech programs in Electronics and Communication Engineering, Electrical Engineering, and Mechanical Engineering.\n\n3. **Dell Aspire Scholars Program**: This program offers financial assistance along with tailored career coaching and mentorship for first-year scholars.\n\n4. **Merit-Based Scholarships**: DTU offers around 25 merit-based scholarships supported by its Alumni for meritorious students from distinct backgrounds.\n\n5. **Annual Merit Scholarships**: These are awarded to the toppers of each branch of the B.Tech program based on academic performance.\n\n6. **Financial Assistance for Research**: Financial support is also provided for students presenting research papers in International/National Conferences, innovative projects, and for overseas internships.\n\nFor more details, students can refer to the respective sections in the DTU documents."
+  },
+  {
+    "id": "adm-01",
+    "question": "How are B.Tech admissions done at DTU, is it through JEE?",
+    "answerable": true,
+    "first_correct_rank": 3,
+    "top_score": 0.6735125,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.674,
+        "title": "DTU Admission Portal",
+        "section": "DTU Admissions 2026",
+        "url": "https://saarthi.dtu.ac.in/admissions2026_27/",
+        "correct": false,
+        "snippet": "DTU Admission Portal > DELHI TECHNOLOGICAL UNIVERSITY > DTU Admissions 2026\n\nWelcome to DTU Admissions Webportal. Please go through the Terms and Cond"
+      },
+      {
+        "rank": 2,
+        "score": 0.671,
+        "title": "DTU Admission Portal",
+        "section": "DTU Admissions 2025",
+        "url": "https://saarthi.dtu.ac.in/admissions2025_26/",
+        "correct": false,
+        "snippet": "DTU Admission Portal > DELHI TECHNOLOGICAL UNIVERSITY > DTU Admissions 2025\n\nWelcome to DTU Admissions Webportal. Please go through the Terms and Cond"
+      },
+      {
+        "rank": 3,
+        "score": 0.66,
+        "title": "JAC Delhi Admission Brochure 2026",
+        "section": "Chapter 2 Eligibility Conditions",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Admission Brochure 2026 > Chapter 2 Eligibility Conditions\n\nAdmission to B. Tech. Programmes in NSUT, DTU, IGDTUW, DSEU and Dual Degree (B.T"
+      },
+      {
+        "rank": 4,
+        "score": 0.651,
+        "title": "JAC Delhi Admission Brochure 2026",
+        "section": "2.2 Qualifying Examination",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Admission Brochure 2026 > 2.2 Qualifying Examination\n\nThe qualifying examination for admission to all the programmes offered by the particip"
+      },
+      {
+        "rank": 5,
+        "score": 0.641,
+        "title": "BTech 2021 ordinance",
+        "section": "All the desirous and eligible students of DTU who belongs to",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2021 ordinance > All the desirous and eligible students of DTU who belongs to lower income group and wish to seek financial assistance\n\nDepartme"
+      }
+    ],
+    "answer": "Yes, admission to B. Tech. programmes at DTU is done strictly based on the Common Rank List (CRL) in JEE (Main) - 2026 Paper-I. The tie-breaker criteria will be followed in case of identical ranks. This information is detailed in the JAC Delhi Admission Brochure 2026, Chapter 2 Eligibility Conditions (Source: https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf)."
+  },
+  {
+    "id": "adm-02",
+    "question": "What is the counselling schedule for JAC Delhi 2026?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.7845739,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.785,
+        "title": "JAC Delhi Counselling Schedule 2026",
+        "section": "Important Instructions",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Counselling_Schedule_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Counselling Schedule 2026 > Important Instructions\n\n1.: 2., Commencement of Online Registration and Choice Filling.\n(Along with Application "
+      },
+      {
+        "rank": 2,
+        "score": 0.784,
+        "title": "JAC Delhi Counselling Schedule 2026",
+        "section": "Important Instructions",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Counselling_Schedule_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Counselling Schedule 2026 > Important Instructions\n\nCounselling Schedule- JAC Delhi -2026: A. Important dates for Online Registration for B."
+      },
+      {
+        "rank": 3,
+        "score": 0.782,
+        "title": "JAC Delhi Counselling Schedule 2026",
+        "section": "Important Instructions",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Counselling_Schedule_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Counselling Schedule 2026 > Important Instructions\n\n1. Registration is open as per the below mentioned timelines – May 28, 2026 to June 09, "
+      },
+      {
+        "rank": 4,
+        "score": 0.754,
+        "title": "JAC Delhi Counselling Schedule 2026",
+        "section": "4. Seat Acceptance Fee payment in any round will start immed",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Counselling_Schedule_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Counselling Schedule 2026 > 4. Seat Acceptance Fee payment in any round will start immediately after the result is\n\nUpgradation Round\nSeat C"
+      },
+      {
+        "rank": 5,
+        "score": 0.748,
+        "title": "JAC Delhi Counselling Schedule 2026",
+        "section": "Physical Reporting after Payment of Seat Acceptance Fee at r",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Counselling_Schedule_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Counselling Schedule 2026 > Physical Reporting after Payment of Seat Acceptance Fee at respective\n\nFIRST ROUND: 2, Col 2: document verificat"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for the counselling schedule at: \n* Admissions / JEE / counselling / seat allotment → https://jacdelhi.admissions.nic.in or https://saarthi.dtu.ac.in"
+  },
+  {
+    "id": "adm-03",
+    "question": "What is the last date to register for JAC Delhi 2026 admission?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.781482,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.781,
+        "title": "JAC Delhi Admission Brochure 2026",
+        "section": "Filling From 10:00 AM",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Admission Brochure 2026 > Filling From 10:00 AM\n\nLast Date and Time for Online Registration (Registration: Form filling, Registration fee pa"
+      },
+      {
+        "rank": 2,
+        "score": 0.777,
+        "title": "JAC Delhi Admission Brochure 2026",
+        "section": "Filling From 10:00 AM",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Admission Brochure 2026 > Filling From 10:00 AM\n\nLast Date and Time for Online Registration (Registration June 09, 2026 (Tuesday) 2. Form fi"
+      },
+      {
+        "rank": 3,
+        "score": 0.765,
+        "title": "JAC Delhi Admission Brochure 2026",
+        "section": "Filling From 10:00 AM",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Admission Brochure 2026 > Filling From 10:00 AM\n\n1.: 2., Commencement of Online Registration and Choice\nFilling: Last Date and Time for Onli"
+      },
+      {
+        "rank": 4,
+        "score": 0.757,
+        "title": "JAC Delhi Counselling Schedule 2026",
+        "section": "Important Instructions",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Counselling_Schedule_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Counselling Schedule 2026 > Important Instructions\n\n1. Registration is open as per the below mentioned timelines – May 28, 2026 to June 09, "
+      },
+      {
+        "rank": 5,
+        "score": 0.752,
+        "title": "JAC Delhi Counselling Schedule 2026",
+        "section": "Important Instructions",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Counselling_Schedule_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Counselling Schedule 2026 > Important Instructions\n\n1.: 2., Commencement of Online Registration and Choice Filling.\n(Along with Application "
+      }
+    ],
+    "answer": "The last date to register for JAC Delhi 2026 admission is June 09, 2026, until 11:30 PM. This information is sourced from the JAC Delhi Admission Brochure 2026 (Section: Filling From 10:00 AM)."
+  },
+  {
+    "id": "plc-01",
+    "question": "Which companies come to DTU for placements?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.74349165,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.743,
+        "title": "BTech_2025_ordinance",
+        "section": "Placements",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > Placements\n\nDTU has been ranked among top institutes in India in terms ofplacement and higher studies as per NIRF data (2024) I"
+      },
+      {
+        "rank": 2,
+        "score": 0.741,
+        "title": "BTech_2023_ordinance",
+        "section": "Placements",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2023_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2023_ordinance > Placements\n\nDTU has been ranked among top institutes in India in terms of placement and higher studies as per NIRF data (2023) "
+      },
+      {
+        "rank": 3,
+        "score": 0.725,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Placements",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Placements\n\nDTU has been ranked among top institutes in India in terms of pl"
+      },
+      {
+        "rank": 4,
+        "score": 0.692,
+        "title": "BTech 2021 ordinance",
+        "section": "The demand for University’s graduates has always been very h",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2021 ordinance > The demand for University’s graduates has always been very high and in the recent years it has increased\n\nexponentially. Large "
+      },
+      {
+        "rank": 5,
+        "score": 0.691,
+        "title": "BTech 2022 ordinance",
+        "section": "The demand for University’s graduates has always been very h",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2022 ordinance > The demand for University’s graduates has always been very high and in the recent years it has increased\n\nexponentially. Large "
+      }
+    ],
+    "answer": "DTU has been visited by a variety of reputed companies for placements. Some of the top recruiters include:\n\n- Google\n- Amazon\n- Microsoft\n- Uber\n- Sprinklr\n- Uniqlo\n- Goldman Sachs\n- Qualcomm\n- Texas Instruments\n- Synopsys\n- SanDisk\n- Nvidia\n- Maruti\n- Samsung\n- Bain\n- KPMG\n- McKinsey\n- PWC\n- GAIL\n- BEL\n- C-Dot\n\nThese companies not only make job offers to final year students but also offer paid internships to third year students, enhancing the industry interface and preparing students for technological challenges (Source: BTech_2025_ordinance > Placements)."
+  },
+  {
+    "id": "plc-02",
+    "question": "What was the average CTC for DTU B.Tech 2024-25 batch?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.75442517,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.754,
+        "title": "TNP Placement Stats 2023-24",
+        "section": "TNP Placement Stats 2023-24",
+        "url": "https://tnp.dtu.ac.in/docs/stats/2324.pdf",
+        "correct": true,
+        "snippet": "TNP Placement Stats 2023-24\n\nB. Tech: No. of Offers, COE: 389, IT: 119, SE: 114, MCE: 126, ECE: 153, EE: 211, ME: 215, AE: 37, PE: 34, CE: 69, ENE: 44"
+      },
+      {
+        "rank": 2,
+        "score": 0.751,
+        "title": "TNP Placement Stats 2024-25",
+        "section": "TNP Placement Stats 2024-25",
+        "url": "https://tnp.dtu.ac.in/docs/stats/2425.pdf",
+        "correct": true,
+        "snippet": "TNP Placement Stats 2024-25\n\nB. Tech: No. of Offers, COE: 371, IT: 146, SE: 135, MCE: 107, ECE: 144, EE: 153, ME: 178, AE: 34, PE: 30, CE: 68, ENE: 23"
+      },
+      {
+        "rank": 3,
+        "score": 0.74,
+        "title": "TNP Placement Stats 2024-25",
+        "section": "TNP Placement Stats 2024-25",
+        "url": "https://tnp.dtu.ac.in/docs/stats/2425.pdf",
+        "correct": true,
+        "snippet": "TNP Placement Stats 2024-25\n\nM. Tech: No. of Offers, CSE: 20, SWE: 13, ISY: 17, DSC: 26, AFI: 23, PES: 9, C&I: 5, IEM: 5, STE: 17, BIO: 1, SPD: 7, VLS"
+      },
+      {
+        "rank": 4,
+        "score": 0.728,
+        "title": "TNP Placement Stats 2023-24",
+        "section": "TNP Placement Stats 2023-24",
+        "url": "https://tnp.dtu.ac.in/docs/stats/2324.pdf",
+        "correct": true,
+        "snippet": "TNP Placement Stats 2023-24\n\nM. Tech: No. of Offers, CSE: 19, SWE: 22, ISY: 16, DSC: 15, AFI: 22, PES: 9, C&I: 5, IEM: 4, STE: 9, ENE: 0, BIO: 1, SPD:"
+      },
+      {
+        "rank": 5,
+        "score": 0.654,
+        "title": "BTech 2020 ordinance",
+        "section": "University. The placement trend has shown that the students ",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2020 ordinance > University. The placement trend has shown that the students of the department have been successful\n\nin getting lucrative jobs b"
+      }
+    ],
+    "answer": "The average CTC for the B.Tech 2024-25 batch at DTU was as follows:\n\n- COE: 19.85 Lakh\n- IT: 16.62 Lakh\n- SE: 18.46 Lakh\n- MCE: 15.22 Lakh\n- ECE: 15.82 Lakh\n- EE: 12.89 Lakh\n- ME: 9.58 Lakh\n- AE: 9.10 Lakh\n- PE: 9.65 Lakh\n- CE: 9.20 Lakh\n- ENE: 10.96 Lakh\n- CH: 9.97 Lakh\n- BT: 11 Lakh\n- EP: 11.44 Lakh\n\n(Source: TNP Placement Stats 2024-25)"
+  },
+  {
+    "id": "plc-03",
+    "question": "What are the placement rules for students at DTU?",
+    "answerable": true,
+    "first_correct_rank": 5,
+    "top_score": 0.7357397,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.736,
+        "title": "BTech_2018_ordinance",
+        "section": "Department",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech_2018_ordinance > Department\n\nFrom the very beginning, Delhi Technological University (Formerly Delhi College of Engineering) has laid greater em"
+      },
+      {
+        "rank": 2,
+        "score": 0.712,
+        "title": "BTech 2021 ordinance",
+        "section": "PG programs of 2 Year duration",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2021 ordinance > PG programs of 2 Year duration\n\n(iii) No Disciplinary Action initiated OR should not be within the Disciplinary Action period. "
+      },
+      {
+        "rank": 3,
+        "score": 0.707,
+        "title": "BTech 2022 ordinance",
+        "section": "PG programs of 2 Year duration",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2022 ordinance > PG programs of 2 Year duration\n\n(iii) No Disciplinary Action initiated OR should not be within the Disciplinary Action period. "
+      },
+      {
+        "rank": 4,
+        "score": 0.699,
+        "title": "BTech 2020 ordinance",
+        "section": "Year duration",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2020 ordinance > Year duration\n\nCGPA ≥ 7.0 (At the time of application) without any backlog No Disciplinary Action initiated OR should not be wi"
+      },
+      {
+        "rank": 5,
+        "score": 0.695,
+        "title": "TNP Placement Policy",
+        "section": "Placement Policy 2025-26",
+        "url": "https://tnp.dtu.ac.in/docs/policy.pdf",
+        "correct": true,
+        "snippet": "TNP Placement Policy > Placement Policy 2025-26\n\nSubject: Approval of Placement Policy/SOP/Rules for 2025-26 passing out batch. 1. Unplaced Students: "
+      }
+    ],
+    "answer": "The placement rules for students at DTU, as outlined in the Placement Policy for the 2025-26 passing out batch, are as follows:\n\n1. **Unplaced Students**: Students who have not received any job offer may apply to any visiting company, provided they meet the company's eligibility criteria.\n\n2. **Second Job Eligibility**: A student placed with a package of 'X' LPA CTC may apply for a second placement only with companies offering at least '1.5X' LPA CTC (or as decided by the T&P department). This is permitted only after 80% of the batch is placed. Students placed in 'Exclusive' companies or PSUs are not allowed to seek a second job. The 'Exclusive' status is determined by the T&P department based on factors such as brand value, CTC, and number of offers. The '1.5X' and '80%' rules may be relaxed only in exceptional cases, as decided by the T&P department.\n\n3. **Pre-Placement Offers (PPO)**:\n   - **Reporting PPOs**: If a student receives a PPO, they must report it to the T&P department within 24 hours of receipt via email at placements@dtu.ac.in.\n   - **Acceptance of PPOs**: Acceptance of a PPO deems the student as placed and hence not allowed for further on-campus opportunities. If a PPO is offered by the company, the student must accept the offer. In exceptional cases, with valid justification and approval from the Head (T&P), a student may decline a PPO and apply for further placement opportunities. In such cases, a written undertaking is required stating that the student will only apply to companies offering a CTC of at least 1.5X (or as per the HOD's direction) of the PPO CTC.\n\nThese rules are designed to ensure a fair and structured placement process for all students at DTU. (Source: Placement Policy 2025-26)"
+  },
+  {
+    "id": "exam-01",
+    "question": "What happens if I miss my end term exam due to a medical emergency?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.73600864,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.736,
+        "title": "BTech_2018_ordinance",
+        "section": "Make-up Examinations on Medical / Extra Ordinary Ground:",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2018_ordinance > Make-up Examinations on Medical / Extra Ordinary Ground:\n\nStudents who have missed the Mid-Term Examinations and/or End-Term Ex"
+      },
+      {
+        "rank": 2,
+        "score": 0.736,
+        "title": "BTech 2021 ordinance",
+        "section": "R. 1(B).23 Make-up Examinations on Medical / Extra Ordinary ",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2021 ordinance > R. 1(B).23 Make-up Examinations on Medical / Extra Ordinary Ground:\n\nStudents who have missed the Mid-Term Examinations and/or "
+      },
+      {
+        "rank": 3,
+        "score": 0.733,
+        "title": "BTech 2022 ordinance",
+        "section": "R. 1(B).23 Make-up Examinations on Medical / Extra Ordinary ",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2022 ordinance > R. 1(B).23 Make-up Examinations on Medical / Extra Ordinary Ground:\n\nStudents who have missed the Mid-Term Examinations and/or "
+      },
+      {
+        "rank": 4,
+        "score": 0.722,
+        "title": "BTech 2019 ordinance",
+        "section": "Students who have missed the Mid-Term Examinations and/or En",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2019 ordinance > Students who have missed the Mid-Term Examinations and/or End-Term Examinations\n\nof a course(s) due to medical reasons or other"
+      },
+      {
+        "rank": 5,
+        "score": 0.718,
+        "title": "BTech 2020 ordinance",
+        "section": "Students who have missed the Mid-Term Examinations and/or En",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2020 ordinance > Students who have missed the Mid-Term Examinations and/or End-Term Examinations\n\nof a course(s) due to medical reasons or other"
+      }
+    ],
+    "answer": "If you miss your End-Term Examination due to a medical emergency, you may be considered for a Make-up Examination based on the clear recommendations of the Head of Department (HOD), considering the merit of your case. However, Make-up Examinations for End-Terms will only be allowed if you have not been disqualified earlier due to a shortage of attendance. \n\nYou must make an application to the HOD within ten working days from the date of the examination missed, explaining the reasons for your absence. Applications received after this period will not be entertained. The HOD will then forward all applications with their recommendations to the Controller of Examinations (COE), who will seek approval from the Dean (UG) or Dean (PG). Please note that there will be no make-up for the Make-up Examinations. \n\nThis information is based on the BTech ordinances from various years (BTech 2018, 2019, 2020, 2021, 2022)."
+  },
+  {
+    "id": "exam-02",
+    "question": "What is the penalty for using unfair means in DTU exams?",
+    "answerable": true,
+    "first_correct_rank": 1,
+    "top_score": 0.730464,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.73,
+        "title": "BTech_2025_ordinance",
+        "section": "Annexure - IV",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > Annexure - IV\n\nInstruction for Penalty for Use of Unfair Means 1. The main instruction for the conduct of a student in the exam"
+      },
+      {
+        "rank": 2,
+        "score": 0.727,
+        "title": "BTech 2019 ordinance",
+        "section": "Instruction for Penalty for Use of Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2019 ordinance > Instruction for Penalty for Use of Unfair Means\n\nCATEGORY: I, NATURE OF ACT: • Found talking to another student during the\nexam"
+      },
+      {
+        "rank": 3,
+        "score": 0.724,
+        "title": "BTech 2019 ordinance",
+        "section": "Instruction for Penalty for Use of Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2019_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2019 ordinance > Instruction for Penalty for Use of Unfair Means\n\n1. The main instruction for the conduct of a student in the examination hall s"
+      },
+      {
+        "rank": 4,
+        "score": 0.724,
+        "title": "B.Tech Ordinance 2017 18",
+        "section": "Instruction for Penalty for Use of Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/B.Tech_Ordinance_2017-18.pdf",
+        "correct": true,
+        "snippet": "B.Tech Ordinance 2017 18 > Instruction for Penalty for Use of Unfair Means\n\n1. The main instruction for the conduct of a student in the examination ha"
+      },
+      {
+        "rank": 5,
+        "score": 0.715,
+        "title": "BTech 2020 ordinance",
+        "section": "R. 1(B).21 Unfair Means",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2020 ordinance > R. 1(B).21 Unfair Means\n\nIn case a student is found adopting or suspected of adopting unfair means before, during or after the "
+      }
+    ],
+    "answer": "The penalty for using unfair means in DTU exams varies based on the nature of the offense. Here are some key points regarding the penalties:\n\n1. **General Conduct**: Any contravention of the instructions printed on the cover page of the answer sheets will render the student liable for punishment. If a student is suspected of using unfair means, their answer-book will be seized, and they will be required to complete a prescribed form.\n\n2. **Specific Offenses**: For example, if a student is found talking to another student during the examination, they may receive a warning with an undertaking that they will not repeat such an act during their program (as per the BTech 2019 ordinance).\n\n3. **Scrutiny Committee**: All cases of unfair means will be forwarded to the Unfair Means Scrutiny Committee, which will inquire into them and submit recommendations to the Vice-Chancellor for consideration and necessary orders.\n\n4. **General Guidelines**: The university may take necessary and adequate penal action to uphold the integrity of the examination system, which may include various penalties depending on the severity of the offense.\n\nFor detailed information, you can refer to the specific ordinances available on the DTU website."
+  },
+  {
+    "id": "una-01",
+    "question": "What is the WiFi password for the DTU library?",
+    "answerable": false,
+    "first_correct_rank": 1,
+    "top_score": 0.42382565,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.424,
+        "title": "BTech_2023_ordinance",
+        "section": "Electronics",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2023_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2023_ordinance > Electronics\n\n& Communication Engineering 38 Environmental Engineering 39 Information Technology 40 Mechanical Engineering 4 Mec"
+      },
+      {
+        "rank": 2,
+        "score": 0.421,
+        "title": "JAC Delhi Admission Brochure 2026",
+        "section": "6. IRIS National Science Fair",
+        "url": "https://jacdelhi.admissions.nic.in/uploads/2026/JAC_Delhi_Admission_Brochure_2026.pdf",
+        "correct": true,
+        "snippet": "JAC Delhi Admission Brochure 2026 > 6. IRIS National Science Fair\n\nDelhi Technological University library building is a four-storied, esthetically des"
+      },
+      {
+        "rank": 3,
+        "score": 0.416,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Electronics",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Electronics\n\n& Communication Engineering 49 Engineering Physics 51 Informati"
+      },
+      {
+        "rank": 4,
+        "score": 0.415,
+        "title": "BTech_2018_ordinance",
+        "section": "B.Tech & MBA",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2018_ordinance > B.Tech & MBA\n\nThe students taking admission in DTU may apply for fresh hostel allotment online vide hostel website- hostels.dtu"
+      },
+      {
+        "rank": 5,
+        "score": 0.41,
+        "title": "file1214",
+        "section": "Dean Academic (UG)",
+        "url": "http://dtu.ac.in/Web/notice/2024/dec/file1214.pdf",
+        "correct": true,
+        "snippet": "file1214 > Dean Academic (UG)\n\nF. No. 105 (1080) DTU/Acad-UG/NSP/2024-25/ I GROLZ0O-2BH"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more information on the DTU website: https://dtu.ac.in.",
+    "guard_refused": true
+  },
+  {
+    "id": "una-02",
+    "question": "Does DTU have a student exchange program with MIT?",
+    "answerable": false,
+    "first_correct_rank": 1,
+    "top_score": 0.62710476,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.627,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Fo",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Fo\n\naes es * Refer scheme of teaching and examinations of M.Tech Program. 12"
+      },
+      {
+        "rank": 2,
+        "score": 0.626,
+        "title": "BTech_2025_ordinance",
+        "section": "Annexure-I",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > Annexure-I\n\nGuidelines for semester away program for course work/project work involving mobility ofDTU students (UG/PG/PhD). Pr"
+      },
+      {
+        "rank": 3,
+        "score": 0.622,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Annexure -1",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": true,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Annexure -1\n\nGuidelines for semester away program for course work/project wo"
+      },
+      {
+        "rank": 4,
+        "score": 0.618,
+        "title": "BTech 2021 ordinance",
+        "section": "PG programs of 2 Year duration",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2021 ordinance > PG programs of 2 Year duration\n\n(iii) No Disciplinary Action initiated OR should not be within the Disciplinary Action period. "
+      },
+      {
+        "rank": 5,
+        "score": 0.616,
+        "title": "BTech_2023_ordinance",
+        "section": "Annexure -1",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2023_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2023_ordinance > Annexure -1\n\nGuidelines for semester away program for course work/project work involving mobility of DTU 21"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more details on student exchange programs at DTU on their official website: https://dtu.ac.in.",
+    "guard_refused": true
+  },
+  {
+    "id": "una-03",
+    "question": "What is the canteen menu on Tuesdays?",
+    "answerable": false,
+    "first_correct_rank": 1,
+    "top_score": 0.26200494,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.262,
+        "title": "file1214",
+        "section": "4. Chief Warden: With the request to arrange display on Host",
+        "url": "http://dtu.ac.in/Web/notice/2024/dec/file1214.pdf",
+        "correct": true,
+        "snippet": "file1214 > 4. Chief Warden: With the request to arrange display on Hostels’\n\nnotice boards. S. COO & Head CC: With the request to upload on DTU main w"
+      },
+      {
+        "rank": 2,
+        "score": 0.256,
+        "title": "DTU Hostel Management Department",
+        "section": "Girls' Hostels",
+        "url": "https://hostels.dtu.ac.in/",
+        "correct": true,
+        "snippet": "DTU Hostel Management Department > Hostels — Delhi Technological University > Girls' Hostels\n\n1. Sister Nivediata Hostel\n2. Kalpana Chawla Hostel\n3. V"
+      },
+      {
+        "rank": 3,
+        "score": 0.238,
+        "title": "BTech_2025_ordinance",
+        "section": "TABLE OF CONTENTS",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2025_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2025_ordinance > TABLE OF CONTENTS\n\nTech. Project 153 ¢ Fee Structure 2025-26 156 * Academic Calendar 2025-26 171 * Fee concession for Students "
+      },
+      {
+        "rank": 4,
+        "score": 0.229,
+        "title": "BTech 2020 ordinance",
+        "section": "Total (B) :- 15300/- 15900/-",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2020_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech 2020 ordinance > Total (B) :- 15300/- 15900/-\n\nOn special occasions, if a student wants to stay in a hostel with some other students not exceedi"
+      },
+      {
+        "rank": 5,
+        "score": 0.229,
+        "title": "BTech_2018_ordinance",
+        "section": "ATT. 6/6",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2018_ordinance.pdf",
+        "correct": true,
+        "snippet": "BTech_2018_ordinance > ATT. 6/6\n\nLIST OF STUDENTS HAVING SHORTAGE OF ATTENDANCE (<75%) ACAdEMIC YEA... ee eee eeeeeeeeeeeeeeeeeeeneeeeeeeeeeneeeeeeeee"
+      }
+    ],
+    "answer": "I could not find this information in the available DTU documents. \n\nYou can look for more details on the DTU website: https://dtu.ac.in.",
+    "guard_refused": true
+  }
+]

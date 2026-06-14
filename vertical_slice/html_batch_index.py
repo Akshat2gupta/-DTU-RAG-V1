@@ -53,8 +53,26 @@ EMBED_MODEL     = "text-embedding-3-small"
 EMBED_BATCH     = 100
 
 HTML_CATEGORIES = {
-    "dept_about", "dept_faculty", "hostel_html", "saarthi_html",
-    "exam_html", "ordinance_html", "notice_html", "scholarship_html",
+    # Academics UG
+    "ordinance_html", "notice_html", "scholarship_html",
+    "academics_php", "programme_html",
+    # Academics PG
+    "pg_academics_php",
+    # Departments
+    "dept_about", "dept_faculty", "dept_scheme", "dept_subpage",
+    "faculty_profile",
+    # About & administration
+    "about_php", "admin_php",
+    # R&D and institutional bodies
+    "rnd_html", "nceet_html", "icc_html", "enggcell_html", "vigilance_html",
+    # Governance
+    "governance_php", "nirf_html",
+    # Admissions
+    "admissions_html", "saarthi_html",
+    # Subdomains
+    "exam_html", "hostel_html", "tnp_html", "library_html",
+    # Student welfare & community
+    "dsw_html", "community_html",
 }
 
 
@@ -118,6 +136,7 @@ def _process_one(row: dict, oai: OpenAI, qdrant: QdrantClient) -> int:
                 "token_count":     int(c.get("token_count") or 0),
                 "page_number":     int(c.get("page_number") or 0),
                 "batch_year":      int(c.get("batch_year") or 0),
+                "chunk_index":     int(c.get("chunk_index") or 0),
             },
         )
         for c, vec in zip(chunks, vectors)
@@ -180,6 +199,12 @@ def main(force: bool = False, qdrant_host: str = "localhost", qdrant_port: int =
                     db._conn.commit()
         except Exception as exc:
             print(f"  ERROR: {exc}")
+            with ManifestDB(MANIFEST_DB) as db:
+                db._conn.execute(
+                    "UPDATE documents SET index_status=?, index_notes=? WHERE url=?",
+                    ("failed", str(exc)[:500], row["url"]),
+                )
+                db._conn.commit()
 
     after = qdrant.get_collection(COLLECTION_NAME).points_count
     print(

@@ -1,0 +1,278 @@
+{
+  "description": "DTU RAG retrieval eval set v2. Each item: a realistic student question, keywords that must appear in a correct retrieved chunk, and a source_url fragment. answerable=false items test the hallucination guard.",
+  "items": [
+    {
+      "id": "att-01",
+      "category": "attendance",
+      "question": "What is the minimum attendance required to sit in the end sem exam?",
+      "answerable": true,
+      "expect_keywords_any": ["75%", "75 %", "minimum attendance"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "att-02",
+      "category": "attendance",
+      "question": "I was sick and missed a lot of classes, can I still give my exams?",
+      "answerable": true,
+      "expect_keywords_any": ["medical", "attendance"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "grade-01",
+      "category": "grading",
+      "question": "How is SGPA calculated at DTU?",
+      "answerable": true,
+      "expect_keywords_any": ["SGPA", "Semester Grade Point Average"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "grade-02",
+      "category": "grading",
+      "question": "What marks do I need for an O grade?",
+      "answerable": true,
+      "expect_keywords_any": ["Outstanding", "O grade", "grade O", "O\n"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "grade-03",
+      "category": "grading",
+      "question": "What happens if I get an F in a subject?",
+      "answerable": true,
+      "expect_keywords_any": ["F grade", "'F' grade", "fail", "detained"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "grade-04",
+      "category": "grading",
+      "question": "Can I improve my grade after passing a course?",
+      "answerable": false,
+      "note": "DTU ordinances only allow repeating after an F grade; no betterment-after-passing provision exists in the corpus. Tests the guard on a near-miss topic."
+    },
+    {
+      "id": "grade-05",
+      "category": "grading",
+      "question": "What is an I grade and when is it given?",
+      "answerable": true,
+      "expect_keywords_any": ["'I' grade", "I grade", "incomplete", "Incomplete"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "prog-01",
+      "category": "progression",
+      "question": "What is the maximum time allowed to finish the B.Tech degree?",
+      "answerable": true,
+      "expect_keywords_any": ["maximum duration", "maximum period", "7 years", "seven"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "prog-02",
+      "category": "progression",
+      "question": "How many credits do I need to be promoted to the next year?",
+      "answerable": true,
+      "expect_keywords_any": ["promotion", "promoted", "credits"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "prog-03",
+      "category": "progression",
+      "question": "Can I take a semester break for health reasons?",
+      "answerable": true,
+      "expect_keywords_any": ["withdrawal", "withdraw", "health"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "prog-04",
+      "category": "progression",
+      "question": "Is there a summer semester to clear backlogs?",
+      "answerable": true,
+      "expect_keywords_any": ["summer semester", "summer term", "back paper"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "minor-01",
+      "category": "academics",
+      "question": "How do I get a minor degree along with my B.Tech?",
+      "answerable": true,
+      "expect_keywords_any": ["minor", "Minor"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "cred-01",
+      "category": "academics",
+      "question": "How many total credits are required for the B.Tech program?",
+      "answerable": true,
+      "expect_keywords_any": ["credits", "credit requirement", "Minimum Credits"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "host-01",
+      "category": "hostel",
+      "question": "How many hostels are there in DTU and what are their names?",
+      "answerable": true,
+      "expect_keywords_any": ["hostel", "Hostel"],
+      "expect_source_contains": "hostel"
+    },
+    {
+      "id": "host-02",
+      "category": "hostel",
+      "question": "Which hostels have mess facilities?",
+      "answerable": true,
+      "expect_keywords_any": ["mess", "Mess", "dining"],
+      "expect_source_contains": "hostel"
+    },
+    {
+      "id": "fac-01",
+      "category": "faculty",
+      "question": "Who teaches machine learning in the CSE department?",
+      "answerable": true,
+      "expect_keywords_any": ["Machine Learning"],
+      "expect_source_contains": "CSE/faculty"
+    },
+    {
+      "id": "fac-02",
+      "category": "faculty",
+      "question": "What is the email of Prof. Anil Singh Parihar?",
+      "answerable": true,
+      "expect_keywords_any": ["Parihar", "anil@dtu"],
+      "expect_source_contains": "faculty"
+    },
+    {
+      "id": "fac-03",
+      "category": "faculty",
+      "question": "Which professors in Electronics work on VLSI?",
+      "answerable": true,
+      "expect_keywords_any": ["VLSI"],
+      "expect_source_contains": "Electronics/faculty"
+    },
+    {
+      "id": "fac-04",
+      "category": "faculty",
+      "question": "Who is the head of the Civil Engineering department?",
+      "answerable": true,
+      "expect_keywords_any": ["Head Of Department", "Head of Department"],
+      "expect_source_contains": "Civil"
+    },
+    {
+      "id": "fac-05",
+      "category": "faculty",
+      "question": "List faculty in Applied Chemistry department",
+      "answerable": true,
+      "expect_keywords_any": ["Chemistry", "Inorganic", "Organic"],
+      "expect_source_contains": "AppliedChemistry"
+    },
+    {
+      "id": "fac-06",
+      "category": "faculty",
+      "question": "Who teaches computer vision or image processing at DTU?",
+      "answerable": true,
+      "expect_keywords_any": ["Computer Vision", "Image Processing"],
+      "expect_source_contains": "faculty"
+    },
+    {
+      "id": "dept-01",
+      "category": "department",
+      "question": "Tell me about the Electrical Engineering department at DTU.",
+      "answerable": true,
+      "expect_keywords_any": ["Electrical Engineering"],
+      "expect_source_contains": "Electrical"
+    },
+    {
+      "id": "dept-02",
+      "category": "department",
+      "question": "What research areas does the CSE department focus on?",
+      "answerable": true,
+      "expect_keywords_any": ["Computer Science", "research"],
+      "expect_source_contains": "CSE"
+    },
+    {
+      "id": "schol-01",
+      "category": "scholarship",
+      "question": "What scholarships are available for B.Tech students at DTU?",
+      "answerable": true,
+      "expect_keywords_any": ["scholarship", "Scholarship"],
+      "expect_source_contains": "scholarship"
+    },
+    {
+      "id": "adm-01",
+      "category": "admissions",
+      "question": "How are B.Tech admissions done at DTU, is it through JEE?",
+      "answerable": true,
+      "expect_keywords_any": ["JEE", "JAC"],
+      "expect_source_contains": ""
+    },
+    {
+      "id": "adm-02",
+      "category": "admissions",
+      "question": "What is the counselling schedule for JAC Delhi 2026?",
+      "answerable": true,
+      "expect_keywords_any": ["counselling", "Counselling", "JAC"],
+      "expect_source_contains": ""
+    },
+    {
+      "id": "adm-03",
+      "category": "admissions",
+      "question": "What is the last date to register for JAC Delhi 2026 admission?",
+      "answerable": true,
+      "expect_keywords_any": ["June", "registration", "2026"],
+      "expect_source_contains": ""
+    },
+    {
+      "id": "plc-01",
+      "category": "placement",
+      "question": "Which companies come to DTU for placements?",
+      "answerable": true,
+      "expect_keywords_any": ["Google", "Amazon", "Microsoft", "Goldman Sachs", "top recruiters"],
+      "expect_source_contains": ""
+    },
+    {
+      "id": "plc-02",
+      "category": "placement",
+      "question": "What was the average CTC for DTU B.Tech 2024-25 batch?",
+      "answerable": true,
+      "expect_keywords_any": ["CTC", "Average", "average", "LPA", "2024", "2425"],
+      "expect_source_contains": "tnp"
+    },
+    {
+      "id": "plc-03",
+      "category": "placement",
+      "question": "What are the placement rules for students at DTU?",
+      "answerable": true,
+      "expect_keywords_any": ["placement", "policy", "rules", "Policy"],
+      "expect_source_contains": "tnp"
+    },
+    {
+      "id": "exam-01",
+      "category": "exams",
+      "question": "What happens if I miss my end term exam due to a medical emergency?",
+      "answerable": true,
+      "expect_keywords_any": ["I grade", "'I' grade", "medical", "incomplete"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "exam-02",
+      "category": "exams",
+      "question": "What is the penalty for using unfair means in DTU exams?",
+      "answerable": true,
+      "expect_keywords_any": ["unfair means", "penalty", "malpractice"],
+      "expect_source_contains": "ordinance"
+    },
+    {
+      "id": "una-01",
+      "category": "unanswerable",
+      "question": "What is the WiFi password for the DTU library?",
+      "answerable": false
+    },
+    {
+      "id": "una-02",
+      "category": "unanswerable",
+      "question": "Does DTU have a student exchange program with MIT?",
+      "answerable": false
+    },
+    {
+      "id": "una-03",
+      "category": "unanswerable",
+      "question": "What is the canteen menu on Tuesdays?",
+      "answerable": false
+    }
+  ]
+}

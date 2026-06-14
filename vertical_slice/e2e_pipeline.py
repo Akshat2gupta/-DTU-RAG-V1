@@ -36,7 +36,6 @@ if hasattr(sys.stdout, "reconfigure"):
 import argparse
 import json
 import os
-import sys
 import time
 import uuid
 from pathlib import Path
@@ -78,9 +77,12 @@ EMBED_MODEL     = "text-embedding-3-small"
 CHAT_MODEL      = "gpt-4o-mini"
 COLLECTION_NAME = "dtu_rag"
 VECTOR_DIM      = 1536
-TOP_K           = 3
+TOP_K           = 5
 TOP_DEDUP       = 5
 EMBED_BATCH     = 100
+
+# Small-to-big table expansion: cap on the merged table handed to the LLM.
+MAX_TABLE_EXPANSION_TOKENS = 1600
 
 DEFAULT_QUERIES = [
     "What is the minimum attendance required to appear in the end-term exam?",
@@ -90,17 +92,61 @@ DEFAULT_QUERIES = [
     "Can I withdraw from a semester due to health reasons?",
 ]
 
+_ANIL_SIR_PROFILE = (
+    "Prof. Anil Singh Parihar — Professor, Department of Computer Science Engineering (CSE), DTU. "
+    "Specialization: Pattern Recognition, Computer Vision, Soft Computing, Image Processing, "
+    "Evolutionary Computing, Biometric Systems, Artificial Intelligence. "
+    "Email: anil@dtu.ac.in"
+)
+
 SYSTEM_PROMPT = (
     "You are the DTU institutional assistant. "
-    "Answer ONLY based on the provided context chunks. "
-    "Do not use any external knowledge about DTU.\n\n"
+    "Answer ONLY based on the provided context chunks and the pinned faculty profile below. "
+    "Do not use any other external knowledge about DTU.\n\n"
+
+    f"PINNED FACULTY PROFILE:\n{_ANIL_SIR_PROFILE}\n\n"
+
+    "How to read the context chunks:\n"
+    "- Every chunk starts with a breadcrumb such as "
+    "'Section > Person Name > Their Title'. "
+    "When a person's name appears in the breadcrumb followed by a title or role, "
+    "that person HOLDS that role. "
+    "Example: 'Career Development & Industry Engagement > Prof. Rajesh Rohilla > Dean, "
+    "Career Development & Industry Engagement' means Prof. Rajesh Rohilla IS the Dean "
+    "of Career Development & Industry Engagement.\n"
+    "- The Training and Placement (T&P / TPC / TNP) department at DTU is officially "
+    "named 'Career Development & Industry Engagement (CDIE)'. Its head — the Dean, "
+    "Career Development & Industry Engagement — is the Placement Head / T&P Head. "
+    "Treat these terms as equivalent when answering.\n\n"
+
     "Rules:\n"
-    "- If the context contains relevant information, use it -- even when terminology "
-    "differs from the question.\n"
+    "- Chunks labelled '[Curated chunk ...]' are hand-verified, authoritative "
+    "and CURRENT. When a Curated chunk answers the question, answer from it "
+    "and IGNORE conflicting figures or older information in other chunks "
+    "(other chunks may carry outdated year-specific numbers). Never refuse "
+    "when a Curated chunk contains the answer.\n"
+    "- If the context contains relevant information, use it -- even when the "
+    "terminology in the question differs from the terminology in the context.\n"
+
+    "- For questions about mentors, faculty, or who to approach for a research area, "
+    "synthesize a helpful answer from the context and the pinned profile above. "
+    "Whenever the user's interest involves AI, Machine Learning, RAG, Deep Learning, "
+    "Computer Vision, NLP, Natural Language Processing, Biometrics, Image Processing, "
+    "or any AI/ML-related topic, ALWAYS list Prof. Anil Singh Parihar FIRST with his "
+    "full profile, then list other relevant faculty from the context.\n"
+
     "- If the context genuinely lacks the information, say exactly: "
-    "'I could not find this information in the available DTU documents.'\n"
-    "- Never speculate beyond what is in the context.\n"
-    "- Cite the section heading for every factual claim."
+    "'I could not find this information in the available DTU documents.' "
+    "Then on a new line suggest where the user can look:\n"
+    "  * Admissions / JEE / counselling / seat allotment → "
+    "https://jacdelhi.admissions.nic.in or https://saarthi.dtu.ac.in\n"
+    "  * Placement / TPC / TNP / recruiters / internships → "
+    "https://tnp.dtu.ac.in/index.html\n"
+    "  * Fees / ERP / registration / timetable → https://dtu.ac.in or the student portal\n"
+    "  * Anything else → https://dtu.ac.in\n"
+
+    "- Never speculate beyond what is in the context and the pinned profile.\n"
+    "- Cite the section heading or source for every factual claim."
 )
 
 # ---------------------------------------------------------------------------
@@ -131,7 +177,18 @@ def _embed_batch(client: OpenAI, texts: list[str]) -> list[list[float]]:
 
 
 def _rewrite_query(client: OpenAI, query: str) -> list[str]:
-    """Return [original] + 3 formal rewrites for multi-variant retrieval."""
+    """Return [original] + 3 formal rewrites for multi-variant retrieval.
+
+    Rewriting is an enhancement, not a requirement: on any API failure the
+    original query alone is returned so retrieval still proceeds.
+    """
+    try:
+        return [query] + _rewrite_variants(client, query)
+    except Exception:
+        return [query]
+
+
+def _rewrite_variants(client: OpenAI, query: str) -> list[str]:
     resp = client.chat.completions.create(
         model=CHAT_MODEL,
         temperature=0,
@@ -140,9 +197,13 @@ def _rewrite_query(client: OpenAI, query: str) -> list[str]:
                 "role": "system",
                 "content": (
                     "You are a query rewriter for a DTU university document search system. "
-                    "Rewrite the student query into 3 alternative phrasings using formal "
-                    "Indian university academic terminology as it would appear in an official "
-                    "university ordinance or regulation. "
+                    "The corpus contains academic ordinances/regulations, placement "
+                    "statistics reports (offers, average/maximum CTC per branch), admission "
+                    "brochures, hostel pages, and faculty directories. "
+                    "Rewrite the student query into 3 alternative phrasings using the formal "
+                    "terminology of whichever document type would answer it — e.g. ordinance "
+                    "language for rules, 'placement statistics / number of offers / average "
+                    "CTC in lakh' for placement questions, brochure language for admissions. "
                     "Return ONLY a JSON array of 3 strings. No explanation. No markdown."
                 ),
             },
@@ -151,9 +212,79 @@ def _rewrite_query(client: OpenAI, query: str) -> list[str]:
     )
     try:
         rewrites = json.loads(resp.choices[0].message.content)
+        if not isinstance(rewrites, list):
+            rewrites = []
     except (json.JSONDecodeError, AttributeError):
         rewrites = []
-    return [query] + rewrites
+    return rewrites
+
+
+def _expand_table_chunks(qdrant: QdrantClient, top: list[dict]) -> list[dict]:
+    """Small-to-big retrieval for tables.
+
+    A long table is split across several chunks at indexing time, so a stats
+    question that matches one slice ("Average CTC…") would otherwise reach the
+    LLM with a third of the table. For every retrieved table chunk, fetch all
+    sibling table chunks (same source_url + section_heading), merge them in
+    document order, and hand the LLM the full table. Other retrieved slices of
+    an already-expanded table are dropped to avoid duplicated context.
+    """
+    expanded: list[dict] = []
+    seen_groups: set[tuple[str, str]] = set()
+
+    for entry in top:
+        p = entry["payload"]
+        if p.get("block_type") != "table":
+            expanded.append(entry)
+            continue
+
+        group = (p.get("source_url") or "", p.get("section_heading") or "")
+        if group in seen_groups:
+            continue   # another slice of a table we already expanded
+        seen_groups.add(group)
+
+        siblings, _ = qdrant.scroll(
+            collection_name=COLLECTION_NAME,
+            scroll_filter=Filter(
+                must=[
+                    FieldCondition(key="source_url", match=MatchValue(value=group[0])),
+                    FieldCondition(key="section_heading", match=MatchValue(value=group[1])),
+                    FieldCondition(key="block_type", match=MatchValue(value="table")),
+                ]
+            ),
+            limit=64,
+            with_payload=True,
+        )
+        sib_payloads = sorted(
+            (s.payload for s in siblings),
+            key=lambda sp: (
+                sp.get("page_number") or 0,
+                sp.get("chunk_index") or 0,
+                sp.get("chunk_id") or "",
+            ),
+        )
+
+        merged: list[str] = []
+        merged_ids: set[str] = set()
+        total_tok = 0
+        for sp in sib_payloads:
+            cid = sp.get("chunk_id", "")
+            if cid in merged_ids:
+                continue
+            tok = int(sp.get("token_count") or 0)
+            if merged and total_tok + tok > MAX_TABLE_EXPANSION_TOKENS:
+                break
+            merged.append(sp["text"])
+            merged_ids.add(cid)
+            total_tok += tok
+
+        # The slice that actually matched the query must always survive the cap.
+        if p.get("chunk_id") not in merged_ids:
+            merged.append(p["text"])
+
+        expanded.append({**entry, "payload": {**p, "text": "\n\n".join(merged)}})
+
+    return expanded
 
 
 # ---------------------------------------------------------------------------
@@ -260,6 +391,7 @@ def stage_index(
                 "token_count":     int(c.get("token_count") or 0),
                 "page_number":     int(c.get("page_number") or 0),
                 "batch_year":      int(c.get("batch_year") or 0),
+                "chunk_index":     int(c.get("chunk_index") or 0),
             },
         )
         for c, vec in zip(chunks, vectors)
@@ -339,6 +471,7 @@ def stage_query(
                     best[cid] = {"payload": hit.payload, "score": score}
 
         top = sorted(best.values(), key=lambda x: x["score"], reverse=True)[:TOP_DEDUP]
+        top = _expand_table_chunks(qdrant, top)
 
         print("  Retrieved:")
         for i, chunk in enumerate(top, 1):

@@ -1,0 +1,63 @@
+TRULY ANSWERED (hit + real answer): 58
+REFUSED DESPITE RETRIEVAL HIT     : 30
+RETRIEVAL MISS                    : 19
+GUARD FAIL (hallucinated)         : 2
+
+=== REFUSED DESPITE HIT ===
+adm-g02     rank=2  How do I apply for admission to DTU?
+adm-g07     rank=1  What is the last date to apply for DTU 2026 admission?
+adm-g09     rank=1  What is the seat matrix for DTU 2026?
+adm-g11     rank=1  What documents are required for DTU admission counselling?
+adm-g12     rank=2  Can NRI students apply for admission at DTU?
+adm-g14     rank=1  What is the total number of B.Tech seats at DTU?
+acad-g05    rank=4  What are the PhD admission requirements at DTU?
+acad-g11    rank=1  Does DTU have an open elective system for B.Tech students?
+acad-g14    rank=1  How many subjects are in each semester at DTU?
+acad-g15    rank=2  Can I take a semester break for health reasons at DTU?
+grade-g09   rank=1  How is CGPA converted to percentage at DTU?
+grade-g10   rank=1  How are marks distributed between internal assessment and end semester exam at DTU?
+grade-g13   rank=1  How many credits are needed for year promotion at DTU?
+grade-g15   rank=1  What is the grade point for the P (pass) grade at DTU?
+exam-g10    rank=4  How much weightage does the end semester exam carry at DTU?
+exam-g13    rank=1  How many attempts are allowed to clear a backlog at DTU?
+exam-g14    rank=2  Is there a grace marks policy at DTU?
+fee-g03     rank=1  Is there a fee concession for SC/ST students at DTU?
+host-g07    rank=4  What are the visiting hours in DTU hostel?
+host-g08    rank=4  Are there single occupancy rooms in DTU hostel?
+host-g09    rank=3  What is the curfew time in DTU hostels?
+host-g11    rank=5  Is there 24-hour security in DTU hostels?
+fac-g02     rank=1  How do I contact the CSE department at DTU?
+fac-g03     rank=2  Who are the professors in the Electronics Engineering department at DTU?
+fac-g09     rank=1  List the faculty in the Applied Chemistry department at DTU.
+fac-g15     rank=1  Who teaches data structures and algorithms at DTU?
+campus-g08  rank=4  Does DTU have an auditorium for events?
+campus-g09  rank=5  What is the NIRF ranking of DTU?
+research-g02 rank=1  Does DTU have any international research collaborations?
+stulife-g01 rank=1  What clubs and societies are there at DTU?
+
+=== MISSES (refused=LLM also said no answer) ===
+adm-g05     refused=True  What are the eligibility criteria for B.Tech admission at DTU?
+acad-g02    refused=True  What is the syllabus for first year B.Tech at DTU?
+acad-g10    refused=True  What is an audit course at DTU?
+acad-g13    refused=True  Is there a summer semester to clear backlogs at DTU?
+grade-g12   refused=True  What is a W grade at DTU?
+exam-g02    refused=True  What is the passing criteria for a subject at DTU?
+exam-g03    refused=False  How do I apply for re-evaluation of my answer sheets at DTU?
+exam-g04    refused=True  What is the back paper policy at DTU?
+exam-g09    refused=True  What is the MST or mid-semester test at DTU?
+host-g02    refused=False  What is the hostel fee at DTU?
+host-g04    refused=False  What are the hostel rules and regulations at DTU?
+host-g10    refused=False  Can first-year students get hostel accommodation at DTU?
+host-g12    refused=True  What items are not allowed in DTU hostel rooms?
+plc-g04     refused=True  When does the placement season start at DTU?
+plc-g06     refused=True  What percentage of students get placed from DTU?
+plc-g10     refused=True  Can students with backlogs sit in DTU placements?
+fac-g14     refused=False  How can I find a research supervisor for PhD at DTU?
+research-g04 refused=True  Does DTU have a startup incubation center?
+stulife-g03 refused=True  Does DTU have an NSS or NCC chapter?
+
+=== GUARD FAILS ===
+host-g14    Are AC rooms available in DTU hostels?
+   ans: Yes, AC rooms are available in DTU hostels. Specifically, the Dr. APJ Abdul Kalam Hostel is mentioned as an AC hostel, and there are also AC blocks in the Virangana Lakshmibai Hostel.   (Source: Chunk
+stulife-g04 Are there student exchange programs at DTU?
+   ans: Yes, there are student exchange programs at DTU. Students have the option to do course work and/or project work for one semester at any university that is ranked in the top 500 by Times Higher Educati

@@ -18,6 +18,8 @@ import sys
 import time
 from pathlib import Path
 
+import fitz  # PyMuPDF — used for scanned-PDF detection
+
 # -- path bootstrap ----------------------------------------------------------
 _HERE      = Path(__file__).resolve().parent
 _REPO_ROOT = _HERE.parent
@@ -39,7 +41,6 @@ from e2e_pipeline import (
     VECTOR_DIM,
     _chunk_to_point_id,
     _embed_batch,
-    stage_index,
 )
 from ingestion.ir_chunker import chunk_document
 from ingestion.pdf_parser import parse_pdf
@@ -47,11 +48,31 @@ from qdrant_client.models import Distance, PointStruct, VectorParams
 
 MANIFEST_DB = _CHATBOT / "manifest" / "manifest.db"
 
+_SCANNED_THRESHOLD = 80  # chars per page below which a page is considered scanned
+
+
+def _is_mostly_scanned(file_path: Path) -> bool:
+    """True when fewer than half the pages have embedded text.
+    Scanned PDFs belong to ocr_worker.py, not this script."""
+    try:
+        with fitz.open(str(file_path)) as doc:
+            n = len(doc)
+            if n == 0:
+                return False
+            with_text = sum(
+                1 for page in doc
+                if len(page.get_text("text").strip()) >= _SCANNED_THRESHOLD
+            )
+        return with_text < 0.5 * n
+    except Exception:
+        return False
+
 
 def _derive_title(url: str, file_path: str) -> str:
-    """Best-effort title from filename."""
-    stem = Path(file_path).stem
-    return stem.replace("_", " ").replace("-", " ")
+    """Best-effort title from the URL filename (stable even when the local
+    file was saved under a de-duplicated name like *_2.pdf)."""
+    stem = Path(url.split("?")[0].rstrip("/")).stem or Path(file_path).stem
+    return stem.replace("_", " ").replace("-", " ").strip()
 
 
 def _process_pdf(
@@ -93,6 +114,7 @@ def _process_pdf(
                 "token_count":     int(c.get("token_count") or 0),
                 "page_number":     int(c.get("page_number") or 0),
                 "batch_year":      int(c.get("batch_year") or 0),
+                "chunk_index":     int(c.get("chunk_index") or 0),
             },
         )
         for c, vec in zip(chunks, vectors)
@@ -136,13 +158,23 @@ def main() -> None:
     # Fetch eligible rows from manifest
     with ManifestDB(MANIFEST_DB) as db:
         cur = db._conn.execute(
-            """SELECT * FROM documents
+            r"""SELECT * FROM documents
                WHERE download_status = 'done'
-                 AND category LIKE '%_pdf%'
+                 AND category LIKE '%\_pdf%' ESCAPE '\'
                  AND file_path IS NOT NULL
                ORDER BY id"""
         )
         all_rows = [dict(r) for r in cur.fetchall()]
+
+    # Curated overrides: hand-verified docs in data/curated/ replace these
+    # sources — machine-extracting them would re-add garbled chunks next to
+    # the clean curated ones. Applies even with --reindex-done.
+    from ingestion.curated_sources import curated_source_urls
+    curated = curated_source_urls()
+    for r in all_rows:
+        if r["url"] in curated:
+            print(f"SKIP (superseded by curated doc): {r['url']}")
+    all_rows = [r for r in all_rows if r["url"] not in curated]
 
     if not args.reindex_done:
         rows = [r for r in all_rows if r.get("index_status") != "done"]
@@ -172,6 +204,12 @@ def main() -> None:
             continue
 
         fname = resolved.name
+
+        # Scanned PDFs are ocr_worker.py's responsibility.
+        if _is_mostly_scanned(resolved):
+            print(f"[{i}/{len(rows)}] SKIP  (scanned — run ocr_worker.py): {fname}")
+            continue
+
         print(f"[{i}/{len(rows)}] Processing: {fname}", flush=True)
 
         row["file_path"] = str(resolved)   # pass absolute path to _process_pdf
@@ -180,15 +218,23 @@ def main() -> None:
             total_chunks += n_chunks
             print(f"         -> {n_chunks} chunks  {elapsed:.1f}s")
 
-            # Mark done in manifest
-            with ManifestDB(MANIFEST_DB) as db:
-                db.update_stage(row["url"], "chunk", "done")
-                db.update_stage(row["url"], "index", "done")
+            if n_chunks > 0:
+                with ManifestDB(MANIFEST_DB) as db:
+                    db.update_stage(row["url"], "chunk", "done")
+                    db.update_stage(row["url"], "index", "done")
+            else:
+                print(f"         -> WARNING: 0 chunks — not marking as done")
 
         except Exception as exc:
             print(f"         -> ERROR: {exc}")
             with ManifestDB(MANIFEST_DB) as db:
                 db.update_stage(row["url"], "index", "failed", notes=str(exc)[:500])
+
+    # Self-healing: indexing raw ordinances re-adds chunks that the curated
+    # docs superseded — retire them again automatically.
+    if total_chunks > 0:
+        from ingestion.chunk_retirement import retire_chunks
+        retire_chunks(qdrant, COLLECTION_NAME)
 
     elapsed_total = time.perf_counter() - t_total
     final_count   = qdrant.get_collection(COLLECTION_NAME).points_count

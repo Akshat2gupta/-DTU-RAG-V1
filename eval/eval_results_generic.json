@@ -1,0 +1,57 @@
+[
+  {
+    "id": "plc-g03",
+    "question": "What is the highest package offered at DTU?",
+    "answerable": true,
+    "first_correct_rank": null,
+    "top_score": 0.6979958,
+    "retrieved": [
+      {
+        "rank": 1,
+        "score": 0.698,
+        "title": "BTech 2022 ordinance",
+        "section": "The demand for University’s graduates has always been very h",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2022_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2022 ordinance > The demand for University’s graduates has always been very high and in the recent years it has increased\n\nexponentially. Large "
+      },
+      {
+        "rank": 2,
+        "score": 0.698,
+        "title": "BTech 2021 ordinance",
+        "section": "The demand for University’s graduates has always been very h",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2021_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech 2021 ordinance > The demand for University’s graduates has always been very high and in the recent years it has increased\n\nexponentially. Large "
+      },
+      {
+        "rank": 3,
+        "score": 0.664,
+        "title": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024",
+        "section": "Placements",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/Ordinance, Regulations &Scheme of teaching and examinations B Tech 2024.pdf",
+        "correct": false,
+        "snippet": "Ordinance__Regulations__Scheme_of_teaching_and_examinations_B_Tech_2024 > Placements\n\nDTU has been ranked among top institutes in India in terms of pl"
+      },
+      {
+        "rank": 4,
+        "score": 0.662,
+        "title": "DTU Placement Statistics — All Branches, All Years (curated)",
+        "section": "Information Technology department placement percentage 2019-",
+        "url": "https://dtu.ac.in/Web/Placement_data.pdf",
+        "correct": false,
+        "snippet": "DTU Placement Statistics — All Branches, All Years (curated) > Information Technology department placement percentage 2019-2025 (NAAC data)\n\n## Inform"
+      },
+      {
+        "rank": 5,
+        "score": 0.656,
+        "title": "BTech_2023_ordinance",
+        "section": "Placements",
+        "url": "https://dtu.ac.in/Web/Academics/ordinance/BTech_2023_ordinance.pdf",
+        "correct": false,
+        "snippet": "BTech_2023_ordinance > Placements\n\nDTU has been ranked among top institutes in India in terms of placement and higher studies as per NIRF data (2023) "
+      }
+    ],
+    "answer": "The highest international salary offered at DTU has reached 1.27 Cr L.P.A by UBER, while the highest domestic salary has reached 38 L.P.A by ADOBE. This information is sourced from the BTech 2022 ordinance (Chunk 1) and the BTech 2021 ordinance (Chunk 2)."
+  }
+]
