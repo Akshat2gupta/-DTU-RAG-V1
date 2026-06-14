@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Rules & Regulations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+         /* Header Styles */
+         .header {
+            background: linear-gradient(135deg, #3b82c4 0%, #2563aa 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3b82c4;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #3b82c4;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Navigation Styles */
+        .nav {
+            background: rgba(74, 144, 226, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 26px;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffffff, #e8f4fd);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-item:hover::before, .nav-item.active::before {
+            width: 100%;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .headerr {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .headerr h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .rule-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .rule-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .rule-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+
+        .rule-content {
+            display: inline-block;
+            width: calc(100% - 55px);
+            vertical-align: top;
+            padding-top: 5px;
+        }
+
+        .rule-content strong {
+            color: #667eea;
+        }
+
+        .important {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+
+        .strict {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                padding: 0 1rem;
+            }
+            
+            .logo {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.8rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .social-links a {
+                width: 35px;
+                height: 35px;
+            }
+            
+            /* Navigation */
+            .nav-content {
+                justify-content: center;
+            }
+            
+            .nav-item {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .rule-number {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 0.85em;
+            }
+
+            .rule-content {
+                width: calc(100% - 45px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Header */
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+            
+            .social-links a {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+            
+            /* Navigation */
+            .nav-item {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            .headerr h1{
+                font-size: 1.6rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="DTU Logo" width="70px">
+                <div class="logo-text">
+                    <h1>Hostel Office</h1>
+                    <p>DELHI TECHNOLOGICAL UNIVERSITY</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="fee.html" class="nav-item">Fee Structure</a>
+            <a href="index.html#hostels" class="nav-item">Boys Hostels</a>
+            <a href="index.html#hostels" class="nav-item">Girls Hostels</a>
+            <a href="complain.html" class="nav-item active">Rules & Regulations</a>
+            <a href="index.html#search-section" class="nav-item">Important Updates</a>
+            <a href="contact.html" class="nav-item">Contact Us</a>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="headerr">
+            <h1>🏠 Hostel Rules & Regulations</h1>
+            <p>Guidelines for a Safe, Disciplined, and Harmonious Campus Life</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p>All hostel residents are required to strictly adhere to the following rules and regulations. Violations will be treated seriously and may result in disciplinary action, fines, or expulsion from the hostel. The Chief Warden is the final authority in all matters related to hostel discipline, admission, and functioning.</p>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">1</span>
+                <div class="rule-content">
+                    <strong>Motorized Vehicles:</strong> No hostel resident can keep any motorized vehicle in the University. However, bicycles are permitted for local transport. Disciplinary action, including fine, will be imposed on defaulters.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">2</span>
+                <div class="rule-content">
+                    <strong>Anti-Ragging Policy:</strong> Ragging is strictly prohibited inside as well as outside the Hostels/Campus. Cases will be handled as per Hon'ble Supreme Court orders. Freshers should promptly report to the Warden, Officer-in-charge, Chief Warden, or any competent authority if ragged.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">3</span>
+                <div class="rule-content">
+                    <strong>Violence & Damage:</strong> Any act of intimidation, violence, willful damage to property, or drunken and riotous behavior constitutes an offence. Offenders will be expelled from hostel without notice and face disciplinary action.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">4</span>
+                <div class="rule-content">
+                    <strong>Narcotics & Alcohol:</strong> Use of narcotics, consumption of alcoholic beverages, and gambling are strictly prohibited. Disciplinary action shall be taken against violators.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">5</span>
+                <div class="rule-content">
+                    <strong>Smoking Ban:</strong> Smoking is strictly prohibited inside hostel/University campus. Students found smoking or in possession of smoking items shall be penalized for indiscipline and causing a possible fire hazard.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">6</span>
+                <div class="rule-content">
+                    <strong>Videography:</strong> Videography is prohibited inside hostel premises. Students found indulging in such activity will face necessary disciplinary action.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">7</span>
+                <div class="rule-content">
+                    <strong>Staff Relations:</strong> Misbehavior or indulging in altercation with staff members/security staff will be treated as an offence and is liable for expulsion from the hostel.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">8</span>
+                <div class="rule-content">
+                    <strong>Leave Procedures:</strong> Hostel inmates shall enter their names in the register before leaving campus and seek written permission from their hostel Wardens before long leave.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">9</span>
+                <div class="rule-content">
+                    <strong>Boys Hostel Curfew:</strong> Boys hostel inmates shall not be allowed to leave/enter the hostel after <span class="highlight">11:00 PM</span>. Late reporting will result in disciplinary action.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">10</span>
+                <div class="rule-content">
+                    <strong>Daily Attendance:</strong> All hostellers must sign daily attendance in the register available with Hostel Attendants. <span class="highlight">Failing to sign for 7 consecutive days</span> without permission will result in accommodation cancellation without notice.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">11</span>
+                <div class="rule-content">
+                    <strong>Girls Hostel Curfew:</strong> All girl hostellers must be back in campus by <span class="highlight">9:00 PM</span> and in their hostel by <span class="highlight">11:00 PM</span>. Disciplinary action will be taken against defaulters.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">12</span>
+                <div class="rule-content">
+                    <strong>Boys Hostel Visitors:</strong> No female member is permitted to visit boys' hostel rooms. Visitors may see their wards in the visitors' room only.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">13</span>
+                <div class="rule-content">
+                    <strong>Girls Hostel Visitors:</strong> No male member is permitted to visit girls' hostel. With warden's permission, visitors may see their wards in the visitors' room only.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">14</span>
+                <div class="rule-content">
+                    <strong>Day Scholars:</strong> No day-scholar or other person is permitted to stay in the hostel after <span class="highlight">9:00 PM</span>. Permission from the warden is required for meetings.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">15</span>
+                <div class="rule-content">
+                    <strong>Guest Stay Policy:</strong> Day scholars must seek prior permission from Chief Warden/Officer-in-charge through their warden. Guest charges: <span class="highlight">Rs. 300/day (Non-AC)</span>, <span class="highlight">Rs. 500/day (AC)</span>. Maximum stay: 5 days.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">16</span>
+                <div class="rule-content">
+                    <strong>Unauthorized Guests:</strong> Entertaining or providing accommodation to any unauthorized person is punishable and will result in expulsion from the hostel.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">17</span>
+                <div class="rule-content">
+                    <strong>Time Violations:</strong> Non-adherence to time norms (points 8 and 10) is grave misconduct and may result in expulsion. The Warden Council's decision is final and binding.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">18</span>
+                <div class="rule-content">
+                    <strong>Outsider Restrictions:</strong> Outsiders are not allowed in girls'/boys' hostels.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">19</span>
+                <div class="rule-content">
+                    <strong>Personal Belongings:</strong> Hostel inmates should take care of their belongings. The University is not responsible for losses. Jewelry, costly watches, and mobile phones must not be left unattended.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">20</span>
+                <div class="rule-content">
+                    <strong>Desert Cooler:</strong> Prior permission required from warden. Charges: <span class="highlight">Rs. 1,000/year</span>. Fines apply beyond the deadline.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">21</span>
+                <div class="rule-content">
+                    <strong>Vulgar Content:</strong> Display of vulgar posters/calendars is strictly prohibited. Non-compliance leads to disciplinary action.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">22</span>
+                <div class="rule-content">
+                    <strong>Cooking & Inflammables:</strong> Cooking and keeping inflammable items inside hostel is strictly prohibited and will be penalized as fire hazard.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">23</span>
+                <div class="rule-content">
+                    <strong>Electrical Appliances:</strong> Electric iron and kettle permitted with prior permission. Charges: <span class="highlight">Rs. 100/month per item</span>. Room heaters and other appliances not permitted.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">24</span>
+                <div class="rule-content">
+                    <strong>False Fire Alarms:</strong> Triggering false fire alarms is serious indiscipline and shall be penalized.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">25</span>
+                <div class="rule-content">
+                    <strong>Minimum Attendance:</strong> Minimum stay duration: <span class="highlight">85%</span>. Reviewed monthly/semester/yearly. Short attendance or frequent absence leads to allotment cancellation.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">26</span>
+                <div class="rule-content">
+                    <strong>Lost ID Card:</strong> Fine of <span class="highlight">Rs. 200</span> and FIR copy required for duplicate hostel identity card.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">27</span>
+                <div class="rule-content">
+                    <strong>Emergency Contact:</strong> In emergencies, contact the concerned Hostel Warden/Officer In-Charge/Chief Warden.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">28</span>
+                <div class="rule-content">
+                    <strong>Notice Boards:</strong> Check notice boards regularly for announcements. Suggestions to improve hostel environment are welcome.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">29</span>
+                <div class="rule-content">
+                    <strong>Restricted Areas:</strong> No access to terrace/AHU room under any circumstances. Using fire exit for sitting strictly prohibited. Violations invite disciplinary action including expulsion.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">30</span>
+                <div class="rule-content">
+                    <strong>Warden Authority:</strong> Wardens may impose fines for any indiscipline as deemed appropriate.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">31</span>
+                <div class="rule-content">
+                    <strong>Contact Updates:</strong> Keep Warden Office informed about changes in contact number/email ID/Hostel ID.
+                </div>
+            </div>
+
+            <div class="rule-section">
+                <span class="rule-number">32</span>
+                <div class="rule-content">
+                    <strong>Authentic Details:</strong> Students must provide authentic details of self, parents, and local guardians for hostel records.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">33</span>
+                <div class="rule-content">
+                    <strong>Chief Warden Authority:</strong> The Chief Warden is the final authority in matters of discipline, admission, and overall hostel functioning.
+                </div>
+            </div>
+
+            <div class="rule-section ">
+                <span class="rule-number">34</span>
+                <div class="rule-content">
+                    <strong>Compliance:</strong> All hostel residents shall abide by the above rules. Violations will be viewed seriously. Hostel Wardens are fully empowered to deal with residents as situations demand.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>⚠️ Disclaimer</strong></p>
+            <p>These rules are designed to ensure a safe, disciplined, and conducive environment for all residents.</p>
+            <p>Strict compliance is mandatory. Non-compliance may result in disciplinary action, fines, or expulsion.</p>
+            <p style="margin-top: 15px; opacity: 0.8;">For queries, contact your respective Hostel Warden or the Chief Warden's Office.</p>
+        </div>
+    </div>
+</body>
+</html>

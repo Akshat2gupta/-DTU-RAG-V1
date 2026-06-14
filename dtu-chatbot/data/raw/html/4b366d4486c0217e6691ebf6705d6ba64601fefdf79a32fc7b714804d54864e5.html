@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        .mainheader {
+            background: linear-gradient(135deg, #3b82c4 0%, #2563aa 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mainheader::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .mainheader-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3b82c4;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-links a:hover {
+            background: white;
+            color: #3b82c4;
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        /* Navigation Styles */
+        .nav {
+            background: rgba(74, 144, 226, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item {
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffffff, #e8f4fd);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-item:hover::before, .nav-item.active::before {
+            width: 100%;
+        }
+        
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+        }
+        
+        /* Organizational Chart Styles */
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .title {
+            margin-top: 20px;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 34px;
+            font-weight: bold;
+        }
+        
+        .level {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .person-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 200px;
+            max-width: 250px;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+        
+        .photo-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            overflow: hidden;
+            border: 3px solid #ddd;
+        }
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: #e9ecef;
+        }
+        
+        .name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .post {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .designation {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        /* Card Variants */
+        .chief-warden-card {
+            border-top: 4px solid #e74c3c;
+        }
+        
+        .chief-warden-card .designation {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .chief-warden-card .photo-container {
+            border-color: #e74c3c;
+        }
+        
+        .hostel-oic-card {
+            border-top: 4px solid #3498db;
+        }
+        
+        .hostel-oic-card .designation {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+        
+        .hostel-oic-card .photo-container {
+            border-color: #3498db;
+        }
+        
+        .warden-card {
+            border-top: 4px solid #1abc9c;
+            min-width: 180px;
+            max-width: 200px;
+        }
+        
+        .warden-card .designation {
+            background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+        }
+        
+        .warden-card .photo-container {
+            border-color: #1abc9c;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .warden-card .name {
+            font-size: 14px;
+        }
+        
+        .warden-card .post {
+            font-size: 12px;
+        }
+        
+        .staff-card {
+            border-top: 4px solid #9b59b6;
+        }
+        
+        .staff-card .designation {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+        }
+        
+        .staff-card .photo-container {
+            border-color: #9b59b6;
+        }
+        
+        .wardens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            justify-items: center;
+        }
+        
+        .connection-line {
+            width: 2px;
+            height: 40px;
+            background-color: #34495e;
+            margin: 0 auto;
+        }
+        
+        .horizontal-line {
+            height: 2px;
+            background-color: #34495e;
+            margin: 20px 0;
+            width: 60%;
+        }
+        
+        /* Chief Warden Section */
+        .container {
+            max-width: 1200px;
+            margin: 24px auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .department-info {
+            margin-bottom: 50px;
+        }
+        
+        .department-info h2 {
+            color: #1e3c72;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .department-info p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        /* Chief Warden Card */
+        .chief-warden-card {
+            background: linear-gradient(135deg, #25a8f9 0%, #3198e7 100%);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(240, 147, 251, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .chief-warden-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(240, 147, 251, 0.4);
+        }
+        
+        .chief-warden-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .card-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .message-content {
+            text-align: justify;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cwarden-info {
+            margin-top: 50px;
+            align-items: center;
+            gap: 20px;
+            min-width: 300px;
+        }
+        
+        .cwarden-photo img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 4px solid #4a90e2;
+        }
+        
+        .chief-warden-card:hover .cwarden-photo img {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .card-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .card-title h3 {
+            font-size: 1.6em;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-title .designation {
+            font-size: 1.1em;
+            opacity: 0.9;
+            font-weight: 300;
+            margin: auto;
+        }
+        
+        .message-content h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .message-content p {
+            line-height: 1.6;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 20px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* ============================================
+           RESPONSIVE DESIGN - MOBILE OPTIMIZATION
+           ============================================ */
+        
+        /* Tablets and Small Laptops */
+        @media (max-width: 1024px) {
+            .container {
+                margin: 20px;
+            }
+            
+            .content {
+                padding: 30px;
+            }
+            
+            .chart-container {
+                padding: 0 1rem;
+            }
+        }
+        
+        /* Tablets */
+        @media (max-width: 900px) {
+            .title {
+                font-size: 28px;
+            }
+            
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .department-info h2 {
+                font-size: 1.8em;
+            }
+            
+            .cwarden-photo img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+            /* Header */
+            .mainheader-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                padding: 0 1rem;
+            }
+            
+            .logo {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.8rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .social-links a {
+                width: 35px;
+                height: 35px;
+            }
+            
+            /* Navigation */
+            .nav-content {
+                justify-content: center;
+            }
+            
+            .nav-item {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            
+            /* Organizational Chart */
+            .title {
+                font-size: 24px;
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .level {
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+            
+            .person-card {
+                min-width: 160px;
+                max-width: 180px;
+                padding: 15px;
+            }
+            
+            .photo-container {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .name {
+                font-size: 14px;
+            }
+            
+            .post {
+                font-size: 12px;
+            }
+            
+            .designation {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+            
+            .wardens-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 15px;
+                padding: 0 1rem;
+            }
+            
+            .warden-card {
+                min-width: 150px;
+                max-width: 170px;
+            }
+            
+            .connection-line {
+                height: 30px;
+            }
+            
+            .horizontal-line {
+                width: 80%;
+                margin: 15px 0;
+            }
+            
+            /* Chief Warden Section */
+            .container {
+                margin: 15px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header .subtitle {
+                font-size: 1em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .department-info {
+                margin-bottom: 30px;
+            }
+            
+            .department-info h2 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+            
+            .department-info p {
+                font-size: 1em;
+                margin-bottom: 12px;
+            }
+            
+            .chief-warden-card {
+                padding: 20px;
+            }
+            
+            .card-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .cwarden-info {
+                order: -1;
+                min-width: auto;
+                justify-content: center;
+                margin-top: 0;
+                text-align: center;
+            }
+            
+            .cwarden-photo img {
+                width: 150px;
+                height: 150px;
+                border: 3px solid #4a90e2;
+            }
+            
+            .card-title h3 {
+                font-size: 1.3em;
+            }
+            
+            .card-title .designation {
+                font-size: 1em;
+            }
+            
+            .message-content h4 {
+                font-size: 1.1em;
+            }
+            
+            .message-content p {
+                font-size: 0.95em;
+            }
+        }
+        
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            /* Header */
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+            
+            .social-links a {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+            
+            /* Navigation */
+            .nav-item {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            /* Organizational Chart */
+            .title {
+                font-size: 20px;
+            }
+            
+            .person-card {
+                min-width: 140px;
+                max-width: 160px;
+                padding: 12px;
+            }
+            
+            .photo-container {
+                width: 50px;
+                height: 50px;
+                border-width: 2px;
+            }
+            
+            .name {
+                font-size: 13px;
+            }
+            
+            .post {
+                font-size: 11px;
+            }
+            
+            .designation {
+                font-size: 10px;
+                padding: 5px 10px;
+            }
+            
+            .wardens-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 12px;
+            }
+            
+            .warden-card {
+                min-width: 130px;
+                max-width: 150px;
+            }
+            
+            .warden-card .photo-container {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .warden-card .name {
+                font-size: 12px;
+            }
+            
+            .warden-card .post {
+                font-size: 11px;
+            }
+            
+            /* Chief Warden Section */
+            .container {
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .header .subtitle {
+                font-size: 0.9em;
+            }
+            
+            .content {
+                padding: 15px;
+            }
+            
+            .department-info h2 {
+                font-size: 1.3em;
+            }
+            
+            .department-info p {
+                font-size: 0.95em;
+            }
+            
+            .chief-warden-card {
+                padding: 15px;
+            }
+            
+            .cwarden-photo img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .card-title h3 {
+                font-size: 1.1em;
+            }
+            
+            .card-title .designation {
+                font-size: 0.9em;
+            }
+            
+            .message-content h4 {
+                font-size: 1em;
+            }
+            
+            .message-content p {
+                font-size: 0.9em;
+            }
+            
+            .signature {
+                font-size: 0.9em;
+            }
+        }
+        
+        /* Very Small Screens */
+        @media (max-width: 360px) {
+            .mainheader-content {
+                padding: 0 0.5rem;
+            }
+            
+            .nav-item {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .title {
+                font-size: 18px;
+            }
+            
+            .person-card {
+                min-width: 120px;
+                max-width: 140px;
+                padding: 10px;
+            }
+            
+            .wardens-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.3em;
+            }
+            
+            .department-info h2 {
+                font-size: 1.2em;
+            }
+            
+            .cwarden-photo img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        /* Landscape Mode for Mobile */
+        @media (max-width: 900px) and (orientation: landscape) {
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .chart-container {
+                padding: 1rem;
+            }
+            
+            .chief-warden-card {
+                padding: 20px;
+            }
+            
+            .card-content {
+                flex-direction: row;
+            }
+            
+            .cwarden-photo img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        
+      
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="mainheader">
+        <div class="mainheader-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="DTU Logo" width="70px">
+                <div class="logo-text">
+                    <h1>Hostel Office</h1>
+                    <p>DELHI TECHNOLOGICAL UNIVERSITY</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item active">About</a>
+            <a href="fee.html" class="nav-item">Fee Structure</a>
+            <a href="index.html#hostels" class="nav-item">Boys Hostels</a>
+            <a href="index.html#hostels" class="nav-item">Girls Hostels</a>
+            <a href="complain.html" class="nav-item">Rules & Regulations</a>
+            <a href="index.html#search-section" class="nav-item">Important Updates</a>
+            <a href="contact.html" class="nav-item">Contact Us</a>
+
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <h1>HOSTEL OFFICE</h1>
+            <p class="subtitle">Delhi Technological University</p>
+        </div>
+        
+        <div class="content">
+            <div class="department-info">
+                <h2>About </h2>
+                <p>The DTU Hostel Office is dedicated to providing a safe, comfortable, and conducive living environment for students pursuing their academic goals at Delhi Technological University. Our department oversees the administration and maintenance of multiple hostel facilities across the campus.</p>
+                
+                <p>We are committed to ensuring that students have access to quality accommodation, essential amenities, and a supportive community atmosphere that enhances their overall university experience. Our team works tirelessly to maintain high standards of cleanliness, security, and student welfare.</p>
+                
+                <p>The department manages various aspects including room allocation, maintenance services, mess facilities, recreational activities, and student grievance resolution. We strive to create an environment that promotes academic excellence while fostering personal growth and social interaction among residents.</p>
+                
+                <p>Our facilities include modern amenities such as Wi-Fi connectivity, study rooms, common areas, sports facilities, and 24/7 security services. We continuously work to upgrade our infrastructure and services to meet the evolving needs of our student community.</p>
+            </div>
+            
+            <div class="chief-warden-card" onclick="playAnimation()">
+                <div class="card-content">
+                    <div class="message-content">
+                        <h4>Message from the Chief Warden</h4>
+                        
+                        <p>Hello Residents,</p>
+                        <p>Your time in the DTU hostels is more than just a place to stay—it's a launchpad for your future. Here’s how you can make the most of it.</p>
+                           <b>Sharpen Your Skills:</b> Excel in your studies and get involved in research to build a strong technical foundation.</p>
+                        <p><b>Develop Leadership:</b> Step up to organize and lead events. This is your training ground for soft and managerial skills.</p>
+                        <p><b>Build Teamwork:</b> Foster a supportive community through mutual respect and cooperation with your peers.</p>
+                        <p><b>Prioritize Well-being:</b> Take care of your physical and mental health through sports, exercise, and mindfulness.</p>
+                        <p><b>Expand Your Network:</b> Connect with students from other hostels, disciplines, and our alumni network.</p>
+                        <p><b>Partner with Us:</b> Actively participate in committees and provide constructive feedback to help us improve.</p>
+                        <div class="signature">
+                            <p>Thanking You and Best wishes,<br>Prof. Raj Kumar Singh<br>Chief Warden, DTU</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cwarden-info">
+                        <div class="cwarden-photo" id="wardenPhoto">
+                            <img src="images/rksingh.png">
+                        </div>
+                        
+                        <div class="card-title">
+                            <h3>Prof. Raj Kumar singh</h3>
+                            <p class="designation">Chief Warden</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chart-container">
+        <h1 class="title">Warden Council </h1>
+        
+        <!-- Chief Warden Level -->
+        <div class="level">
+            <div class="person-card chief-warden-card">
+                <div class="photo-container">
+                    <img src="images/rksingh.png" alt="Chief Warden Photo" class="photo">
+                </div>
+                <div class="name">Prof. R.K. Singh</div>
+               
+                <div class="designation">Chief Warden</div>
+            </div>
+        </div>
+        
+        <div class="connection-line"></div>
+        
+        <!-- Hostel OIC Level -->
+        <div class="level">
+            <div class="person-card hostel-oic-card">
+                <div class="photo-container">
+                    <img src="images/sp.png" alt="Hostel OIC Photo" class="photo">
+                </div>
+                <div class="name">Dr. Sanjay Patidar</div>
+               
+                <div class="designation">Hostel OIC</div>
+            </div>
+        </div>
+        
+        <div class="connection-line"></div>
+        <div class="horizontal-line"></div>
+        
+        <!-- Wardens Level -->
+        <div class="level">
+            <div class="wardens-grid">
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/anamikachauchan.png" alt="Ms. Anamika Chauhan" class="photo">
+                    </div>
+                    <div class="name">Ms. Anamika Chauhan</div>
+                    <div class="post">VLB Block-1</div>
+                    <div class="designation">Warden </div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/sonikadahiya.png" alt="Dr. Sonika Dahiya" class="photo">
+                    </div>
+                    <div class="name">Dr. Sonika Dahiya</div>
+                    <div class="post">VLB Block-2</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/abhilashasharma.png" alt="Dr. Abhilasha Sharma" class="photo">
+                    </div>
+                    <div class="name">Dr. Abhilasha Sharma</div>
+                    <div class="post">SNH</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/sonalsingh.png" alt="Dr. Sonal Singh" class="photo">
+                    </div>
+                    <div class="name">Dr. Sonal Singh</div>
+                    <div class="post">KCH</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/sanjaykumar.png" alt="Dr. Sanjay Kumar" class="photo">
+                    </div>
+                    <div class="name">Dr. Sanjay Kumar</div>
+                    <div class="post">ABH</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/krishnadutt.png" alt="Mr.Krishna Dutt" class="photo">
+                    </div>
+                    <div class="name">Mr.Krishna Dutt</div>
+                    <div class="post">Type-II Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/dcmeena.png" alt="Dr. D.C. Meena" class="photo">
+                    </div>
+                    <div class="name">Dr. D.C. Meena</div>
+                    <div class="post">HJB Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/raghvendragautam.png" alt="Dr. Raghvendra Gautam" class="photo">
+                    </div>
+                    <div class="name">Dr. Raghvendra Gautam</div>
+                    <div class="post">CVR Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/sp.png" alt="Dr. Sanjay Patidar" class="photo">
+                    </div>
+                    <div class="name">Dr. Sanjay Patidar</div>
+                    <div class="post">VMH Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/prashantg.png" alt="Dr. Prashant G Shambharkar" class="photo">
+                    </div>
+                    <div class="name">Dr. Prashant G Shambharkar</div>
+                    <div class="post">BCH Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/deshrajmeena.png" alt="Dr. Deshraj Meena" class="photo">
+                    </div>
+                    <div class="name">Dr. Deshraj Meena</div>
+                    <div class="post">APJ Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/rohitkumar.png" alt="Dr. Rohit Kumar" class="photo">
+                    </div>
+                    <div class="name">Dr. Rohit Kumar</div>
+                    <div class="post">JCB Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/dhirenderkumar.png" alt="Dr. Dhirendra Kumar" class="photo">
+                    </div>
+                    <div class="name">Dr. Dhirendra Kumar</div>
+                    <div class="post">VVS Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/premprakash.png" alt="Dr. Prem Prakash" class="photo">
+                    </div>
+                    <div class="name">Dr. Prem Prakash</div>
+                    <div class="post">Ramanujan Hostel</div>
+                    <div class="designation">Warden</div>
+                </div>
+                <div class="person-card warden-card">
+                    <div class="photo-container">
+                        <img src="images/shreyansh.png" alt="Mr. Shreyansh Upadhyaya" class="photo">
+                    </div>
+                    <div class="name">Mr. Shreyansh Upadhyaya</div>
+                    <div class="post">NDPG (Rented)</div>
+                    <div class="designation">Warden</div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="connection-line"></div>
+        <div class="horizontal-line"></div>
+        
+        <!-- Hostel Staff Level -->
+        <div class="level">
+            <div class="person-card staff-card">
+                <div class="photo-container">
+                    <img src="images/nil.png" alt="Staff Member 1 Photo" class="photo">
+                </div>
+                <div class="name">Mr. Deepak</div>
+                <div class="post">Stenographer</div>
+                <div class="designation">Hostel Staff</div>
+            </div>
+            
+            <div class="person-card staff-card">
+                <div class="photo-container">
+                    <img src="images/nil.png" alt="Staff Member 2 Photo" class="photo">
+                </div>
+                <div class="name">Mrs. Bhagwati</div>
+                <div class="post">[Position]</div>
+                <div class="designation">Hostel Staff</div>
+            </div>
+            <div class="person-card staff-card">
+                <div class="photo-container">
+                    <img src="images/nil.png" alt="Staff Member 2 Photo" class="photo">
+                </div>
+                <div class="name">Mr. Maninder</div>
+                <div class="post">Attendent Supervisor</div>
+                <div class="designation">Hostel Staff</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+function playAnimation() {
+    const card = document.querySelector('.chief-warden-card');
+    const photo = document.getElementById('wardenPhoto');
+    
+    // Add pulse animation
+    card.style.animation = 'pulse 0.6s ease-in-out';
+    photo.style.animation = 'bounce 0.8s ease-in-out';
+    
+    // Reset animation after completion
+    setTimeout(() => {
+        card.style.animation = '';
+        photo.style.animation = '';
+    }, 800);
+}
+
+// CSS animations for JavaScript
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 60%, 100% { transform: scale(1) rotate(0deg); }
+        40% { transform: scale(1.2) rotate(-5deg); }
+        80% { transform: scale(1.1) rotate(5deg); }
+    }
+`;
+document.head.appendChild(style);
+
+// Add floating animation to the shimmer effect
+let shimmerDirection = 1;
+setInterval(() => {
+    const shimmer = document.querySelector('.chief-warden-card::before');
+    shimmerDirection *= -1;
+}, 3000);
+</script>
+
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #3b82c4 0%, #2563aa 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3b82c4;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #3b82c4;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Navigation Styles */
+        .nav {
+            background: rgba(74, 144, 226, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffffff, #e8f4fd);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-item:hover::before, .nav-item.active::before {
+            width: 100%;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .main-title {
+            margin-top: 25px;
+            text-align: center;
+            color: #0d47a1;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: titleSlide 1s ease-out;
+        }
+
+        @keyframes titleSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fee-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: cardSlideUp 0.8s ease-out forwards;
+        }
+
+        .fee-section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .fee-section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes cardSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fee-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            animation: underlineGrow 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes underlineGrow {
+            to {
+                width: 100%;
+            }
+        }
+
+        .hostel-grid {
+            display: grid;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .room-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .room-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .room-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .room-number {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .room-type {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .room-amount {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .ac-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(255,107,107,0.3);
+        }
+
+        .mess-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mess-card::before {
+            content: '🍽️';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+
+        .mess-amount {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .mess-description {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .floating-icons {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .icon-1 {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .icon-2 {
+            top: 30%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .icon-3 {
+            bottom: 20%;
+            left: 8%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .academic-year-note {
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #667eea;
+            font-style: italic;
+            color: #666;
+        }
+
+        
+
+            @media (max-width: 768px) {
+                .header-content {
+                    flex-direction: column;
+                    gap: 1rem;
+                    text-align: center;
+                    padding: 0 1rem;
+                }
+                
+                .logo {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+                
+                .logo-icon {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 1.2rem;
+                }
+                
+                .logo-text h1 {
+                    font-size: 1.5rem;
+                }
+                
+                .logo-text p {
+                    font-size: 0.8rem;
+                }
+                
+                .social-links {
+                    justify-content: center;
+                }
+                
+                .social-links a {
+                    width: 35px;
+                    height: 35px;
+                }
+                
+                /* Navigation */
+                .nav-content {
+                    justify-content: center;
+                }
+                
+                .nav-item {
+                    padding: 12px 15px;
+                    font-size: 14px;
+                }
+
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .room-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .room-type {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Header */
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.75rem;
+            }
+            
+            .social-links a {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+            
+            /* Navigation */
+            .nav-item {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 2rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            animation: slideInUp 1s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+            margin-top: 25px;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.8s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="DTU Logo" width="70px">
+                <div class="logo-text">
+                    <h1>Hostel Office</h1>
+                    <p>DELHI TECHNOLOGICAL UNIVERSITY</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="fee.html" class="nav-item active">Fee Structure</a>
+            <a href="index.html#hostels" class="nav-item">Boys Hostels</a>
+            <a href="index.html#hostels" class="nav-item">Girls Hostels</a>
+            <a href="complain.html" class="nav-item">Rules & Regulations</a>
+            <a href="index.htmk#search-section" class="nav-item">Important Updates</a>
+            <a href="contact.html" class="nav-item">Contact Us</a>
+
+        </div>
+        </nav>
+        <div class="container">
+            <div class="floating-icons icon-1">🏠</div>
+            <div class="floating-icons icon-2">🎓</div>
+            <div class="floating-icons icon-3">📚</div>
+            
+            <h1 class="main-title">Academic Year Fee Structure</h1>
+            
+            <div class="fee-section">
+                <h2 class="section-title">Hostel Fee Structure</h2>
+                <div class="hostel-grid">
+                    <div class="room-card">
+                        <div class="room-header">
+                            <div class="room-number">01</div>
+                            <div class="room-type">Single-Seater (Non-AC)</div>
+                            <div class="room-amount">₹ 60,000/-</div>
+                        </div>
+                    </div>
+                    
+                    <div class="room-card">
+                        <div class="room-header">
+                            <div class="room-number">02</div>
+                            <div class="room-type">Double-Seater (Non-AC)</div>
+                            <div class="room-amount">₹ 56,000/-</div>
+                        </div>
+                    </div>
+                    
+                    <div class="room-card">
+                        <div class="room-header">
+                            <div class="room-number">03</div>
+                            <div class="room-type">Triple-Seater/Type-I & Type-II flats (Non-AC)</div>
+                            <div class="room-amount">₹ 52,000/-</div>
+                        </div>
+                    </div>
+                    
+                    <div class="room-card pulse">
+                        <div class="ac-badge">WITH AC</div>
+                        <div class="room-header">
+                            <div class="room-number">04</div>
+                            <div class="room-type">Triple-Seater (AC)</div>
+                            <div class="room-amount">₹ 72,000/-</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://dtu.ac.in/Web/notice/2023/july/file0729.pdf" class="cta-button">Office Order of Annual Hostel Fees</a>     
+            </div>
+            
+            <div class="fee-section">
+                <h2 class="section-title">Mess Fee Structure</h2>
+                <div class="mess-card">
+                    <div class="mess-amount">₹ 34,800/-</div>
+                    <div class="mess-description">
+                        For an Academic year (August to next year May)
+                    </div>
+                </div>
+                <div class="academic-year-note">
+                    <strong>Note:</strong> All fees are applicable for a complete academic year from August to May of the following year.
+                </div>
+                <a href="https://dtu.ac.in/Web/notice/2023/july/file0729.pdf" class="cta-button">Office Order of Annual Mess Fees</a> 
+            </div>
+        </div>
+    
+        <script>
+            // Add some interactive effects
+            document.addEventListener('DOMContentLoaded', function() {
+                const roomCards = document.querySelectorAll('.room-card');
+                
+                roomCards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                        this.style.color = 'white';
+                        const amount = this.querySelector('.room-amount');
+                        amount.style.background = 'rgba(255,255,255,0.9)';
+                        amount.style.color = '#333';
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+                        this.style.color = '#333';
+                        const amount = this.querySelector('.room-amount');
+                        amount.style.background = 'white';
+                        amount.style.color = '#667eea';
+                    });
+                });
+                
+                // Animate numbers
+                const amounts = document.querySelectorAll('.room-amount, .mess-amount');
+                amounts.forEach(amount => {
+                    const finalValue = amount.textContent;
+                    amount.textContent = '₹ 0/-';
+                    
+                    setTimeout(() => {
+                        amount.textContent = finalValue;
+                        amount.style.animation = 'pulse 0.5s ease-out';
+                    }, 1000);
+                });
+            });
+        </script>
+</body>
+</html>
